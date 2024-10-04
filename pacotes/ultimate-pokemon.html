@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Pokémon</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">	
+	<link rel="stylesheet" href="includes/estilo.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>	
+</head>
+<body>
+	<div id="corpo">
+		<div class="items"></div>
+		<div class="videovisual compet">
+			<video id="video" autoplay muted loop><source src="../imagens/pacotes/ultimate-pokemon/pet-pikachu.mp4" type="video/mp4"></video>
+			<div class="botoes-versao">
+				<div class="botoes1">
+					<button class="pikachu" onclick="changeVideo('../imagens/pacotes/ultimate-pokemon/pet-pikachu.mp4')">Pikachu</button>					
+					<button class="bulba" onclick="changeVideo('../imagens/pacotes/ultimate-pokemon/pet-bulbassauro.mp4')">Bulbassauro</button>										
+				</div>
+				<div class="botoes2">					
+					<button class="squirtle" onclick="changeVideo('../imagens/pacotes/ultimate-pokemon/pet-squirtle.mp4')">Squirtle</button>
+					<button class="charmander" onclick="changeVideo('../imagens/pacotes/ultimate-pokemon/pet-charmander.mp4')">Charmander</button>
+				</div>
+			</div>
+		</div>
+		<div class="bauaberto">
+			<h2>Você receberá os itens abaixo.</h2>
+			<div class="itens"><div class="clearboth"></div></div>
+		</div>
+	</div>
+		<script src="includes/script.js"></script>
+		<script src="../includes/itens.js"></script>	
+
+		<script>
+			$(document).ready(function() {
+				itemid(item2393770,"");
+				itemid(item2393790,"");
+				itemid(item2393830,"");
+				itemid(item2393810,"");
+				itemid(item2394100,"1","bau");
+				itemid(item2393650,"");
+				itemid(item2393660,"");
+				itemid(item2393680,"");
+				itemid(item2393670,"");
+				itemid(item1795040,"4");
+				itemid(item2595460,"");
+				itemid(item2404820,"");
+				itemid(item2404800,"");
+				itemid(item2404810,"");								
+				itemid(item2304730,"4");
+			});
+		</script>	
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chase Fantasy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="includes/estilo.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+</head>
+<body id="guiasmissoes" oncontextmenu="return false;">
+	<div id="topo">			
+		<div id="language-buttons" class="dropdown">
+			<button class="dropbtn"><img src="imagens/br.svg" alt="Portuguese"><p>Português</p> <span class="dropdown-icon">▼</span></button>
+			<div class="dropdown-content">
+				<div class="language-button" data-lang="ph"><img src="../imagens/ph.svg" alt="Filipino"><p>Filipino</p></div>
+				<div class="language-button" data-lang="cn"><img src="../imagens/cn.svg" alt="Chinese"><p>中文</p></div>
+				<div class="language-button" data-lang="id"><img src="../imagens/id.svg" alt="Indonesian"><p>Bahasa Indonesia</p></div>
+				<div class="language-button" data-lang="es"><img src="../imagens/es.svg" alt="Spanish"><p>Español</p></div>
+				<div class="language-button" data-lang="th"><img src="../imagens/th.svg" alt="Thai"><p>ไทย</p></div>
+				<div class="language-button" data-lang="en"><img src="../imagens/us.svg" alt="English"><p>English</p></div>
+				<div class="language-button" data-lang="pt"><img src="../imagens/br.svg" alt="Portuguese"><p>Português</p></div>
+			</div>
+		</div>
+		<img src="../imagens/logo-fantasy.png" alt=""/>
+	</div>	
+	<div id="missoes">
+		<a class="missao wiki" href="wiki.html">
+			<img src="../imagens/missoes/wiki.png" alt="" />
+			<div class="nomemissao"><p data-translate="wiki">Wiki</p></div>
+		</a>
+		<a class="missao guias" href="https://chasefantasy.com.br/forum/forum/8-guias-de-desenvolvimento/">
+			<img src="../imagens/missoes/guias.png" alt="" />
+			<div class="nomemissao"><p data-translate="guiamissoes">Guias de Progressão</p></div>
+		</a>
+		<a class="missao loja" href="https://chasefantasy.com.br/cash">
+			<img src="../imagens/missoes/loja.png" alt="" />
+			<div class="nomemissao"><p data-translate="loja">Loja</p></div>
+		</a>
+	</div>
+<script src="includes/script.js"></script>        
+<script src="includes/traducao.js"></script>
+<script>
+    $(document).ready(function() {              
+        addTranslations(TraducaoIndex);
+		setLanguageFromStorage();
+    });
+</script>       
+</body>
+</html>

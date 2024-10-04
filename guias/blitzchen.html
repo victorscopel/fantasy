@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Covil de Blitzchen</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">	
+		<link rel="stylesheet" href="includes/estilo.css">
+		<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+	</head>
+	<body oncontextmenu="return false;">
+	<div class="container">
+		<div id="topo">			
+			<div id="language-buttons" class="dropdown">
+				<button class="dropbtn"><img src="../imagens/br.svg" alt="Portuguese"><p>Português</p> <span class="dropdown-icon">▼</span></button>
+				<div class="dropdown-content">
+					<div class="language-button" data-lang="ph"><img src="../imagens/ph.svg" alt="Filipino"><p>Filipino</p></div>
+					<div class="language-button" data-lang="cn"><img src="../imagens/cn.svg" alt="Chinese"><p>中文</p></div>
+					<div class="language-button" data-lang="id"><img src="../imagens/id.svg" alt="Indonesian"><p>Bahasa Indonesia</p></div>
+					<div class="language-button" data-lang="es"><img src="../imagens/es.svg" alt="Spanish"><p>Español</p></div>
+					<div class="language-button" data-lang="th"><img src="../imagens/th.svg" alt="Thai"><p>ไทย</p></div>
+					<div class="language-button" data-lang="en"><img src="../imagens/us.svg" alt="English"><p>English</p></div>
+					<div class="language-button" data-lang="pt"><img src="../imagens/br.svg" alt="Portuguese"><p>Português</p></div>
+				</div>
+			</div>		
+			<img src="../imagens/logo-fantasy.png" alt=""/>
+		</div>
+	  <table cellspacing="0" style="border: 1px solid rgba(153, 153, 153, 0.3); background: rgba(32, 33, 35, 0.6);" width="100%">
+		<tbody>
+		  <tr>
+			<td class="bgtitulo" colspan="4" align="center">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><div class="titulonav home"><a href="index.html" data-translate="inicioguias">Início</a></div></li>
+						<li class="breadcrumb-item"><div class="titulonav wiki"><a href="wiki.html" data-translate="wiki">Wiki</a></div></li>
+						<li class="breadcrumb-item active"><div id="title" class="titulodg blitzchen"><h1 data-translate="title">Covil de Blitzchen</h1></div></li>
+					</ol>
+				</nav>				
+			</td>
+		  </tr>
+		  <tr>
+			<th width="25%" data-translate="menutitulomissao">Título</th>
+			<td>
+				<div class="titulomissao">
+					<p><img alt="" src="../imagens/titulo-blitzchen.png"></p>
+					<div><span class="raridade lendario" data-translate="titulomissao">Caçador de Dragões</span></div>                 
+					<div class="maintooltip">
+						<div class="nomeitem">
+							<p class="raridade lendario" data-translate="item1878980_nomedoitem">Caçador de Dragões</p>
+						</div>
+						<div class="tooltipdesc">
+							<div class="statustitulo">
+								<span data-translate="item1878980_tipo">Título</span>
+								<span class="raridade lendario" data-translate="itemlendario">Item Lendário</span>
+								<div class="clearboth"></div>
+								<ul class="tituloprop"><li><span data-translate="ataque">Ataque</span> <span class="numeroatributo">400</span></li><li><span data-translate="defesa">Defesa</span> <span class="numeroatributo">200</span></li><li><span data-translate="hp">HP</span> <span class="numeroatributo">200</span></li></ul>
+								<span class="custo"><span data-translate="nvminimo">Nv minimo</span> <span class="amarelo">0</span></span>
+								<span class="custo" data-translate="item1878980_custo">Cristal 0</span>
+							</div>
+							<div class="statustitulo"><ul class="tituloatributo"><li><span data-translate="efeitotexto">Efeito: </span><span data-translate="item1878980_efeito1">Ataque Especial +5000</span></li><li><span data-translate="efeitotexto">Efeito: </span><span data-translate="item1878980_efeito2">Defesa Especial +5000</span></li><li><span data-translate="efeitotexto">Efeito: </span><span data-translate="item1878980_efeito3">Dano Crítico +100.00%</span></li><li><span data-translate="efeitotexto">Efeito: </span><span data-translate="item1878980_efeito4">Lança Infernal +1000</span></li></ul></div>
+							<div class="descricaotooltip">
+								<span class="naopodemover" data-translate="naopodemover">Não pode ser movido para o Armazém</span>								
+								<span class="itemdesc" data-translate="item1878980_descricao"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</td>
+		  </tr>
+		  <tr>
+			<th data-translate="drops">Drops</th>
+			<td colspan="4" style="color:#FFFF; margin-bottom: 8px !important;">
+			  <div class="containerdrops itensnormais"></div>
+			</td>
+		  </tr>
+		  <tr>
+			<th data-translate="dropsaleatorios">Drops Aleatórios</th>
+			<td colspan="4" style="color:#FFFF; margin-bottom: 8px !important;">
+			  <div class="containerdrops dropsaleatorios"></div>
+			</td>
+		  </tr>
+		  <tr>
+			<th data-translate="itensconstruidos">Itens Construídos</th>
+			<td colspan="4" style="color:#FFFF; margin-bottom: 8px !important;">
+			  <div class="containerdrops itensconstruidos"></div>
+			</td>
+		  </tr>		  
+		</tbody>
+	  </table>	  
+	</div>
+		<script src="includes/script.js"></script>
+		<script src="../includes/itens.js"></script>
+		<script src="includes/traducao.js"></script>
+		<script>
+			$(document).ready(function() {
+				itemid(item1720690,"10","normal");
+				itemid(item1878990,"30","normal");				
+				itemid(item1129090,"5","normal");
+				itemid(item1129100,"","aleatorio");
+				itemid(item1129110,"","aleatorio");
+				itemid(item1808320,"","aleatorio");
+				itemid(item1727100,"","aleatorio");
+				itemid(item1879010,"","construido");
+				itemid(item1115750,"","construido");
+				itemid(item1407980,"","construido");
+				itemid(item1735800,"","construido");
+				itemid(item1867640,"","construido");
+				itemid(item2023850,"","construido");
+				itemid(item2023860,"","construido");
+				itemid(item2023870,"","construido");
+				itemid(item1899070,"","construido");
+				itemid(item1810140,"","construido");
+				itemid(item1738720,"","construido");
+				itemid(item1905190,"","construido");
+				itemid(item1941450,"","construido");
+				itemid(item2009780,"","construido");
+				addTranslations(TraducaoBlitzchen);
+				setLanguageFromStorage();
+			});
+		</script>		
+	</body>
+</html>

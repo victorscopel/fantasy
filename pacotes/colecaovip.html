@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleção VIP</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">	
+	<link rel="stylesheet" href="includes/estilo.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>	
+</head>
+<body>
+	<div id="corpo" class="colecaovip"><div class="descricaovip">A cada 2 VIPs adquiridos você recebera uma recompensa.</div>
+		<div class="items">			
+		</div>
+		<div class="videovisual">
+			<div class="vip-info">8 VIPs</div>
+			<video id="video" autoplay muted loop><source src="../imagens/pacotes/colecaovip/acolito-feminino.mp4" type="video/mp4"></video>
+			<div class="botoes-versao">
+				<div class="botoes1">
+					<button class="feminino" onclick="changeVideo('../imagens/pacotes/colecaovip/acolito-feminino.mp4')">Feminino</button>					
+				</div>
+				<div class="botoes2">
+					<button class="masculino" onclick="changeVideo('../imagens/pacotes/colecaovip/acolito-masculino.mp4')">Masculino</button>					
+				</div>
+			</div>
+		</div>
+		<div class="bauaberto">
+			<h2>Você receberá os itens abaixo.</h2>
+			<div class="itens"><div class="clearboth"></div></div>
+		</div>
+	</div>
+		<script src="includes/script.js"></script>
+		<script src="../includes/itens.js"></script>	
+		<script>
+			$(document).ready(function() {
+				itemid(item2595420,"");
+				itemid(item2553460,"");
+				itemid(item2770820,"");
+				itemid(item2797370,"25");
+				itemid(item2678350,"");
+			});			
+		</script>	
+		<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			setTimeout(function() {				
+				var items = document.querySelectorAll('.item');									
+				if (items.length === 0) {					
+					return;
+				}				
+				var vipCount = 2;
+				items.forEach(function(item, index) {					
+					var vipDiv = document.createElement('div');
+					vipDiv.textContent = vipCount + ' VIPs';
+					vipDiv.className = 'vip-info';					
+					item.appendChild(vipDiv);					
+					vipCount += 2;										
+				});
+			}, 100); 
+	});
+</script>
+</body>
+</html>

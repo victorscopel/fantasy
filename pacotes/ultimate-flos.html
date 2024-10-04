@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Flos Abyssi</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">	
+	<link rel="stylesheet" href="includes/estilo.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>	
+</head>
+<body>
+	<div id="corpo">
+		<div class="items"></div>
+		<div class="videovisual">
+			<video id="video" autoplay muted loop><source src="../imagens/pacotes/ultimate-flos/flosabyssi-feminino.mp4" type="video/mp4"></video>
+			<div class="botoes-versao">
+				<div class="botoes1">
+					<button class="feminino" onclick="changeVideo('../imagens/pacotes/ultimate-flos/flosabyssi-feminino.mp4')">Flos Abyssi</button>
+					<button class="feminino" onclick="changeVideo('../imagens/pacotes/ultimate-flos/flosalt-feminino.mp4')">Flos Alternativo</button>
+				</div>
+				<div class="botoes2">
+					<button class="masculino" onclick="changeVideo('../imagens/pacotes/ultimate-flos/flosabyssi-masculino.mp4')">Flos Abyssi</button>
+					<button class="masculino" onclick="changeVideo('../imagens/pacotes/ultimate-flos/flosalt-masculino.mp4')">Flos Alternativo</button>
+				</div>
+			</div>
+		</div>
+		<div class="bauaberto">
+			<h2>Você receberá os itens abaixo.</h2>
+			<div class="itens"><div class="clearboth"></div></div>
+		</div>
+	</div>
+		<script src="includes/script.js"></script>
+		<script src="../includes/itens.js"></script>	
+
+		<script>
+			$(document).ready(function() {
+				itemid(item2667270,"25");
+				itemid(item2670460,"25");
+				itemid(item2673200,"25");
+				itemid(item2671180,"25");
+				itemid(item2594360,"25");
+				itemid(item2595410,"");
+				itemid(item2670710,"");
+				itemid(item2673240,"");
+				itemid(item2671210,"");
+				itemid(item2394100,"1","bau");
+				itemid(item1795040,"4");
+				itemid(item2304730,"4");
+			});
+		</script>	
+</body>
+</html>

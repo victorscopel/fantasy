@@ -1,0 +1,633 @@
+/*CSS RESET*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section{display:block;}
+body{line-height:1;}
+:focus{outline:0;}
+ol, ul{list-style:none;} 
+blockquote, q{quotes:none;}
+blockquote::before, blockquote::after,
+q::before, q::after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+.clearboth{clear:both;height:0;width:auto;}
+html {
+	background:url(../../imagens/bg.jpg) no-repeat top center;	
+	background-attachment: fixed;
+	box-sizing:border-box;
+	background-color:#1B1D23;
+    font-family: rubik,helvetica,arial,sans-serif;	
+	overflow-y:auto;overflow-x:hidden;
+}
+html a{text-decoration:none !important;}
+
+body#guiasmissoes{max-width: 1200px;margin: 0 auto;position:relative;}
+body#guiasmissoes h1{
+    font-size: 35px;
+    font-weight: 700;    
+    -webkit-background-clip: text;    
+    text-shadow: 4px 2px 2px black;
+    color: white;
+}
+#topo{position:relative;}
+#topo img[src="../imagens/logo-fantasy.png"]{height:160px;margin:0 auto;display:block;}
+#guiasmissoes #topo{margin-top:20px;}
+#missoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;       
+	padding-bottom:30px;
+}
+
+.missao {       
+	width: calc(33.33%);
+    display: block;
+    position: relative;
+    max-width: calc(33.33% - 14px);
+    height: 150px;
+    transition: transform 0.2s ease;
+}
+
+@media (max-width:1199px) {
+body#guiasmissoes{max-width: 760px;}
+.missao {
+	width: calc(50%);    
+    max-width: calc(50% - 14px);    
+}
+}
+
+.missao img {
+    max-width: 100%;
+    height: auto;
+	float:left;
+	max-height:150px;
+}
+
+.nomemissao{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block;
+    color: black;
+    width: 100%;
+    position: absolute;
+	min-height: 70px;
+    right: 0;    
+    bottom: 0;
+    z-index: -1;
+	transition: all 0.2s ease;
+}
+.missao:hover .nomemissao{min-height:150px;}
+
+.missao .nomemissao:after{
+   content : "";
+   display: block;
+   position: absolute;
+   border-radius:8px;
+   top: 0;
+   left: 0;   
+   width: 100%;
+   height: 100%;
+   opacity : 0.3;
+   z-index: -1;
+   transition:all .5s;
+}
+.missao.berco .nomemissao:after{background: url(../../imagens/missoes/bercobg.png) -10px -40px;background-size: 400px;}
+.missao.altar .nomemissao:after{background: url(../../imagens/missoes/altarbg.png) -30px -17px;background-size: 430px;}
+.missao.refugio .nomemissao:after{background: url(../../imagens/missoes/refugiobg.png) 400px -70px;background-size: 400px;}
+.missao.sacrario .nomemissao:after{background: url(../../imagens/missoes/sacrariobg.png) 410px -40px;background-size: 420px;}
+.missao.vazioinvasao .nomemissao:after{background: url(../../imagens/missoes/vaziobg.png) 420px 0px;background-size: 420px;}
+.missao.henir .nomemissao:after{background: url(../../imagens/missoes/henirbg.jpg) 420px -90px;background-size: 420px;}
+.missao.reigosma .nomemissao:after{background: url(../../imagens/missoes/reigosmabg.png) 420px -90px;background-size: 420px;}
+.missao.cripta .nomemissao:after{background: url(../../imagens/missoes/criptabg.jpg) 391px -10px;background-size: 400px;}
+.missao.md .nomemissao:after{background: url(../../imagens/missoes/mdbg.png) 392px -70px;background-size: 400px;}
+.missao.blitzchen .nomemissao:after{background: url(../../imagens/missoes/blitzchenbg.png) 382px -140px;background-size: 400px;}
+.missao.santuario .nomemissao:after{background: url(../../imagens/missoes/santuariobg.png) 390px -150px;background-size: 400px;}
+.missao.pokeraid .nomemissao:after{background: url(../../imagens/missoes/pokeraidbg.png) 390px -50px;background-size: 400px;}
+.missao.hades .nomemissao:after{background: url(../../imagens/missoes/hadesbg.jpg) 391px -10px;background-size: 400px;}
+.missao.wiki .nomemissao:after{background: url(../../imagens/missoes/wikibg.png) 390px -50px;background-size: 400px;}
+.missao.guias .nomemissao:after{background: url(../../imagens/missoes/guiasbg.png) 390px -50px;background-size: 400px;}
+.missao.loja .nomemissao:after{background: url(../../imagens/missoes/lojabg.png) 390px -50px;background-size: 400px;}
+.missao:hover .nomemissao:after{opacity:1;}
+.nomemissao p {
+	font-size:20px;
+	font-weight:700;
+	letter-spacing:0.4px;
+	text-transform:uppercase;
+	text-align:right;
+	padding:15px 15px 15px 105px;	
+	transition:all .5s;	
+}
+.missao:hover .nomemissao p{opacity:0;}
+
+.container{
+	margin: 0 auto;	
+	padding:20px 0;
+	width:760px;
+}
+h3.construcao{font-size:40px; padding:10px;}
+.container th{border:none;color:#fff;width: 189px;}
+.container tr{border-bottom: 1px solid rgba(153, 153, 153, 0.3);}
+.container td{border-left: 1px solid rgba(153, 153, 153, 0.3);}
+.container tr:last-child{border-bottom:none;}
+.abas{
+	align-items: center;
+	margin: 0 0 0 5px;
+    flex-wrap: wrap;
+    display: inline-flex;
+    padding: 0;
+}
+.voltarguias{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;    
+	color: #ffffff;
+    line-height: 20px;
+    font-weight: 500;
+    font-size: 16px;
+	text-transform:uppercase;
+	text-align:right;	
+}
+#topo .voltarguias img{
+    margin: unset;
+    display: block;
+    height: unset;
+    float: left;
+    width: 18px;
+}
+#topo .voltarguias span{padding-left:5px;}
+
+#language-buttons {
+    position: absolute;
+    bottom: 5px;
+    left: 1px;
+    text-align: left;
+}
+
+body#guiasmissoes #language-buttons {
+    top: 22px;
+	bottom:unset;
+}
+
+.dropbtn {
+    background:none;
+    color: #bfbfbf;
+    padding: 0;
+    font-size: 14px;
+	font-weight: 500;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 15px;
+    width: 100%;
+	font-family: rubik, helvetica, arial, sans-serif;
+    text-align: left;
+}
+
+.dropbtn img {
+    float: left;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.dropbtn p {
+    line-height: 15px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.dropdown-icon {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;   
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+	padding-top:5px;
+	width: 160px;
+}
+
+#language-buttons .language-button {
+	background-color: rgba(255,255,255,1);
+    color: #000;
+    padding: 5px 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+	transition:.3s all;
+	padding:5px 5px 0 5px;
+}
+#language-buttons .language-button:last-child {
+	padding-bottom:5px;
+}
+
+#language-buttons .language-button img {
+    float: left;
+    height: 15px;
+    margin-right: 5px;
+}
+
+#language-buttons .language-button p {
+    line-height: 15px;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0;
+}
+
+#language-buttons .language-button:hover {
+    color: red;
+}
+
+#language-buttons.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.breadcrumb {
+	align-items: center;	
+	display: flex;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+}
+#guiasmissoes nav{display:flex;}
+#guiasmissoes .breadcrumb{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    width: auto;
+	margin-bottom:5px;
+	padding-right:5px;
+}
+
+.breadcrumb-item {
+  margin-right: 10px;
+}
+
+.breadcrumb-item a {    
+  color: #b1b1b1;
+  font-size:17px;
+  transition: .5s all;
+}
+
+#guiasmissoes .breadcrumb-item a{
+	-webkit-background-clip: text;
+	text-shadow:1px 1px 1px black;
+}
+
+.breadcrumb-item a:hover {
+  color: red;
+}
+
+.breadcrumb-item a::after {
+  content: "/";
+  margin-left: 10px;
+  color: #6c757d;
+}
+
+.breadcrumb-item:last-child::after {
+  content: "";
+}
+
+/*
+#language-buttons{
+    position: absolute;
+    bottom: 5px;
+    left: 6px;
+    display: block;
+    width: 150px;
+    text-align: left;
+}
+body#guiasmissoes #language-buttons{top:22px;}
+#language-buttons .language-button{
+    margin: 0 0 5px 0;
+    padding: 0;       
+	height:15px;
+	cursor:pointer;
+}
+#language-buttons .language-button p{
+	color:#bfbfbf;
+	line-height:15px;
+	font-weight:500;
+	font-size:14px;
+}
+#language-buttons .language-button img{
+	float:left;
+	height:15px;
+	margin-right:5px;
+}
+*/
+.titulodg{display:flex;justify-content: center;}
+.titulodg h1{
+	font-size: larger;
+    font-weight: 700;
+	color:white;
+	line-height: 55px;
+}
+.titulodg.berco h1{background:url(../../imagens/missoes/berco.png) no-repeat left center;background-size:55px;padding-left: 50px;}
+.titulodg.cripta h1{background:url(../../imagens/missoes/cripta.png) no-repeat left center;background-size:67px;padding-left: 67px;}
+.titulodg.santuario h1{background:url(../../imagens/missoes/santuario.png) no-repeat left center;background-size:57px;padding-left: 55px;}
+.titulodg.hades h1{background:url(../../imagens/missoes/hades.png) no-repeat left center;background-size:58px;padding-left: 58px;}
+.titulodg.henir h1{background:url(../../imagens/missoes/henir.png) no-repeat left center;background-size:60px;padding-left: 55px;}
+.titulodg.altar h1{background:url(../../imagens/missoes/altar.png) no-repeat left center;background-size:58px;padding-left: 55px;}
+.titulodg.refugio h1{background:url(../../imagens/missoes/refugio.png) no-repeat left center;background-size:56px;padding-left: 50px;}
+.titulodg.sacrario h1{background:url(../../imagens/missoes/sacrario.png) no-repeat left center;background-size:59px;padding-left: 54px;}
+.titulodg.vazioinvasao h1{background:url(../../imagens/missoes/vazioinvasao.png) no-repeat left center;background-size:65px;padding-left: 65px;}
+.titulodg.pokeraid h1{background:url(../../imagens/missoes/pokeraid.png) no-repeat left center;background-size:59px;padding-left: 59px;}
+.titulodg.reigosma h1{background:url(../../imagens/missoes/reigosma.png) no-repeat left center;background-size:50px;padding-left: 50px;}
+.titulodg.md h1{background:url(../../imagens/missoes/md.png) no-repeat left center;background-size:56px;padding-left: 52px;}
+.titulodg.blitzchen h1{background:url(../../imagens/missoes/blitzchen.png) no-repeat left center;background-size:55px;padding-left: 55px;}
+.titulonav.wiki{background:url(../../imagens/missoes/wiki.png) no-repeat left center;background-size: 46px;padding-left: 50px;line-height:55px;}
+.titulonav.home{background:url(../../imagens/missoes/home.png) no-repeat left center;background-size: 50px;padding-left: 44px;line-height:55px;}
+.bgtitulo{height: 58px;position: relative;}
+.dificuldade a{
+	color:rgb(230 230 230 / 75%);
+	transition: 0.3s;
+    align-items: center;
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    letter-spacing: .5px;
+    margin: 0 11px;
+    text-align: center;
+    text-decoration: none;    
+    white-space: nowrap;	
+}
+.dificuldade a:hover{color:#fff;}
+.dificuldade.ui-tabs-active{	
+	box-shadow: inset 0 -3px 0 -1px #66c8f9;
+}
+.dificuldade.ui-tabs-active a{color:#66c8f9 !important;}
+.containerdrops .tabcontainer[aria-hidden=true]{opacity:0 !important;}
+.containerdrops .tabcontainer[aria-hidden=false]{opacity:1 !important;}
+.item{
+    display: flex;
+    float: left;
+    height: 65px;
+    margin: 5px 0 5px 5px;
+    justify-content: center;
+    position: relative;
+    width: 65px;
+    align-items: center;
+	z-index:1;
+}
+.item img{max-width:65px;max-height:65px;}
+.item.comum{
+	background-image:url("../../imagens/comum.png");
+}
+.item.raro{
+	background-image:url("../../imagens/raro.png");
+}
+.item.epico{
+	background-image:url("../../imagens/epico.png");
+}
+.item.lendario{
+	background-image:url("../../imagens/lendario.png");
+}
+.item.supremo{
+	background-image:url("../../imagens/supremo.png");
+}
+.quantidade{
+	bottom: 3%;
+    position: absolute;
+    left: 7%;
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 2px 2px 0px #000000;
+}
+.titulomissao{
+	height: 50px;
+    display: flex;
+    align-items: center;
+	position:relative;
+}
+.titulomissao img{max-width:50px;max-heigth:50px;}
+.statustitulo .tituloprop{
+	float: left;
+    display: block;
+    width: 100%;
+    max-width: 125px;	
+}
+.statustitulo .tituloprop li .numeroatributo{float:right;}
+.titulomissao .lendariotexto{
+	color: #e262e8;
+	margin-left:5px;
+}
+.containertexto p{
+	margin: 0;
+    padding: 5px 5px 10px 5px;
+}
+
+body .maintooltip {
+	display:none;
+	z-index:-1;
+    background-color: #a7b6b9;
+    padding: 6px;
+    margin: 0px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    color: #CCC;
+    font-size: 16px;
+    line-height: 150%;
+	width:442px;	
+	opacity:0 !important;
+	visibility:hidden;
+	position:absolute;
+	user-select: none;
+	pointer-events:none;	
+}
+body .maintooltip.video {
+	background:none;
+	box-shadow:none;
+	border:none;
+	height:auto;
+	padding:0;
+	width:auto;
+}
+body .maintooltip.cartamonstro{
+	background:none;
+	box-shadow:none;
+	border:none;
+	height:495px;
+	padding:0;
+	width:365px;
+}
+body .maintooltip.cartamonstro .imagemcarta{
+	position:absolute;
+	top:-14px;
+	left:-85px;
+}
+body .maintooltip.cartamonstro img{
+	display:block;
+	height:512px !important;
+	width:512px !important;
+	max-height:none;
+	max-width:none;
+}
+body .maintooltip.cartamonstro .statuscarta{
+    position: absolute;
+    bottom: 127px;
+    height: 45px;
+    left: 18px;
+    width: 306px;
+}
+body .maintooltip.cartamonstro .statuscarta li{	
+    -webkit-text-stroke: 0.1px rgb(255 255 255 / 50%);
+	font-size: 21px;
+	color: #000000;
+	font-weight: 500;	
+	text-align: center;
+	line-height:45px;	
+}
+body .maintooltip.cartamonstro .statuscarta.escuro li{
+	color: #fff;
+    -webkit-text-stroke: 0.1px rgb(0 0 0 / 100%);
+}
+body .maintooltip.cartamonstro .statuscarta>li:nth-last-child(n+2), body .maintooltip.cartamonstro .statuscarta>li:nth-last-child(n+2) ~ li {
+	font-size: 18px;
+    line-height: 20px;
+	margin-top:1px;
+}
+.item:hover, .titulomissao:hover {cursor: help;z-index:2;}
+.item:hover .maintooltip, .titulomissao:hover .maintooltip {	
+	display:block;
+	opacity:1 !important;
+	position:fixed;	
+	visibility:visible;
+	z-index:2;
+}
+
+.tooltipdesc{
+	background-color: #4d6272;
+	border-radius:5px;
+	border:1px solid #657f8c;
+}
+.tooltipdesc video{height:auto;width:100%;display: block;}
+.nomeitem {
+    background-color: #788a94;
+	border-radius: 5px;
+	border:1px solid #6b787d;
+    padding: 6px;
+    text-align: center;
+	margin:0 21px 3px 21px;	
+}
+.nomeitem p{
+	-webkit-text-stroke: 1px rgb(0 0 0 / 95%);
+	font-size: 18px;
+	line-height:21px;
+    font-weight: 700;
+}
+.raridade.comum{color:#fff;}
+.raridade.raro{color:#00CCFF;}
+.raridade.epico{color:#FCE800;}
+.raridade.lendario{color:#F763F7;}
+.raridade.supremo{color:#F04C4F;}
+
+.statustitulo {
+    border-radius: 5px;
+	border:1px solid #657f8c;
+    background-color: #364957;
+    padding: 10px;
+    margin: 4px 4px 0 4px;
+    color: #ffffff
+}
+
+.statustitulo .raridade{float:right;}
+.statustitulo .custo{
+    float:right;
+    margin: 0;
+    padding: 0;	
+	float:right;
+	clear:right;
+}
+.statustitulo:before,
+.statustitulo:after {
+  content: " ";
+  display: table;
+}
+.statustitulo:after {
+  clear: both;
+}
+
+.statustitulo .tituloatributo li{color:#01F9FA;}
+.statustitulo.conjunto .tituloatributo li{margin-left:30px;color:#E8E900;}
+.statustitulo.conjunto .tituloatributo li:first-child{margin-left:0 !important;}
+
+.descricaotooltip {
+    padding: 16px 15px 19px 15px;
+    margin: 0 !important;
+    color: #00ffff;
+    margin: 7px 0px 7px 0px;
+    color: #00ffff
+}
+
+.itemdesc {
+	color:#fff;
+    display: block;
+    word-wrap: break-word;
+    max-width: 410px;
+    padding: 0px 0px 0px 0px !important
+}
+.podemover{color:#00ccff !important;display:block;}
+.naopodemover{color:#ff0000 !important;display:block;}
+.maintooltip .amarelo{color:#F0FF00;}
+.maintooltip .vermelho{color:#00fdff;font-size:15px;font-weight:500;}
+.efeitosgrupo {
+    border-radius: 15px;
+    background-color: #153245;
+    padding: 15px 15px 15px 15px;
+    margin: 0px 0px 7px 0px;
+    color: #00ffff
+}
+
+.tooltipconstruir{
+	opacity:0;
+	visibility:hidden;
+	background-color:#161a24;
+	position: absolute;
+    top: 0;
+	left: 0;	
+    width: 361px;   
+    height: auto;
+	padding:10px 10px 15px 10px;
+	border:1px solid #2b303b;
+	border-radius:5px;
+	pointer-eventos:none;
+}
+.item:hover .tooltipconstruir{
+	opacity:1 !important;
+	position:fixed;	
+	visibility:visible;
+	z-index:2;
+}
+.tooltipconstruir h1{
+	font-size:20px;
+	margin-bottom:10px;
+}
+.tooltipconstruir .containeritens {
+	background-color:#1e3046;
+	border-radius:5px;
+	padding:8px 8px 8px 3px;
+}
+.tooltipconstruir .containeritens .item {
+	margin:0 0 0 5px;
+}
+.tooltipconstruir .containercusto{margin-top:10px;}
+.tooltipconstruir .currency{border-radius:5px;background-color:;display:block;float:left; width:39%;height:27px;line-height:27px;padding-left:36px;}
+.tooltipconstruir .moedaepica{background:#1e3046 url(../../imagens/moedaepica.png) 5px 2px no-repeat;}
+.tooltipconstruir .gp{background:#1e3046 url(../../imagens/gp.png) 6px 5px no-repeat;margin-left:7px;}

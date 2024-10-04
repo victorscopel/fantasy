@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Rei Gosma</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">	
+		<link rel="stylesheet" href="includes/estilo.css">
+		<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+	</head>
+	<body oncontextmenu="return false;">
+	<div class="container">
+		<div id="topo">			
+			<div id="language-buttons" class="dropdown">
+				<button class="dropbtn"><img src="../imagens/br.svg" alt="Portuguese"><p>Português</p> <span class="dropdown-icon">▼</span></button>
+				<div class="dropdown-content">
+					<div class="language-button" data-lang="ph"><img src="../imagens/ph.svg" alt="Filipino"><p>Filipino</p></div>
+					<div class="language-button" data-lang="cn"><img src="../imagens/cn.svg" alt="Chinese"><p>中文</p></div>
+					<div class="language-button" data-lang="id"><img src="../imagens/id.svg" alt="Indonesian"><p>Bahasa Indonesia</p></div>
+					<div class="language-button" data-lang="es"><img src="../imagens/es.svg" alt="Spanish"><p>Español</p></div>
+					<div class="language-button" data-lang="th"><img src="../imagens/th.svg" alt="Thai"><p>ไทย</p></div>
+					<div class="language-button" data-lang="en"><img src="../imagens/us.svg" alt="English"><p>English</p></div>
+					<div class="language-button" data-lang="pt"><img src="../imagens/br.svg" alt="Portuguese"><p>Português</p></div>
+				</div>
+			</div>		
+			<img src="../imagens/logo-fantasy.png" alt=""/>
+		</div>
+	  <table cellspacing="0" style="border: 1px solid rgba(153, 153, 153, 0.3); background: rgba(32, 33, 35, 0.6);" width="100%">
+		<tbody>
+		  <tr>
+			<td class="bgtitulo" colspan="4" align="center">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><div class="titulonav home"><a href="index.html" data-translate="inicioguias">Início</a></div></li>
+						<li class="breadcrumb-item"><div class="titulonav wiki"><a href="wiki.html" data-translate="wiki">Wiki</a></div></li>
+						<li class="breadcrumb-item active"><div id="title" class="titulodg reigosma"><h1 data-translate="title">Rei Gosma</h1></div></li>
+					</ol>
+				</nav>
+			</td>
+		  </tr>
+		  <tr>
+			<th data-translate="drops">Drops</th>
+			<td colspan="4" style="color:#FFFF; margin-bottom: 8px !important;">
+			  <div class="containerdrops">				
+				<ul class="abas">
+					<li class="dificuldade"><a href="#tabs-1" data-translate="normal">Normal</a></li>
+					<li class="dificuldade"><a href="#tabs-2" data-translate="infernal">Infernal</a></li>
+				</ul>
+				<div class="tabcontainer itensnormais" id="tabs-1"></div>
+				<div class="tabcontainer itensheroicos" id="tabs-2" style=":display:none;opacity:0;"></div>			
+			  </div>
+			</td>
+		  </tr>		  
+		  <tr>
+			<th data-translate="itensconstruidos">Itens Construídos</th>
+			<td colspan="4" style="color:#FFFF; margin-bottom: 8px !important;">
+			  <div class="containerdrops itensconstruidos"></div>
+			</td>
+		  </tr>	  
+		</tbody>
+	  </table>	  
+	</div>
+		<script src="includes/script.js"></script>
+		<script src="../includes/itens.js"></script>
+		<script src="includes/traducao.js"></script>
+		<script>
+			$(document).ready(function() {				
+				itemid(item1561980,"2","normal");
+				itemid(item1563590,"1","normal");
+				itemid(item2337080,"50","heroico");
+				itemid(item2337090,"20","heroico");
+				itemid(item1561980,"3","heroico");				
+				itemid(item1563540,"","construido");
+				itemid(item1563610,"","construido");
+				itemid(item2336620,"","construido");
+				itemid(item2336850,"","construido");
+				itemid(item1473500,"","construido");
+				itemid(item1464240,"","construido");
+				itemid(item1473510,"","construido");
+				itemid(item1464250,"","construido");
+				itemid(item2236320,"","construido");
+				itemid(item2236330,"","construido");
+				itemid(item1473520,"","construido");
+				itemid(item1464260,"","construido");
+				itemid(item1473530,"","construido");
+				itemid(item1464270,"","construido");
+				itemid(item1473540,"","construido");
+				itemid(item1464280,"","construido");
+				addTranslations(TraducaoReigosma);
+				setLanguageFromStorage();
+			});
+		</script>		
+	</body>
+</html>

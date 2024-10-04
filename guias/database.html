@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="includes/estilo.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>    
+</head>
+<body>
+    <div class="container">
+        <table cellspacing="0" style="border: 1px solid #999; background: #202123;" width="100%">
+            <tbody>
+                <tr>
+                    <td class="bgtitulo" style="background-color:gold;" colspan="4" align="center">	
+                        <h1 id="title" data-translate="title" class="titulodg" style="color: black;">Database</h1>
+						<input type="text" id="searchInput" placeholder="Procure por ID ou Nome do item" style="width: 195px;padding: 5px;position: absolute;left: 10px;top: 17px;">
+						<button id="searchButton" style="display:none;">Buscar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 130px;border-right:1px grey solid ;background:#15202c;color:#FFFF">Itens cadastrados</th>
+                    <td colspan="4" style="color:#FFFF; margin-bottom: 8px !important;">
+                        <div id="containerdrops"></div>
+                    </td>
+                </tr>     
+                <tr>
+                    <td colspan="4" style="color:#FFFF;">
+                        <h3>Imagens não encontradas:</h3>
+                        <div id="missing-images"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>      
+    </div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            
+        }).catch(err => {
+            console.error('Error copying text: ', err);
+        });
+    }
+
+    function checkMissingImages() {
+        const missingImages = new Set();
+        document.querySelectorAll('#containerdrops img').forEach(img => {
+            if (!img.complete || img.naturalWidth === 0) {
+                const imgSrc = img.getAttribute('src');
+                const itemId = imgSrc.replace('../imagens/sbta', '').replace('-imagens/sbta', '').replace('.png', '');
+                missingImages.add(itemId);
+            }
+        });
+        document.getElementById('missing-images').innerHTML = Array.from(missingImages).join('<br>');
+    }
+
+    const globalVariables = Object.keys(window);
+    const container = document.getElementById('containerdrops');
+
+    globalVariables.forEach(variableName => {
+        if (variableName.startsWith("item")) {
+            const itemValue = window[variableName];
+            if (typeof itemValue === 'string') {
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = itemValue;
+                const img = tempDiv.querySelector('img');
+                if (img) {
+                    img.setAttribute('data-item', variableName);
+                    container.appendChild(tempDiv.firstChild);
+                }
+            }
+        }
+    });
+
+    // Função de busca
+function searchItems(query) {
+    const items = document.querySelectorAll('#containerdrops .item');
+    const queryLower = query.toLowerCase();
+
+    items.forEach(item => {
+        const img = item.querySelector('img'); // Verifica se há uma imagem
+        if (img) {
+            const dataItem = img.getAttribute('data-item') || "";
+            const itemNumber = dataItem.replace('item', ''); // Remove o prefixo 'item' para a busca
+            const altText = img.getAttribute('alt') || ""; // Obtém o valor do alt
+
+            // Verifica se a query está presente no número do item ou no alt da imagem
+            if (itemNumber.includes(queryLower) || altText.toLowerCase().includes(queryLower)) {
+                item.style.display = ""; // Exibe o item
+            } else {
+                item.style.display = "none"; // Oculta o item
+            }
+        }
+    });
+}
+
+    // Evento de clique no botão de busca
+    document.getElementById('searchButton').addEventListener('click', () => {
+        const query = document.getElementById('searchInput').value;
+        searchItems(query);
+    });
+
+    // Evento de digitação no campo de busca
+    document.getElementById('searchInput').addEventListener('keyup', () => {
+        const query = document.getElementById('searchInput').value;
+        searchItems(query);
+    });
+
+container.addEventListener('click', event => {
+    if (event.target.tagName === 'IMG') {
+        const variableName = event.target.getAttribute('data-item');
+		const variableImg = event.target.getAttribute('src');
+        if (event.ctrlKey) {
+            // Copiar diretamente o valor do data-item sem alerta
+            copyToClipboard(variableImg.replace("../imagens/","").replace(".png",""));
+		} else if (event.altKey) {
+            // Copiar diretamente o valor do data-item sem alerta
+            copyToClipboard(variableName.replace("item",""));
+        } else {
+            // Exibe o prompt normal quando Ctrl não está pressionado
+            const firstField = prompt("Insira o valor do primeiro campo:", "");
+            const secondField = prompt("Insira o valor do segundo campo (normal):", "normal");
+
+            const itemFunctionCall = `itemid(${variableName},"${firstField}","${secondField}");`;
+            copyToClipboard(itemFunctionCall);
+            alert('Copied to clipboard: ' + itemFunctionCall);
+        }
+    }
+});
+
+    window.addEventListener('load', checkMissingImages);
+});
+</script>
+    <script src="includes/script.js"></script>
+    <script src="../includes/itens.js"></script>
+</body>
+</html>
