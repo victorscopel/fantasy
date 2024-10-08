@@ -56,16 +56,20 @@ window.onmousemove = function (e) {
 };
 
 // Função para adicionar um item ao HTML e abrir o baú quando for clicado
-function itemid(itemVar, quantidade, tipo = "") {		
-    var container = $('.items'); // O container onde os itens serão adicionados
+function itemid(itemVar, quantidade, tipo = "", cutin = false, container = "") {
+    if (container === "") {
+        container = $('.items'); 
+    } else {
+        container = $(container);
+    }
 
     // Converte a string do item em um elemento HTML
     var itemElement = $(itemVar);
 
     // Atualiza a quantidade do item
     itemElement.find('.quantidade').text(quantidade);
-	var dataitemid = itemElement.data('iditem');	
-	
+    var dataitemid = itemElement.data('iditem');
+
     // Adiciona o item ao container
     container.append(itemElement);
 
@@ -73,11 +77,56 @@ function itemid(itemVar, quantidade, tipo = "") {
     if (tipo === "bau") {
         // Associa o clique ao item de baú para abrir o diálogo
         itemElement.on('click', function() {
-            // Chama a função que irá gerar o conteúdo do baú	
-            openBauDialog(dataitemid);  // Exemplo: usando o baú item2394100_bau como dados
+            openBauDialog(dataitemid); // Exemplo: usando o baú item2394100_bau como dados
+        });
+    }
+
+    // Se cutin for verdadeiro, associa um evento de clique no item para mostrar a animação
+    if (cutin) {
+        itemElement.on('click', function() {
+            // Verifica se a cutin já está sendo exibida
+            if ($('.cutin-image').length > 0) {
+                return; // Se a imagem já está em exibição, não faz nada
+            }
+
+            // Supondo que o item tenha uma imagem dentro dele
+            var itemImageSrc = itemElement.find('img').attr('src'); // Pega a imagem do item
+
+            // Cria um novo elemento de imagem para o "cutin"
+            var cutinElement = $('<img>', {
+                src: itemImageSrc, // Atribui a imagem do item
+                class: 'cutin-image', // Classe para estilizar
+                css: {
+                    position: 'absolute',
+                    left: '-100%',  // Começa fora da tela à esquerda
+                    bottom: '0px',     // Centraliza verticalmente                    
+                    opacity: 0,
+                    zIndex: 9999 // Garante que o elemento apareça na frente
+                }
+            });
+
+            // Adiciona o elemento de cutin ao #corpo
+            $('#corpo').append(cutinElement);
+
+            // Aplica o efeito de slide da esquerda para a direita
+            cutinElement.animate({
+                left: '0',      // Move para a posição visível
+                opacity: 1
+            }, 600, function() {
+                // Após um tempo, some com fade
+                setTimeout(function() {
+                    cutinElement.animate({
+                        opacity: 0
+                    }, 500, function() {
+                        // Remove o elemento após o efeito de fade
+                        cutinElement.remove();
+                    });
+                }, 1500); // Exibe a imagem por 2 segundos antes de desaparecer
+            });
         });
     }
 }
+
 
 // Função para abrir o diálogo do baú e carregar os itens dinamicamente
 function openBauDialog(itemVar) {

@@ -26,6 +26,7 @@ html {
     font-family: rubik,helvetica,arial,sans-serif;	
 	overflow:hidden;
 }
+html.forumiframe{background-color:#090B14;}
 html a{text-decoration:none !important;}
 
 body {	        
@@ -37,13 +38,23 @@ body {
 	overflow:hidden;
 	margin:0 auto;	
 	width:1044px;
-	height:474px;
+	height:474px;	
 }
-#corpo .videovisual{display:block;height:474px;width:330px;position:relative;overflow:hidden;}
-#corpo .videovisual.compet video{    width: auto;
-    height: auto;
-    margin: -50px 0px 0 -43px;
+.forumiframe #corpo{height:auto;}
+.forumiframe .cashvalor{
+	background:url(../../imagens/cash.png) no-repeat left center;
+	line-height:20px;
+	font-size:20px;
+	color:white;
+	margin:10px 0 10px 0;
+	padding-left:19px;
 }
+.forumiframe .cashvalor.semtop{
+	margin-top:0;
+}
+#corpo .cutin-image{pointer-events:none;}
+#corpo .videovisual{background-color:#17273a;display:block;height:474px;width:330px;position:relative;overflow:hidden;}
+#corpo .videovisual.compet video{width: auto;height: auto;margin: -50px 0px 0 -43px;}
 #corpo .videovisual.compet::before{
 	background: url("../../imagens/pacotes/ultimate-pokemon/petbg.png") no-repeat -15px bottom;
 	content:'';
@@ -64,7 +75,8 @@ body {
 	transform: translate(29.3%) rotate(45deg);
 	font-size: 18px;
 	padding: 5px 0px;
-	color:#000;		
+	color:#000;	
+	z-index:1;	
 }
 #corpo .videovisual .botoes-versao{position:absolute; left:0;bottom: 0;width: 100%;}
 #corpo .videovisual .botoes-versao .botoes1{float:left;width:165px;}
@@ -114,7 +126,6 @@ body {
 	width:100%;
 	float:left;
 }
-#corpo.colecaovip .items .item{overflow:hidden;}
 #corpo .items .item .vip-info {
 	position: absolute;
 	background: #c28322;
@@ -143,7 +154,9 @@ body {
 	border:2px solid #6CB6E4;
 	border-radius:5px;
 	position:relative;
+	overflow:hidden;
 }
+.forumiframe #corpo .items .item{height:64px;width:64px;}
 #corpo .items .item .quantidade{
 	bottom: 3%;
     position: absolute;
@@ -153,6 +166,7 @@ body {
 	font-size:30px;
     text-shadow: 2px 2px 0px #000000;
 }
+.forumiframe #corpo .items .item .quantidade{font-size:19px;}
 .ui-dialog-titlebar{position:absolute;right:4px;top:4px;}
 .ui-dialog-titlebar button.ui-button{
     display: block;
