@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="forumiframe">
+<html lang="pt-BR" class="forumiframe" style="overflow:unset;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>	
 </head>
-<body>
+<body oncontextmenu="return false;">
 	<div id="corpo">
 		<div class="descricaovip">A recompensa é entregue para os usuários após gastarem um valor de CASH durante o período em que o evento está ativo.</div>
 		<div class="items secao1"><h2 class="cashvalor semtop">1500 ~ 3999 CASH</h2></div>
@@ -28,29 +28,28 @@
 				</div>
 			</div>
 		</div>
-		<div class="bauaberto">
-			<h2>Você receberá os itens abaixo.</h2>
-			<div class="itens"><div class="clearboth"></div></div>
-		</div>
+		<div class="bauaberto"></div>
 	</div>
 		<script src="includes/script.js"></script>
 		<script src="../includes/itens.js"></script>	
 
 		<script>
 			$(document).ready(function() {
-				//1500 ~ 3999 CASH
+				//1500 ~ 3999 CASH				
 				itemid(item2249360,"25","",false,".secao1");
 				itemid(item2249370,"25","",false,".secao1");
 				itemid(item2249380,"10","",false,".secao1");
 				itemid(item2249390,"10","",false,".secao1");
 				itemid(item2249400,"10","",false,".secao1");
 				itemid(item2249410,"5","",false,".secao1");
-				itemid(item2009780,"1","",false,".secao1");
+				itemid(item2009780,"1","bau",false,".secao1");
 				itemid(item1738720,"50","",false,".secao1");
 				itemid(item1017270,"3","",false,".secao1");
 				itemid(item2023820,"1","",false,".secao1");
 				itemid(item2023830,"1","",false,".secao1");
 				itemid(item2023840,"1","",false,".secao1");
+				itemid(item807710,"5","",false,".secao1");
+				itemid(item2554250,"5","",false,".secao1");
 				//4000 ~ 7499 CASH
 				itemid(item2249360,"30","",false,".secao2");
 				itemid(item2249370,"30","",false,".secao2");
@@ -58,40 +57,70 @@
 				itemid(item2249390,"20","",false,".secao2");
 				itemid(item2249400,"20","",false,".secao2");
 				itemid(item2249410,"10","",false,".secao2");
-				itemid(item2009780,"2","",false,".secao2");
+				itemid(item2009780,"2","bau",false,".secao2");
 				itemid(item1738720,"100","",false,".secao2");
 				itemid(item1017270,"8","",false,".secao2");
 				itemid(item2023850,"500","",false,".secao2");
 				itemid(item2023860,"500","",false,".secao2");
 				itemid(item2023870,"500","",false,".secao2");
+				itemid(item2023880,"480","",false,".secao2");
+				itemid(item807710,"5","",false,".secao2");
+				itemid(item2554250,"5","",false,".secao2");
+				itemid(item2554260,"5","",false,".secao2");
 				//7500 ~ 14999 CASH
-				itemid(item2009780,"3","",false,".secao3");
+				itemid(item2009780,"3","bau",false,".secao3");
+				itemid(item2377690,"","",false,".secao3");
+				itemid(item1959160,"2","",false,".secao3");
 				itemid(item1017270,"7","",false,".secao3");
 				itemid(item1810140,"12","",false,".secao3");
+				itemid(item1545480,"3","",false,".secao3");
 				itemid(item1115750,"1200","",false,".secao3");
 				itemid(item1735800,"3600","",false,".secao3");
 				itemid(item1867640,"1200","",false,".secao3");
 				itemid(item378370,"300","",false,".secao3");
+				itemid(item807710,"5","",false,".secao3");
+				itemid(item2554250,"15","",false,".secao3");
+				itemid(item2554260,"5","",false,".secao3");
+				itemid(item2554270,"5","",false,".secao3");
+				itemid(item2753640,"5","",false,".secao3");
 				//15000 ~ 21999 CASH
-				itemid(item2009780,"5","",false,".secao4");
+				itemid(item2009780,"5","bau",false,".secao4");
 				itemid(item2393890,"4","",false,".secao4");
 				itemid(item2393900,"4","",false,".secao4");
 				itemid(item2393920,"4","",false,".secao4");
 				itemid(item2393930,"4","",false,".secao4");
 				itemid(item2393940,"4","",false,".secao4");
+				itemid(item1959170,"3","",false,".secao4");
 				itemid(item2104320,"25","",false,".secao4");
+				itemid(item1545480,"5","",false,".secao4");
 				itemid(item2304730,"1","",false,".secao4");
 				itemid(item1941450,"3120","",false,".secao4");
 				itemid(item378370,"540","",false,".secao4");
+				itemid(item807710,"10","",false,".secao4");
+				itemid(item2575060,"1","",false,".secao4");
+				itemid(item2554250,"25","",false,".secao4");
+				itemid(item2554260,"15","",false,".secao4");
+				itemid(item2554270,"15","",false,".secao4");
+				itemid(item2753640,"15","",false,".secao4");
 				//22000 ~ 999999 CASH
 				itemid(item2249480,"8","",false,".secao5");
+				itemid(item2243060,"","",false,".secao5");
+				itemid(item2236420,"6","bau",false,".secao5");
+				itemid(item1959190,"6","",false,".secao5");
+				itemid(item1545480,"10","",false,".secao5");
 				itemid(item2304730,"1","",false,".secao5");
 				itemid(item2104320,"25","",false,".secao5");
 				itemid(item2329520,"4","",false,".secao5");
 				itemid(item2329510,"4","",false,".secao5");
 				itemid(item2597210,"8","",false,".secao5");
 				itemid(item2597220,"8","",false,".secao5");
-				itemid(item2329530,"4","",false,".secao5");
+				itemid(item2329530,"4","bau",false,".secao5");
+				itemid(item807710,"15","",false,".secao5");
+				itemid(item2575070,"1","",false,".secao5");
+				itemid(item2554250,"30","",false,".secao5");
+				itemid(item2554260,"20","",false,".secao5");
+				itemid(item2554270,"20","",false,".secao5");
+				itemid(item2753640,"20","",false,".secao5");				
 			});
 		</script>	
 </body>

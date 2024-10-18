@@ -4,31 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultimate Pokémon</title>
-	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">	
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">		
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
 	<link rel="stylesheet" href="includes/estilo.css">
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>	
+	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 </head>
-<body>
+<body oncontextmenu="return false;">
 	<div id="corpo">
 		<div class="items"></div>
-		<div class="videovisual compet">
+		<div class="videovisual">
 			<video id="video" autoplay muted loop><source src="../imagens/pacotes/ultimate-pokemon/pet-pikachu.mp4" type="video/mp4"></video>
 			<div class="botoes-versao">
-				<div class="botoes1">
-					<button class="pikachu" onclick="changeVideo('../imagens/pacotes/ultimate-pokemon/pet-pikachu.mp4')">Pikachu</button>					
-					<button class="bulba" onclick="changeVideo('../imagens/pacotes/ultimate-pokemon/pet-bulbassauro.mp4')">Bulbassauro</button>										
-				</div>
-				<div class="botoes2">					
-					<button class="squirtle" onclick="changeVideo('../imagens/pacotes/ultimate-pokemon/pet-squirtle.mp4')">Squirtle</button>
-					<button class="charmander" onclick="changeVideo('../imagens/pacotes/ultimate-pokemon/pet-charmander.mp4')">Charmander</button>
-				</div>
-			</div>
+				<select id="videoSelect" style="width:175px;">
+					<option value="../imagens/pacotes/ultimate-pokemon/pet-pikachu.mp4" data-image="../imagens/sbta239365.png" selected>Pikachu</option>
+					<option value="../imagens/pacotes/ultimate-pokemon/pet-bulbassauro.mp4" data-image="../imagens/sbta239366.png">Bulbassauro</option>
+					<option value="../imagens/pacotes/ultimate-pokemon/pet-squirtle.mp4" data-image="../imagens/sbta239368.png">Squirtle</option>
+					<option value="../imagens/pacotes/ultimate-pokemon/pet-charmander.mp4" data-image="../imagens/sbta239367.png">Charmander</option>
+				</select>
+			</div>			
 		</div>
-		<div class="bauaberto">
-			<h2>Você receberá os itens abaixo.</h2>
-			<div class="itens"><div class="clearboth"></div></div>
-		</div>
+		<div class="bauaberto"></div>
 	</div>
 		<script src="includes/script.js"></script>
 		<script src="../includes/itens.js"></script>	

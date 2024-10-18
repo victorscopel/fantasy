@@ -4,37 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultimate Diangelion</title>
-	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">	
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">		
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
 	<link rel="stylesheet" href="includes/estilo.css">
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>	
+	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>	
 </head>
-<body>
+<body oncontextmenu="return false;">
 	<div id="corpo">
 		<div class="items"></div>
 		<div class="videovisual">
-			<video id="video" autoplay muted loop><source src="../imagens/pacotes/ultimate-flos/flosabyssi-feminino.mp4" type="video/mp4"></video>
+			<video id="video" autoplay muted loop><source src="../imagens/pacotes/ultimate-diangelion/diangelion-feminino.mp4" type="video/mp4"></video>
 			<div class="botoes-versao">
-				<div class="botoes1">
-					<button class="feminino" onclick="changeVideo('../imagens/pacotes/ultimate-flos/flosabyssi-feminino.mp4')">Flos Abyssi</button>
-					<button class="feminino" onclick="changeVideo('../imagens/pacotes/ultimate-flos/flosalt-feminino.mp4')">Flos Alternativo</button>
-				</div>
-				<div class="botoes2">
-					<button class="masculino" onclick="changeVideo('../imagens/pacotes/ultimate-flos/flosabyssi-masculino.mp4')">Flos Abyssi</button>
-					<button class="masculino" onclick="changeVideo('../imagens/pacotes/ultimate-flos/flosalt-masculino.mp4')">Flos Alternativo</button>
-				</div>
+				<select id="videoSelect" style="width:165px;">
+					<optgroup label="Feminino">
+						<option value="../imagens/pacotes/ultimate-diangelion/diangelion-feminino.mp4" data-image="../imagens/feminino.png" selected>Diangelion</option>
+						<option value="../imagens/pacotes/ultimate-diangelion/diangelionalt-feminino.mp4" data-image="../imagens/feminino.png">Alternativo</option>
+					</optgroup>
+					<optgroup label="Masculino">
+						<option value="../imagens/pacotes/ultimate-diangelion/diangelion-masculino.mp4" data-image="../imagens/masculino.png">Diangelion</option>
+						<option value="../imagens/pacotes/ultimate-diangelion/diangelionalt-masculino.mp4" data-image="../imagens/masculino.png">Alternativo</option>
+					</optgroup>
+				</select>
 			</div>
 		</div>
-		<div class="bauaberto">
-			<h2>Você receberá os itens abaixo.</h2>
-			<div class="itens"><div class="clearboth"></div></div>
-		</div>
+		<div class="bauaberto"></div>
 	</div>
 		<script src="includes/script.js"></script>
 		<script src="../includes/itens.js"></script>	
 
 		<script>
 			$(document).ready(function() {
+				itemid(item2264470,"25");
+				itemid(item2264700,"25");
+				itemid(item2271860,"25");
+				itemid(item2264930,"55");
+				itemid(item2278580,"");
+				itemid(item2304170,"","",true);
+				itemid(item2304240,"","",true);
+				itemid(item2304260,"","",true);
+				itemid(item2408690,"");
+				itemid(item2437450,"");
 				itemid(item2394100,"1","bau");
 				itemid(item1795040,"4");
 				itemid(item2304730,"4");

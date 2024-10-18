@@ -4,29 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultimate Oceano Azul</title>
-	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">	
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">		
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
 	<link rel="stylesheet" href="includes/estilo.css">
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>	
+	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 </head>
-<body>
+<body oncontextmenu="return false;">
 	<div id="corpo">
 		<div class="items"></div>
 		<div class="videovisual">
 			<video id="video" autoplay muted loop><source src="../imagens/pacotes/ultimate-oceanoazul/oceanoazul-feminino.mp4" type="video/mp4"></video>
 			<div class="botoes-versao">
-				<div class="botoes1">
-					<button class="feminino" onclick="changeVideo('../imagens/pacotes/ultimate-oceanoazul/oceanoazul-feminino.mp4')">Feminino</button>					
-				</div>
-				<div class="botoes2">
-					<button class="masculino" onclick="changeVideo('../imagens/pacotes/ultimate-oceanoazul/oceanoazul-masculino.mp4')">Masculino</button>					
-				</div>
+				<select id="videoSelect">					
+					<option value="../imagens/pacotes/ultimate-oceanoazul/oceanoazul-feminino.mp4" data-image="../imagens/feminino.png" selected>Feminino</option>					
+					<option value="../imagens/pacotes/ultimate-oceanoazul/oceanoazul-masculino.mp4" data-image="../imagens/masculino.png">Masculino</option>					
+				</select>
 			</div>
 		</div>
-		<div class="bauaberto">
-			<h2>Você receberá os itens abaixo.</h2>
-			<div class="itens"><div class="clearboth"></div></div>
-		</div>
+		<div class="bauaberto"></div>
 	</div>
 		<script src="includes/script.js"></script>
 		<script src="../includes/itens.js"></script>	

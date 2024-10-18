@@ -22,11 +22,11 @@ q::before, q::after{content:'';content:none;}
 table{border-collapse:collapse;border-spacing:0;}
 .clearboth{clear:both;height:0;width:auto;}
 html {
-	background-color:#210e50;
+	
     font-family: rubik,helvetica,arial,sans-serif;	
 	overflow:hidden;
 }
-html.forumiframe{background-color:#090B14;}
+html.forumiframe{}
 html a{text-decoration:none !important;}
 
 body {	        
@@ -40,7 +40,7 @@ body {
 	width:1044px;
 	height:474px;	
 }
-.forumiframe #corpo{height:auto;}
+.forumiframe #corpo{height:auto;width: 954px;}
 .forumiframe .cashvalor{
 	background:url(../../imagens/cash.png) no-repeat left center;
 	line-height:20px;
@@ -78,43 +78,67 @@ body {
 	color:#000;	
 	z-index:1;	
 }
-#corpo .videovisual .botoes-versao{position:absolute; left:0;bottom: 0;width: 100%;}
-#corpo .videovisual .botoes-versao .botoes1{float:left;width:165px;}
-#corpo .videovisual .botoes-versao .botoes2{float:right;width:165px;}
-#corpo .videovisual .botoes-versao button {
-    background-color: #6fa7d1;
-    border: 1px solid #3b6a8e;
-    color: white; 
-	height:35px;
-    padding: 0 15px;
-    border-radius: 5px;
-	margin-top:5px;
-    font-size: 16px;
+.select2-results__group {
     font-weight: bold;
-    text-align: center; 
-    cursor: pointer; 
-    box-shadow: inset 0 -2px 0 #3b6a8e;
-	text-shadow: 1px 1px 0px #000000;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    color: #5897fb;
+    padding: 5px 10px;
+    border-bottom: 1px solid #3b6a8e; 
 }
-#corpo .videovisual .botoes-versao .botoes2 button{float:right;}
-#corpo .videovisual .botoes-versao button.masculino{background-image:url(../../imagens/masculino.png);background-position:right center;background-repeat:no-repeat;background-size:40px;}
-#corpo .videovisual .botoes-versao button.feminino{background-image:url(../../imagens/feminino.png);background-position:-5px center;background-repeat:no-repeat;}
+#corpo .videovisual .botoes-versao {
+    position: absolute; 
+    right: 5px; 
+    top: 5px; 
+    width: auto;
+}
+
+#corpo .videovisual .botoes-versao #videoSelect {
+    width: 150px; /* Tamanho adaptado para seguir o estilo dos botões */
+    height: 20px; /* Altura ajustada para ficar semelhante ao botão */       
+}
+.imagemselect img{
+	height: 20px;
+    width: 20px;
+    float: left;
+    margin-top: 2px;
+	margin-right:4px;
+}
+.imagemselect {
+    color: #333333;
+    font-size: 19px;
+    line-height: 19px;
+    text-shadow: none;
+    font-weight: 500;
+}
+.imagemselectdropdown {
+    color: #333333;
+    font-size: 19px;
+    line-height: 19px;
+    text-shadow: none;
+    font-weight: 500;
+}
+.imagemselectdropdown img{
+	height: 20px;
+    width: 20px;
+    float: left;
+    margin-top: 2px;
+	margin-right:4px;
+}
+.select2-container--default .select2-selection--single {
+    background-color: rgba(255,255,255,0.6);
+    transition: all 0.3s ease;
+}
+
+.select2-container--default .select2-selection--single:hover {
+    background-color: #fff;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected]{transition:all .3s ease;}
+.select2-container--default .select2-results__option .select2-results__option{padding-left:7px;}
 #corpo .videovisual .botoes-versao button.charmander{background-image:url(../../imagens/sbta239367.png);background-position: 108px -12px;background-repeat: no-repeat;background-size: 50px;padding-right: 48px;}
-#corpo .videovisual .botoes-versao button.pikachu{background-image:url(../../imagens/sbta239365.png);background-position: 75px -12px;background-repeat: no-repeat;background-size: 50px;padding-right: 48px;}
+#corpo .videovisual .botoes-versao button.pikachu{background-image:url(../../imagens/sbta239365.png);background-position: 75px -12px;background-repeat: no-repeat;background-size: 50px;padding-right: 48px;padding-left: 15px;}
 #corpo .videovisual .botoes-versao button.bulba{background-image:url(../../imagens/sbta239366.png);background-position: -1px -12px;background-repeat: no-repeat;background-size: 50px;padding-left: 50px;}
-#corpo .videovisual .botoes-versao button.squirtle{background-image:url(../../imagens/sbta239368.png);background-position: -1px -12px;background-repeat: no-repeat;background-size: 50px;padding-left: 48px;}
+#corpo .videovisual .botoes-versao button.squirtle{background-image:url(../../imagens/sbta239368.png);background-position: -1px -12px;background-repeat: no-repeat;background-size: 50px;padding-left: 48px;padding-right: 15px;}
 
-
-#corpo .videovisual .botoes-versao button:hover {
-    background-color: #508db7; 
-}
-
-#corpo .videovisual .botoes-versao button:active {
-    background-color: #3b6a8e; 
-    box-shadow: inset 0 2px 0 #6fa7d1;
-}
-#corpo .videovisual video{height: auto;margin: -11px 0 0 -8px;width: 348px;}
+#corpo .videovisual video{height: auto;margin: 0 0 0 -10px;width: 348px;}
 #corpo .descricaovip{
 	display: block;
     background-color: #1e3046;
@@ -126,6 +150,7 @@ body {
 	width:100%;
 	float:left;
 }
+.forumiframe #corpo .descricaovip{max-width:100%;}
 #corpo .items .item .vip-info {
 	position: absolute;
 	background: #c28322;
@@ -143,6 +168,7 @@ body {
 #corpo .items .item:hover .vip-info {opacity:1;}
 
 #corpo .items{float:left;list-style:none;max-width:710px;margin: 0 0 0 0;width: 100%;}
+.forumiframe #corpo .items{max-width:624px;}
 #corpo .items .item{
 	float:left;
 	display:flex;
@@ -156,6 +182,7 @@ body {
 	position:relative;
 	overflow:hidden;
 }
+
 .forumiframe #corpo .items .item{height:64px;width:64px;}
 #corpo .items .item .quantidade{
 	bottom: 3%;
@@ -428,4 +455,9 @@ body .maintooltip.cartamonstro .statuscarta>li:nth-last-child(n+2) ~ li {
 }
 .tembau:hover:after{
 	background-image: url(../../imagens/lupa-hover.png);
+}
+.forumiframe .tembau::after{
+	background-size:70px;
+	height: 68px;
+    width: 68px;
 }

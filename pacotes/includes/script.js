@@ -75,6 +75,7 @@ function itemid(itemVar, quantidade, tipo = "", cutin = false, container = "") {
 
     // Verifica se o item é um baú
     if (tipo === "bau") {
+		itemElement.addClass('tembau');
         // Associa o clique ao item de baú para abrir o diálogo
         itemElement.on('click', function() {
             openBauDialog(dataitemid); // Exemplo: usando o baú item2394100_bau como dados
@@ -141,7 +142,7 @@ function openBauDialog(itemVar) {
 
     // Estrutura fixa do baú
     var dialogContent = `
-        <h2>Você receberá os itens abaixo.</h2>
+        <h2>Você pode obter os itens abaixo.</h2>
         <div class="itens"><div class="clearboth"></div></div>
     `;
     $(".bauaberto").html(dialogContent);
@@ -212,4 +213,66 @@ function changeVideo(src) {
 	const videoElement = document.getElementById('video');
 	videoElement.src = src;
 	videoElement.load();
+}
+const video = document.getElementById('video');
+
+// Função para aumentar a velocidade do vídeo
+function increasePlaybackSpeed() {
+	video.playbackRate = 3; // Define a taxa de reprodução para 2x
+}
+
+// Função para retornar à velocidade normal
+function resetPlaybackSpeed() {
+	video.playbackRate = 1; // Define a taxa de reprodução para 1x
+}
+
+// Adiciona eventos de mouse
+video.addEventListener('mousedown', increasePlaybackSpeed);
+video.addEventListener('mouseup', resetPlaybackSpeed);
+video.addEventListener('mouseleave', resetPlaybackSpeed); // Reseta se o mouse sair do vídeo
+
+$(document).ready(function() {
+    $('#videoSelect').select2({
+		closeOnSelect: true,
+		minimumResultsForSearch: 12,
+        templateResult: formatOption,  // Função para customizar as opções
+        templateSelection: formatOptionSelection  // Customiza a seleção
+    });
+
+    // Carrega a versão feminina por padrão ao iniciar
+    var initialVideo = $('#videoSelect').val();
+    changeVideo(initialVideo);
+
+    $('#videoSelect').on('change', function() {
+        var videoUrl = $(this).val();
+        if (videoUrl) {
+            changeVideo(videoUrl);
+        }
+    });
+});
+
+// Customiza as opções para exibir imagem
+function formatOption(option) {
+    if (!option.id) {
+        return option.text;  // Retorna o texto padrão para as opções sem id (como o placeholder)
+    }
+
+    var imgSrc = $(option.element).data('image');  // Pega a imagem a partir do atributo data-image
+    if (imgSrc) {
+        var $option = $(
+            '<span class="imagemselectdropdown"><img src="' + imgSrc + '" /> ' + option.text + '</span>'
+        );
+        return $option;
+    }
+
+    return option.text;
+}
+
+// Customiza a visualização da opção selecionada
+function formatOptionSelection(option) {
+    var imgSrc = $(option.element).data('image');
+    if (imgSrc) {
+        return $('<span class="imagemselect"><img src="' + imgSrc + '" /> ' + option.text + '</span>');
+    }
+    return option.text;
 }
