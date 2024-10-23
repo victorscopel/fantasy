@@ -244,7 +244,7 @@ body {
     text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.2);
     text-align: center;    
 	float:left;	
-	margin-left: 10px;
+	margin-right: 7px;
 }
 #videoSelect .ativo{cursor:unset;}
 #videoSelect button.ativo,#videoSelect button:hover {background: linear-gradient(to bottom, #ffcc33, #ff9900);border-color: #cc7a00;color:#000;}
