@@ -1,6 +1,7 @@
 //Traduções Compartilhadas
 const TraducaoGeral = {
 	'en': {
+		'buscadeitem':'Item Search',
 		'ataque':'Attack',
 		'defesa':'Defense',	
 		'hp':'Vitality',
@@ -29,6 +30,7 @@ const TraducaoGeral = {
 		'detalhesmissao':'Mission Details'
 	},
 	'pt': {
+		'buscadeitem':'Busca de Item',
 		'ataque':'Ataque',
 		'defesa':'Defesa',
 		'hp':'HP',
@@ -1252,8 +1254,12 @@ const TraducaoIndex = {
 		'cripta':'Ancestral Crypt',
 		'sacrario':'Spirit Sanctum'
 	},
-	'pt': {				
+	'pt': {
+		'normal':'Normal',
+		'heroico':'Heróico',
+		'aleatorio':'Aleatório',
 		'guiamissoes': 'Guias de Progressão',
+		'pokeraid':'PokeRaid',
 		'loja':'Loja',
 		'altar':'Altar da Invocação',
 		'refugio':'Refúgio Devastado dos Espíritos',

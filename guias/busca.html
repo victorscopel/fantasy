@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Itens</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="includes/estilo.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>    
+</head>
+<body>
+<div class="container">
+    <div id="topo">
+        <div id="language-buttons" class="dropdown" style="z-index:20;">
+            <button class="dropbtn"><img src="../imagens/br.svg" alt="Portuguese"><p>Português</p> <span class="dropdown-icon">▼</span></button>
+            <div class="dropdown-content">
+                <div class="language-button" data-lang="ph"><img src="../imagens/ph.svg" alt="Filipino"><p>Filipino</p></div>
+                <div class="language-button" data-lang="cn"><img src="../imagens/cn.svg" alt="Chinese"><p>中文</p></div>
+                <div class="language-button" data-lang="id"><img src="../imagens/id.svg" alt="Indonesian"><p>Bahasa Indonesia</p></div>
+                <div class="language-button" data-lang="es"><img src="../imagens/es.svg" alt="Spanish"><p>Español</p></div>
+                <div class="language-button" data-lang="th"><img src="../imagens/th.svg" alt="Thai"><p>ไทย</p></div>
+                <div class="language-button" data-lang="en"><img src="../imagens/us.svg" alt="English"><p>English</p></div>
+                <div class="language-button" data-lang="pt"><img src="../imagens/br.svg" alt="Portuguese"><p>Português</p></div>
+            </div>
+        </div>
+        <img src="../imagens/logo-fantasy.png" alt=""/>
+    </div>    
+    <table cellspacing="0" style="border: 1px solid #999; background: #202123;" width="100%">
+        <tbody>
+            <tr>
+                <td class="bgtitulo" style="background-color:gold;" colspan="4" align="center">    
+                    <h1 id="title" data-translate="buscadeitem" class="titulodg" style="color: black;">Busca de Item</h1>
+                    <input type="text" id="searchInput" placeholder="Procure por Nome do item" autocomplete="off" style="width: 195px;padding: 5px;position: absolute;left: 10px;top: 17px;">
+                    <button id="searchButton" style="display:none;">Buscar</button>
+                </td>
+            </tr>
+            <tr>                    
+                <td colspan="4" style="color:#FFFF; margin-bottom: 8px !important;">
+                    <div id="containerdrops"></div>
+                </td>
+            </tr>     
+        </tbody>
+    </table>      
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById('containerdrops');
+
+    const missionItems = {
+        "berco": [
+        { item: "item1867640", dificuldade: "normal" },
+        { item: "item1115750", dificuldade: "normal" },
+        { item: "item362080", dificuldade: "normal" },
+        { item: "item2023850", dificuldade: "normal" },
+        { item: "item2023860", dificuldade: "normal" },
+        { item: "item2023870", dificuldade: "normal" },
+        { item: "item1735800", dificuldade: "normal" },
+        { item: "item2023880", dificuldade: "normal" },
+        { item: "item2008930", dificuldade: "normal" },
+        { item: "item2008960", dificuldade: "normal" },
+        { item: "item909050", dificuldade: "normal" },
+        { item: "item1000540", dificuldade: "normal" },
+        { item: "item1433420", dificuldade: "normal" },
+        { item: "item1129080", dificuldade: "normal" },
+        { item: "item378370", dificuldade: "heroico" },
+        { item: "item1867640", dificuldade: "heroico" },
+        { item: "item1115750", dificuldade: "heroico" },
+        { item: "item362080", dificuldade: "heroico" },
+        { item: "item2023850", dificuldade: "heroico" },
+        { item: "item2023860", dificuldade: "heroico" },
+        { item: "item2023870", dificuldade: "heroico" },
+        { item: "item1735800", dificuldade: "heroico" },
+        { item: "item2023880", dificuldade: "heroico" },
+        { item: "item2008930", dificuldade: "heroico" },
+        { item: "item2008960", dificuldade: "heroico" },
+        { item: "item1129080", dificuldade: "heroico" },
+        { item: "item1017260", dificuldade: "heroico" },
+        { item: "item799310", dificuldade: "heroico" },
+        { item: "item627330", dificuldade: "heroico" },
+        { item: "item2023820", dificuldade: "dropsdropsaleatorioss" },
+        { item: "item2023830", dificuldade: "dropsdropsaleatorioss" },
+        { item: "item2023840", dificuldade: "dropsdropsaleatorioss" },
+        ],
+"md" : [
+{ item: "item2152120", dificuldade: "normal" },
+{ item: "item362080", dificuldade: "normal" },
+{ item: "item378370", dificuldade: "normal" },
+{ item: "item2251250", dificuldade: "normal" },
+{ item: "item2251260", dificuldade: "normal" },
+{ item: "item2251270", dificuldade: "normal" },
+{ item: "item2152120", dificuldade: "heroico" },
+{ item: "item362080", dificuldade: "heroico" },
+{ item: "item378370", dificuldade: "heroico" },
+{ item: "item2251270", dificuldade: "heroico" },
+{ item: "item2251250", dificuldade: "heroico" },
+{ item: "item2251260", dificuldade: "heroico" },
+{ item: "item2104320", dificuldade: "heroico" },
+{ item: "item1017270", dificuldade: "dropsaleatorios" },
+{ item: "item2249360", dificuldade: "dropsaleatorios" },
+{ item: "item2249370", dificuldade: "dropsaleatorios" },
+{ item: "item2249380", dificuldade: "dropsaleatorios" },
+{ item: "item2249390", dificuldade: "dropsaleatorios" },
+{ item: "item2249400", dificuldade: "dropsaleatorios" },
+{ item: "item2249410", dificuldade: "dropsaleatorios" },
+{ item: "item2249650", dificuldade: "dropsaleatorios" },
+{ item: "item2249660", dificuldade: "dropsaleatorios" },
+{ item: "item2249550", dificuldade: "dropsaleatorios" },
+{ item: "item2249560", dificuldade: "dropsaleatorios" },
+{ item: "item2249570", dificuldade: "dropsaleatorios" },
+{ item: "item2249580", dificuldade: "dropsaleatorios" },
+{ item: "item2249590", dificuldade: "dropsaleatorios" },
+{ item: "item2249600", dificuldade: "dropsaleatorios" },
+{ item: "item2249610", dificuldade: "dropsaleatorios" },
+{ item: "item2249620", dificuldade: "dropsaleatorios" },
+{ item: "item2249630", dificuldade: "dropsaleatorios" },
+{ item: "item2249640", dificuldade: "dropsaleatorios" },
+],
+"altar" : [
+{ item: "item2347140", dificuldade: "normal" },
+{ item: "item2104320", dificuldade: "normal" },
+{ item: "item2347900", dificuldade: "normal" },
+{ item: "item378370", dificuldade: "normal" },
+{ item: "item287060", dificuldade: "normal" },
+{ item: "item1017270", dificuldade: "normal" },
+{ item: "item2392300", dificuldade: "dropsaleatorios" },
+{ item: "item2392080", dificuldade: "dropsaleatorios" },
+{ item: "item2392740", dificuldade: "dropsaleatorios" },
+{ item: "item2392520", dificuldade: "dropsaleatorios" },
+{ item: "item2281990", dificuldade: "dropsaleatorios" },
+{ item: "item2282000", dificuldade: "dropsaleatorios" },
+{ item: "item1808320", dificuldade: "dropsaleatorios" },
+{ item: "item2347210", dificuldade: "dropsaleatorios" },
+{ item: "item2347220", dificuldade: "dropsaleatorios" },
+{ item: "item2347230", dificuldade: "dropsaleatorios" },
+{ item: "item2597220", dificuldade: "dropsaleatorios" },
+{ item: "item2346860", dificuldade: "dropsaleatorios" },
+{ item: "item2346880", dificuldade: "dropsaleatorios" },
+{ item: "item2346900", dificuldade: "dropsaleatorios" },
+],
+"sacrario" : [
+{ item: "item2391200", dificuldade: "normal" },
+{ item: "item2391420", dificuldade: "normal" },
+{ item: "item2391860", dificuldade: "normal" },
+{ item: "item2391640", dificuldade: "normal" },
+{ item: "item2104320", dificuldade: "normal" },
+{ item: "item287060", dificuldade: "normal" },
+{ item: "item650340", dificuldade: "normal" },
+{ item: "item725140", dificuldade: "normal" },
+{ item: "item799410", dificuldade: "normal" },
+{ item: "item801540", dificuldade: "normal" },
+{ item: "item799360", dificuldade: "normal" },
+{ item: "item378370", dificuldade: "normal" },
+{ item: "item2596950", dificuldade: "heroico" },
+{ item: "item2391200", dificuldade: "heroico" },
+{ item: "item2391420", dificuldade: "heroico" },
+{ item: "item2391860", dificuldade: "heroico" },
+{ item: "item2391640", dificuldade: "heroico" },
+{ item: "item2104320", dificuldade: "heroico" },
+{ item: "item287060", dificuldade: "heroico" },
+{ item: "item650340", dificuldade: "heroico" },
+{ item: "item725140", dificuldade: "heroico" },
+{ item: "item799410", dificuldade: "heroico" },
+{ item: "item801540", dificuldade: "heroico" },
+{ item: "item799360", dificuldade: "heroico" },
+{ item: "item378370", dificuldade: "heroico" },
+{ item: "item1017270", dificuldade: "dropsaleatorios" },
+{ item: "item2281990", dificuldade: "dropsaleatorios" },
+{ item: "item2282000", dificuldade: "dropsaleatorios" },
+{ item: "item2347210", dificuldade: "dropsaleatorios" },
+{ item: "item2347220", dificuldade: "dropsaleatorios" },
+{ item: "item2347230", dificuldade: "dropsaleatorios" },
+{ item: "item2009780", dificuldade: "dropsaleatorios" },
+{ item: "item1808320", dificuldade: "dropsaleatorios" },
+{ item: "item2597210", dificuldade: "dropsaleatorios" },
+{ item: "item2393710", dificuldade: "dropsaleatorios" },
+{ item: "item2393690", dificuldade: "dropsaleatorios" },
+{ item: "item2393700", dificuldade: "dropsaleatorios" },
+{ item: "item2393620", dificuldade: "dropsaleatorios" },
+{ item: "item2393630", dificuldade: "dropsaleatorios" },
+{ item: "item2393640", dificuldade: "dropsaleatorios" },
+],
+"reigosma":[
+{ item: "item1561980", dificuldade: "normal" },
+{ item: "item1563590", dificuldade: "normal" },
+{ item: "item2337080", dificuldade: "heroico" },
+{ item: "item2337090", dificuldade: "heroico" },
+{ item: "item1561980", dificuldade: "heroico" },
+],
+"blitzchen":[
+{ item: "item1720690", dificuldade: "normal" },
+{ item: "item1878990", dificuldade: "normal" },
+{ item: "item1129090", dificuldade: "normal" },
+{ item: "item1129100", dificuldade: "dropsaleatorios" },
+{ item: "item1129110", dificuldade: "dropsaleatorios" },
+{ item: "item1808320", dificuldade: "dropsaleatorios" },
+{ item: "item1727100", dificuldade: "dropsaleatorios" },
+],
+"cripta" :[
+{ item: "item362080", dificuldade: "normal" },
+{ item: "item1129080", dificuldade: "normal" },
+{ item: "item287060", dificuldade: "normal" },
+{ item: "item2008970", dificuldade: "normal" },
+{ item: "item1899070", dificuldade: "normal" },
+{ item: "item2108160", dificuldade: "normal" },
+{ item: "item2108380", dificuldade: "normal" },
+{ item: "item2108600", dificuldade: "normal" },
+{ item: "item2108820", dificuldade: "normal" },
+{ item: "item2107940", dificuldade: "normal" },
+{ item: "item362080", dificuldade: "heroico" },
+{ item: "item1129080", dificuldade: "heroico" },
+{ item: "item287060", dificuldade: "heroico" },
+{ item: "item2008970", dificuldade: "heroico" },
+{ item: "item1899070", dificuldade: "heroico" },
+{ item: "item2108160", dificuldade: "heroico" },
+{ item: "item2108380", dificuldade: "heroico" },
+{ item: "item2108600", dificuldade: "heroico" },
+{ item: "item2108820", dificuldade: "heroico" },
+{ item: "item2107940", dificuldade: "heroico" },
+{ item: "item1808100", dificuldade: "dropsaleatorios" },
+{ item: "item650340", dificuldade: "dropsaleatorios" },
+{ item: "item725140", dificuldade: "dropsaleatorios" },
+{ item: "item799410", dificuldade: "dropsaleatorios" },
+{ item: "item1017270", dificuldade: "dropsaleatorios" },
+{ item: "item558990", dificuldade: "dropsaleatorios" },
+{ item: "item559000", dificuldade: "dropsaleatorios" },
+{ item: "item559010", dificuldade: "dropsaleatorios" },
+{ item: "item559010", dificuldade: "dropsaleatorios" },
+{ item: "item2597230", dificuldade: "dropsaleatorios" },
+{ item: "item2103850", dificuldade: "dropsaleatorios" },
+{ item: "item1790340", dificuldade: "dropsaleatorios" },
+],
+"hades" :[
+{ item: "item362080", dificuldade: "normal" },
+{ item: "item1129080", dificuldade: "normal" },
+{ item: "item1941450", dificuldade: "normal" },
+{ item: "item2008940", dificuldade: "normal" },
+{ item: "item799360", dificuldade: "normal" },
+{ item: "item1024420", dificuldade: "normal" },
+{ item: "item1024430", dificuldade: "normal" },
+{ item: "item1024440", dificuldade: "normal" },
+{ item: "item650340", dificuldade: "normal" },
+{ item: "item725140", dificuldade: "normal" },
+{ item: "item799410", dificuldade: "normal" },
+{ item: "item2008920", dificuldade: "dropsaleatorios" },
+{ item: "item1941420", dificuldade: "dropsaleatorios" },
+{ item: "item1965720", dificuldade: "dropsaleatorios" },
+{ item: "item1965730", dificuldade: "dropsaleatorios" },
+{ item: "item1965740", dificuldade: "dropsaleatorios" },
+{ item: "item1965750", dificuldade: "dropsaleatorios" },
+{ item: "item1965760", dificuldade: "dropsaleatorios" },
+],
+"henir":[
+{ item: "item2278570", dificuldade: "normal" },
+{ item: "item362080", dificuldade: "normal" },
+{ item: "item378370", dificuldade: "normal" },
+{ item: "item2104320", dificuldade: "normal" },
+{ item: "item1808320", dificuldade: "dropsaleatorios" },
+{ item: "item1129080", dificuldade: "dropsaleatorios" },
+{ item: "item1129090", dificuldade: "dropsaleatorios" },
+{ item: "item2281990", dificuldade: "dropsaleatorios" },
+{ item: "item2282000", dificuldade: "dropsaleatorios" },
+{ item: "item2282010", dificuldade: "dropsaleatorios" },
+{ item: "item2282020", dificuldade: "dropsaleatorios" },
+{ item: "item2278450", dificuldade: "dropsaleatorios" },
+{ item: "item2278460", dificuldade: "dropsaleatorios" },
+{ item: "item2278470", dificuldade: "dropsaleatorios" },
+{ item: "item2278480", dificuldade: "dropsaleatorios" },
+{ item: "item2278490", dificuldade: "dropsaleatorios" },
+{ item: "item2278500", dificuldade: "dropsaleatorios" },
+{ item: "item2278510", dificuldade: "dropsaleatorios" },
+{ item: "item2278520", dificuldade: "dropsaleatorios" },
+],
+"pokeraid":[
+{ item: "item2394130", dificuldade: "normal" },
+{ item: "item2393900", dificuldade: "dropsaleatorios" },
+{ item: "item2393910", dificuldade: "dropsaleatorios" },
+],
+"refugio":[
+{ item: "item2439120", dificuldade: "normal" },
+{ item: "item287060", dificuldade: "normal" },
+{ item: "item378370", dificuldade: "normal" },
+{ item: "item1129080", dificuldade: "normal" },
+{ item: "item650340", dificuldade: "normal" },
+{ item: "item725140", dificuldade: "normal" },
+{ item: "item799410", dificuldade: "normal" },
+{ item: "item801540", dificuldade: "normal" },
+{ item: "item799360", dificuldade: "normal" },
+{ item: "item2104320", dificuldade: "normal" },
+{ item: "item1017270", dificuldade: "dropsaleatorios" },
+{ item: "item2439050", dificuldade: "dropsaleatorios" },
+{ item: "item2439060", dificuldade: "dropsaleatorios" },
+{ item: "item2439070", dificuldade: "dropsaleatorios" },
+{ item: "item2439080", dificuldade: "dropsaleatorios" },
+{ item: "item2439090", dificuldade: "dropsaleatorios" },
+{ item: "item2439100", dificuldade: "dropsaleatorios" },
+{ item: "item2439110", dificuldade: "dropsaleatorios" },
+{ item: "item2281990", dificuldade: "dropsaleatorios" },
+{ item: "item2282000", dificuldade: "dropsaleatorios" },
+{ item: "item2282010", dificuldade: "dropsaleatorios" },
+{ item: "item2282020", dificuldade: "dropsaleatorios" },
+{ item: "item1129090", dificuldade: "dropsaleatorios" },
+],
+"santuario":[
+{ item: "item1905190", dificuldade: "normal" },
+{ item: "item2109040", dificuldade: "normal" },
+{ item: "item2109260", dificuldade: "normal" },
+{ item: "item2109480", dificuldade: "normal" },
+{ item: "item2008950", dificuldade: "normal" },
+{ item: "item1129080", dificuldade: "normal" },
+{ item: "item650340", dificuldade: "normal" },
+{ item: "item725140", dificuldade: "normal" },
+{ item: "item799410", dificuldade: "normal" },
+{ item: "item114180", dificuldade: "normal" },
+{ item: "item378370", dificuldade: "normal" },
+{ item: "item1905190", dificuldade: "heroico" },
+{ item: "item2109040", dificuldade: "heroico" },
+{ item: "item2109260", dificuldade: "heroico" },
+{ item: "item2109480", dificuldade: "heroico" },
+{ item: "item2008950", dificuldade: "heroico" },
+{ item: "item1129080", dificuldade: "heroico" },
+{ item: "item650340", dificuldade: "heroico" },
+{ item: "item725140", dificuldade: "heroico" },
+{ item: "item799410", dificuldade: "heroico" },
+{ item: "item801540", dificuldade: "heroico" },
+{ item: "item114180", dificuldade: "heroico" },
+{ item: "item378370", dificuldade: "heroico" },
+{ item: "item1808320", dificuldade: "dropsaleatorios" },
+{ item: "item1905200", dificuldade: "dropsaleatorios" },
+{ item: "item2103860", dificuldade: "dropsaleatorios" },
+],
+"vazioinvasao":[
+{ item: "item2753710", dificuldade: "normal" },
+{ item: "item2104320", dificuldade: "normal" },
+{ item: "item287060", dificuldade: "normal" },
+{ item: "item650340", dificuldade: "normal" },
+{ item: "item725140", dificuldade: "normal" },
+{ item: "item799410", dificuldade: "normal" },
+{ item: "item801540", dificuldade: "normal" },
+{ item: "item799360", dificuldade: "normal" },
+{ item: "item378370", dificuldade: "normal" },
+{ item: "item2753710", dificuldade: "heroico" },
+{ item: "item2104320", dificuldade: "heroico" },
+{ item: "item287060", dificuldade: "heroico" },
+{ item: "item650340", dificuldade: "heroico" },
+{ item: "item725140", dificuldade: "heroico" },
+{ item: "item799410", dificuldade: "heroico" },
+{ item: "item801540", dificuldade: "heroico" },
+{ item: "item799360", dificuldade: "heroico" },
+{ item: "item378370", dificuldade: "heroico" },
+{ item: "item1017270", dificuldade: "dropsaleatorios" },
+{ item: "item2281990", dificuldade: "dropsaleatorios" },
+{ item: "item2282000", dificuldade: "dropsaleatorios" },
+{ item: "item2009780", dificuldade: "dropsaleatorios" },
+{ item: "item1808320", dificuldade: "dropsaleatorios" },
+{ item: "item2753710", dificuldade: "dropsaleatorios" },
+{ item: "item2753680", dificuldade: "dropsaleatorios" },
+{ item: "item2753740", dificuldade: "dropsaleatorios" },
+{ item: "item2770700", dificuldade: "dropsaleatorios" },
+{ item: "item2770710", dificuldade: "dropsaleatorios" },
+{ item: "item2770720", dificuldade: "dropsaleatorios" },
+{ item: "item2770730", dificuldade: "dropsaleatorios" },
+{ item: "item2770740", dificuldade: "dropsaleatorios" },
+]
+    };
+
+// Função para carregar os itens
+function loadItems() {
+    const uniqueItems = {};
+
+    // Agrupa itens únicos por missão e dificuldade
+    Object.entries(missionItems).forEach(([mission, items]) => {
+        items.forEach(({ item, dificuldade }) => {
+            if (!uniqueItems[item]) {
+                uniqueItems[item] = { mission: [mission], dificuldade: [dificuldade] };
+            } else {
+                // Adiciona a missão se ainda não estiver presente
+                if (!uniqueItems[item].mission.includes(mission)) {
+                    uniqueItems[item].mission.push(mission);
+                }
+                // Adiciona a dificuldade se ainda não estiver presente
+                if (!uniqueItems[item].dificuldade.includes(dificuldade)) {
+                    uniqueItems[item].dificuldade.push(dificuldade);
+                }
+            }
+        });
+    });
+
+    // Adiciona os itens únicos ao container
+    Object.entries(uniqueItems).forEach(([itemKey, info]) => {
+        const itemValue = window[itemKey];
+        if (typeof itemValue === 'string') {
+            const tempDiv = document.createElement('div');
+            tempDiv.classList.add('dropinfos'); // Adiciona classe ao tempDiv
+
+            tempDiv.innerHTML = itemValue; // Insere o item HTML
+
+            const img = tempDiv.querySelector('img');
+            if (img) {
+                img.setAttribute('data-item', itemKey); // Define atributo data-item
+
+                const dificuldadeInfo = info.dificuldade
+                    .map(dificuldade => `<span data-translate="${dificuldade}">${dificuldade}</span>`)
+                    .join(', '); // Formata dificuldade info
+
+                // Adiciona as informações de drop ao maintooltip
+                const maintooltip = tempDiv.querySelector('.maintooltip');
+                if (maintooltip) {
+                    const dropInfo = document.createElement('div');
+                    dropInfo.classList.add('dropinfos'); // Adiciona classe ao dropInfo
+                    const missionInfo = info.mission.map(m => `<span class="${m}" data-translate="${m}">${m}</span>`).join(', '); // Concatena as missões
+                    dropInfo.innerHTML = `${missionInfo}<br><span data-translate="drops">Drops</span>: ${dificuldadeInfo}`;
+                    maintooltip.appendChild(dropInfo); // Adiciona dropInfo ao maintooltip
+                }
+
+                container.appendChild(tempDiv.firstChild); // Adiciona o primeiro filho do tempDiv ao container
+            }
+        }
+    });
+}
+
+loadItems();
+
+
+
+// Função de busca
+function searchItems(query) {
+    const itemsnome = container.querySelectorAll('.item'); // Seleciona todos os elementos com a classe 'item'
+    const queryLower = query.toLowerCase();
+
+    itemsnome.forEach(item => {
+        const itemsnometextoElement = item.querySelector('.nomeitem'); // Seleciona o elemento com a classe 'nomeitem'
+        const itemImageElement = item.querySelector('img'); // Seleciona o elemento <img> dentro do item
+        let shouldShow = false;
+
+        // Verifica se o texto do elemento .nomeitem inclui a consulta
+        if (itemsnometextoElement) {
+            const itemsnometexto = itemsnometextoElement.textContent || ""; // Obtém o texto do elemento
+            if (itemsnometexto.toLowerCase().includes(queryLower)) {
+                shouldShow = true;
+            }
+        }
+
+        // Se não encontrou pelo .nomeitem ou se .nomeitem não existe, verifica o alt da imagem
+        if (!shouldShow && itemImageElement) {
+            const altText = itemImageElement.alt.toLowerCase(); // Obtém o texto alt da imagem
+            if (altText.includes(queryLower)) {
+                shouldShow = true;
+            }
+        }
+
+        // Mostra ou esconde o item com base no resultado das verificações
+        item.style.display = shouldShow ? "" : "none";
+    });
+}
+
+
+
+    // Evento de clique no botão de busca
+    document.getElementById('searchButton').addEventListener('click', () => {
+        const query = document.getElementById('searchInput').value;
+        searchItems(query);
+    });
+
+    // Evento de digitação no campo de busca
+    let timeout;
+    document.getElementById('searchInput').addEventListener('keyup', () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            const query = document.getElementById('searchInput').value;
+            searchItems(query);
+        }, 300);
+    });
+        addTranslations(TraducaoIndex);
+		addTranslations(TraducaoGeral);
+		setLanguageFromStorage();
+});
+</script>
+<script src="includes/script.js"></script>
+<script src="includes/traducao.js"></script>
+<script src="../includes/itens.js"></script>
+</body>
+</html>

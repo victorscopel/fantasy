@@ -22,7 +22,6 @@ q::before, q::after{content:'';content:none;}
 table{border-collapse:collapse;border-spacing:0;}
 .clearboth{clear:both;height:0;width:auto;}
 html {
-	
     font-family: rubik,helvetica,arial,sans-serif;	
 	overflow:hidden;
 }
@@ -53,18 +52,8 @@ body {
 	margin-top:0;
 }
 #corpo .cutin-image{pointer-events:none;}
-#corpo .videovisual{background-color:#17273a;display:block;height:474px;width:330px;position:relative;overflow:hidden;}
-#corpo .videovisual.compet video{width: auto;height: auto;margin: -50px 0px 0 -43px;}
-#corpo .videovisual.compet::before{
-	background: url("../../imagens/pacotes/ultimate-pokemon/petbg.png") no-repeat -15px bottom;
-	content:'';
-	display:block;
-	width:100%;
-	position:absolute;
-	bottom:0;
-	left:0;
-	height:162px;
-}
+#corpo .videovisual{background-color:#17273a;display:block;height:476px;width:348px;position:relative;overflow:hidden;}
+#corpo .videovisual2{background-color:#17273a;display:block;margin-top:20px;height:476px;width:348px;position:relative;overflow:hidden;}
 #corpo .videovisual .vip-info {
 	position: absolute;
 	background: #c28322;
@@ -133,12 +122,16 @@ body {
 }
 .select2-container--default .select2-results__option--highlighted[aria-selected]{transition:all .3s ease;}
 .select2-container--default .select2-results__option .select2-results__option{padding-left:7px;}
-#corpo .videovisual .botoes-versao button.charmander{background-image:url(../../imagens/sbta239367.png);background-position: 108px -12px;background-repeat: no-repeat;background-size: 50px;padding-right: 48px;}
-#corpo .videovisual .botoes-versao button.pikachu{background-image:url(../../imagens/sbta239365.png);background-position: 75px -12px;background-repeat: no-repeat;background-size: 50px;padding-right: 48px;padding-left: 15px;}
-#corpo .videovisual .botoes-versao button.bulba{background-image:url(../../imagens/sbta239366.png);background-position: -1px -12px;background-repeat: no-repeat;background-size: 50px;padding-left: 50px;}
-#corpo .videovisual .botoes-versao button.squirtle{background-image:url(../../imagens/sbta239368.png);background-position: -1px -12px;background-repeat: no-repeat;background-size: 50px;padding-left: 48px;padding-right: 15px;}
-
-#corpo .videovisual video{height: auto;margin: 0 0 0 -10px;width: 348px;}
+#corpo .videovisual video{height: auto;margin:0;width: 348px;}
+#corpo .videovisual::before, #corpo .videovisual2::before{
+	background: url(../../imagens/logo-fantasy2.png) no-repeat left center;    
+    content: '';
+    position: absolute;
+    left: 0;    
+    bottom: 0px;
+    display: block;
+    width: 100%;
+    height: 147px;}
 #corpo .descricaovip{
 	display: block;
     background-color: #1e3046;
@@ -146,11 +139,11 @@ body {
     color: white;
     text-align: center;
     margin-bottom: 15px;
-    max-width: 680px;
+    max-width: 669px;
 	width:100%;
 	float:left;
 }
-.forumiframe #corpo .descricaovip{max-width:100%;}
+.forumiframe #corpo .descricaovip{max-width:574px;}
 #corpo .items .item .vip-info {
 	position: absolute;
 	background: #c28322;
@@ -167,8 +160,8 @@ body {
 }
 #corpo .items .item:hover .vip-info {opacity:1;}
 
-#corpo .items{float:left;list-style:none;max-width:710px;margin: 0 0 0 0;width: 100%;}
-.forumiframe #corpo .items{max-width:624px;}
+#corpo .items{float:left;list-style:none;max-width:696px;margin: 0;width: 100%;}
+.forumiframe #corpo .items{max-width:606px;}
 #corpo .items .item{
 	float:left;
 	display:flex;
@@ -176,7 +169,7 @@ body {
 	width:128px;
 	background: rgb(28,45,60);
 	background: linear-gradient(180deg, rgba(28,45,60,1) 0%, rgba(51,78,106,1) 100%);
-	margin: 0 10px 10px 0;
+	margin: 0 7px 7px 0;
 	border:2px solid #6CB6E4;
 	border-radius:5px;
 	position:relative;

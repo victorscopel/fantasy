@@ -1,0 +1,362 @@
+/*CSS RESET*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section{display:block;}
+body{line-height:1;}
+:focus{outline:0;}
+ol, ul{list-style:none;} 
+blockquote, q{quotes:none;}
+blockquote::before, blockquote::after,
+q::before, q::after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+.clearboth{clear:both;height:0;width:auto;}
+html {
+	font-family: rubik,helvetica,arial,sans-serif !important;
+	overflow:hidden;
+	background-color:#090B14;
+}
+html.forumiframe{}
+html a{text-decoration:none !important;}
+
+body {	        
+    margin: 0;
+    padding: 0;
+}
+#corpo{
+    margin: 0 auto;
+    width: 748px;
+}
+
+	.videocontainer {
+		border-radius:20px;	
+		background: rgb(27,41,60);
+		background: linear-gradient(180deg, rgba(27,41,60,1) 0%, rgba(34,53,77,1) 100%);
+		height:594px;
+		float:left;
+		position:relative;
+		width:486px;
+		margin:20px 0 0 0;
+	}
+	.videocontainer::before{
+		content:'';
+		background:url(../imagens/bgvideocontainer.png) no-repeat center center;
+		height:594px;
+		width:486px;
+		position:absolute;
+		left:0;
+		top:0;
+		pointer-events:none;
+	}
+	.videocontainer::after{
+		content:'';
+		background:url(../imagens/supersistema.png) no-repeat center center;
+		height:70px;
+		width:220px;
+		position:absolute;
+		left:133px;
+		top:-20px;
+		pointer-events:none;
+	}
+	.videovisual{
+		margin:48px 0 0 17px;
+		background:url(../imagens/bgvideo.png?v=1) no-repeat center center;
+		display:block;		
+		height: 503px;
+		width: 449px;		
+	}
+	.videovisual video{margin:20px 0 0 15px;}
+	.sistemasvisual{
+		background:url(../imagens/sistemasbg.png) no-repeat center center;
+		display:block;
+		height:570px;
+		width:262px;
+		float:left;
+		position:relative;
+		margin-top: 33px;
+	}
+	.sistemasvisual::after{
+		content:'';
+		background:url(../imagens/selecionarsistema.png) no-repeat center center;
+		height:54px;
+		position:absolute;
+		left:0;
+		top:18px;
+		width:285px;
+	}
+	.listaitenscontainer {
+		background: rgb(25,27,29);
+		background: linear-gradient(180deg, rgba(25,27,29,1) 0%, rgba(23,33,44,1) 55%);
+		margin-left:11px;
+		height: 430px;
+		position:relative;
+		padding: 9px 0 0 4px;
+		width: 218px;
+	}
+.listaitenscontainer .listaitens {
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+/* Esconde a barra de rolagem no WebKit (Chrome, Safari) */
+.listaitenscontainer .listaitens::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-up, .scroll-down {
+	background:url(../imagens/botao-scroll.png) no-repeat left top;
+    width: 19px;
+    height:19px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: -22px;
+    z-index: 1;	
+}
+
+.scroll-up {
+	background-position:left top;
+    top: 0;
+}
+.scroll-up:hover{
+	background-position:right top;
+}
+
+.scroll-down {
+    bottom: 0;
+	background-position:left bottom;
+}
+.scroll-down:hover{
+	background-position:right bottom;
+}
+.scroll-track {
+    position: absolute;
+    right: -16px;
+    top: 2px;
+    bottom: 3px;
+    width: 7px;
+	background:url(../imagens/scroll-bg.png) repeat center center;
+    border-radius: 4px;
+}
+
+.scroll-thumb {
+	height:47px;
+	background:url(../imagens/scroll-botao.png) no-repeat center center;
+    width: 13px;
+    cursor: pointer;
+	position: absolute;
+    left: -3px;
+}
+	.listaitens .setvisual{background:url(../imagens/separador.png) no-repeat 13px bottom;cursor: pointer;padding-bottom: 7px;}
+	.listaitens .setvisual:last-child{background:none;}
+	.listaitens .setvisual .nomepet{
+		background: transparent; 
+		display:block;
+		height:46px;
+		float:left;
+		margin-top:5px;
+		width:167px;		
+		color: white;
+		padding: 0 0 0 6px;
+		line-height: 46px;
+	    transition: all 0.3s ease;
+
+	}
+	.listaitens .setvisual .imgpet{
+		background:url(../imagens/bordapet.png) no-repeat center center;
+		display:block;
+		height:56px;
+		float:left;
+		width:42px;
+	}
+	.listaitens .setvisual.ativo{pointer-events:none;}
+	.listaitens .setvisual.ativo .imgpet{
+		background:url(../imagens/bordapet-ativo.png) no-repeat center center;
+	}
+	.listaitens .setvisual.ativo .nomepet, .listaitens .setvisual:hover .nomepet{
+		background-color:#203349;
+		color:#08e1a1;
+	}
+	
+	.listaitens .setvisual .imgpet img {
+		max-width:30px;
+		margin: 6px 0 0 6px;
+	}
+
+.botoes {       
+    margin: 70px 0 0 8px;
+}
+
+.botoes .botao {
+	background: rgb(72,82,96);
+	background: linear-gradient(180deg, rgba(72,82,96,1) 0%, rgba(45,53,69,1) 100%);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	width:110px;
+    margin-right: 5px;
+    float: left;	
+}
+.botoes .ui-tabs-active .botao{
+	background: rgb(3,88,190);
+	background: linear-gradient(180deg, rgba(3,88,190,1) 0%, rgba(7,49,122,1) 100%);
+}
+
+#corpo .videocontainer .botoes-versao {
+	position: absolute;    
+    bottom: 11px;    
+    left: calc(50% - 158px);
+    width: 340px;
+}
+
+.tabcontainer{transition:all .5s;}
+.tabcontainer[aria-hidden=true]{opacity:0 !important;}
+.tabcontainer[aria-hidden=false]{opacity:1 !important;}
+
+
+#videoSelect button{
+    background: linear-gradient(to bottom, #ff4c4c, #a60000);
+    border: 1px solid #870000;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+	font-weight:700;
+	height:33px;
+	line-height:33px;
+    padding: 0 20px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;    
+	float:left;	
+	margin-left: 10px;
+}
+#videoSelect .ativo{cursor:unset;}
+#videoSelect button.ativo,#videoSelect button:hover {background: linear-gradient(to bottom, #ffcc33, #ff9900);border-color: #cc7a00;color:#000;}
+
+
+html body .maintooltip {
+	display:none;
+	z-index:-1;
+    background-color: #a7b6b9;
+    padding: 6px;
+    margin: 0px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    color: #CCC;
+    font-size: 16px;
+    line-height: 150%;
+	width:442px;
+	opacity:0 !important;
+	visibility:hidden;
+	position:absolute;
+	user-select: none;
+	pointer-events:none;	
+}
+html body .maintooltip.video {
+	background:none;
+	box-shadow:none;
+	border:none;
+	height:auto;
+	padding:0;
+	width:auto;
+}
+.botaopet button:hover ~ .maintooltip {	
+	display:block;
+	opacity:1 !important;
+	position:fixed;	
+	visibility:visible;
+	z-index:2;
+}
+
+.botaopet:hover {cursor: help;z-index:2;}
+
+.tooltipdesc{
+	background-color: #4d6272;
+	border-radius:5px;
+	border:1px solid #657f8c;
+}
+.tooltipdesc video{height:auto;width:100%;display: block;}
+.nomeitem {
+    background-color: #788a94;
+	border-radius: 5px;
+	border:1px solid #6b787d;
+    padding: 6px;
+    text-align: center;
+	margin:0 21px 3px 21px;	
+}
+.nomeitem p{
+	-webkit-text-stroke: 1px rgb(0 0 0 / 95%);
+	font-size: 18px;
+	line-height:21px;
+    font-weight: 700;
+}
+.raridade.comum{color:#fff;}
+.raridade.raro{color:#00CCFF;}
+.raridade.epico{color:#FCE800;}
+.raridade.lendario{color:#F763F7;}
+.raridade.supremo{color:#F04C4F;}
+
+
+/* Estilos básicos para o popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.popup-content {
+    position: relative;
+}
+
+#videoPlayer {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#closePopupButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4c4c;
+    border: none;
+    color: #fff;
+	font-weight:bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Fundo escurecido */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 900;
+}
+
