@@ -10,47 +10,49 @@
 	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
 </head>
 <body>
-	<div id="corpo">		
-		<div class="videocontainer">
-			<div class="videovisual"><video id="video" autoplay muted loop><source src="imagens/miu/miu-feminino.mp4" type="video/mp4"></video></div>        
-			<div id="videoSelect" class="botoes-versao">
-				<button class="botaovideo feminino ativo" value="imagens/miu/miu-feminino.mp4" data-genero="feminino" data-image="../imagens/feminino.png">Feminino</button>
-				<button class="botaovideo masculino" value="imagens/miu/miu-masculino.mp4" data-genero="masculino" data-image="../imagens/masculino.png">Masculino</button>
-				<div class="botaopet">
-					<button value="imagens/miu/pet.mp4" data-genero="pet">Pet</button>
-<!--
-					<div class="maintooltip"><div class="nomeitem"><p class="raridade epico">Miu</p></div><div class="tooltipdesc"><video autoplay="" muted="" loop=""><source src="../imagens/pacotes/anjolian/lian.mp4" type="video/mp4"></video></div></div>
--->
-				</div>
-			</div>			
-		</div>
-        <div class="sistemasvisual" id="tabs">
-			<ul class="botoes">
-				<li><a href="#tabs-2" class="botao">Equipamento</a></li>
-				<li><a href="#tabs-1" class="botao">Visual</a></li>
-				<div class="clearboth"></div>
-			</ul>
-			<div class="listaitenscontainer">
-				<button class="scroll-up"></button>
-				<div class="tabcontainer listaitens itemvisual" id="tabs-1">			    
-					<div class="setvisual ativo" data-f="imagens/miu/miu-feminino.mp4" data-m="imagens/miu/miu-masculino.mp4" data-petnome="Miu" data-petvideo="../imagens/pacotes/anjolian/lian.mp4"><span class="imgpet"><img src="imagens/miu/pet.png" /></span><span class="nomepet">Miu</span><div class="clearboth"></div></div>
-					<div class="setvisual" data-f="imagens/ramsay/ramsay-feminino.mp4" data-m="imagens/ramsay/ramsay-masculino.mp4" data-petnome="Ramsay" data-petvideo="../imagens/pacotes/hordarubra/leif.mp4"><span class="imgpet"><img src="imagens/ramsay/pet.png" /></span><span class="nomepet">Ramsay</span><div class="clearboth"></div></div>
-					<div class="setvisual" data-f="imagens/belia/belia-feminino.mp4" data-m="imagens/belia/belia-masculino.mp4" data-petnome="Belia" data-petvideo="imagens/belia/pet.mp4"><span class="imgpet"><img src="imagens/belia/pet.png" /></span><span class="nomepet">Belia</span><div class="clearboth"></div></div>
-					<div class="setvisual" data-f="imagens/voodoo/voodoo-feminino.mp4" data-m="imagens/voodoo/voodoo-masculino.mp4" data-petnome="Voodoo Samedi" data-petvideo="imagens/voodoo/pet.mp4"><span class="imgpet"><img src="imagens/voodoo/pet.png" /></span><span class="nomepet">Voodoo Samedi</span><div class="clearboth"></div></div>
-					<div class="setvisual" data-f="imagens/diabinha/diabinha-feminino.mp4" data-m="imagens/diabinha/diabinha-masculino.mp4" data-petnome="Diabinha Açucarada" data-petvideo="imagens/diabinha/pet.mp4"><span class="imgpet"><img src="imagens/diabinha/pet.png" /></span><span class="nomepet">Diabinha Açucarada</span><div class="clearboth"></div></div>
-					<div class="setvisual" data-f="imagens/asmodeus/asmodeus-feminino.mp4" data-m="imagens/asmodeus/asmodeus-masculino.mp4" data-petnome="Asmodeus" data-petvideo="imagens/asmodeus/pet.mp4"><span class="imgpet"><img src="imagens/asmodeus/pet.png" /></span><span class="nomepet">Asmodeus</span><div class="clearboth"></div></div>
-					<div class="setvisual" data-f="imagens/aslanprateado/aslan-feminino.mp4" data-m="imagens/aslanprateado/aslan-masculino.mp4" data-petnome="Aslan Prateado" data-petvideo="imagens/aslanprateado/pet.mp4"><span class="imgpet"><img src="imagens/aslanprateado/pet.png" /></span><span class="nomepet">Aslan Prateado</span><div class="clearboth"></div></div>
-					<div class="setvisual" data-f="imagens/genio/genio-feminino.mp4" data-m="imagens/genio/genio-masculino.mp4" data-petnome="Gênio" data-petvideo="imagens/genio/pet.mp4"><span class="imgpet"><img src="imagens/genio/pet.png" /></span><span class="nomepet">Gênio</span><div class="clearboth"></div></div>
-				</div>
-				<div class="tabcontainer listaitens itemequipamento" id="tabs-2" style="opacity:0;">
-					<div class="setvisual" data-f="imagens/selion/selion-feminino.mp4" data-m="imagens/selion/selion-masculino.mp4" data-petnome="Selion" data-petvideo="imagens/selion/pet.mp4"><span class="imgpet"><img src="imagens/selion/pet.png" /></span><span class="nomepet">Selion</span><div class="clearboth"></div></div>					
-				</div>
-				<button class="scroll-down"></button>
-				<div class="scroll-track">
-					<div class="scroll-thumb"></div>
+	<div id="corpo">
+		<div id="srcontainer">
+			<div class="videocontainer">
+				<div class="videovisual"><video id="video" autoplay muted loop><source src="imagens/miu/miu-feminino.mp4" type="video/mp4"></video></div>        
+				<div id="videoSelect" class="botoes-versao">
+					<button class="botaovideo feminino ativo" value="imagens/miu/miu-feminino.mp4" data-genero="feminino" data-image="../imagens/feminino.png">Feminino</button>
+					<button class="botaovideo masculino" value="imagens/miu/miu-masculino.mp4" data-genero="masculino" data-image="../imagens/masculino.png">Masculino</button>
+					<div class="botaopet">
+						<button value="imagens/miu/pet.mp4" data-genero="pet">Pet</button>
+	<!--
+						<div class="maintooltip"><div class="nomeitem"><p class="raridade epico">Miu</p></div><div class="tooltipdesc"><video autoplay="" muted="" loop=""><source src="../imagens/pacotes/anjolian/lian.mp4" type="video/mp4"></video></div></div>
+	-->
+					</div>
+				</div>			
+			</div>
+			<div class="sistemasvisual" id="tabs">
+				<ul class="botoes">
+					<li><a href="#tabs-2" class="botao">Equipamento</a></li>
+					<li><a href="#tabs-1" class="botao">Visual</a></li>
+					<div class="clearboth"></div>
+				</ul>
+				<div class="listaitenscontainer">
+					<button class="scroll-up"></button>
+					<div class="tabcontainer listaitens itemvisual" id="tabs-1">			    
+						<div class="setvisual ativo" data-f="imagens/miu/miu-feminino.mp4" data-m="imagens/miu/miu-masculino.mp4" data-petnome="Miu" data-petvideo="../imagens/pacotes/anjolian/lian.mp4"><span class="imgpet"><img src="imagens/miu/pet.png" /></span><span class="nomepet">Miu</span><div class="clearboth"></div></div>
+						<div class="setvisual" data-f="imagens/ramsay/ramsay-feminino.mp4" data-m="imagens/ramsay/ramsay-masculino.mp4" data-petnome="Ramsay" data-petvideo="../imagens/pacotes/hordarubra/leif.mp4"><span class="imgpet"><img src="imagens/ramsay/pet.png" /></span><span class="nomepet">Ramsay</span><div class="clearboth"></div></div>
+						<div class="setvisual" data-f="imagens/belia/belia-feminino.mp4" data-m="imagens/belia/belia-masculino.mp4" data-petnome="Belia" data-petvideo="imagens/belia/pet.mp4"><span class="imgpet"><img src="imagens/belia/pet.png" /></span><span class="nomepet">Belia</span><div class="clearboth"></div></div>
+						<div class="setvisual" data-f="imagens/voodoo/voodoo-feminino.mp4" data-m="imagens/voodoo/voodoo-masculino.mp4" data-petnome="Voodoo Samedi" data-petvideo="imagens/voodoo/pet.mp4"><span class="imgpet"><img src="imagens/voodoo/pet.png" /></span><span class="nomepet">Voodoo Samedi</span><div class="clearboth"></div></div>
+						<div class="setvisual" data-f="imagens/diabinha/diabinha-feminino.mp4" data-m="imagens/diabinha/diabinha-masculino.mp4" data-petnome="Diabinha Açucarada" data-petvideo="imagens/diabinha/pet.mp4"><span class="imgpet"><img src="imagens/diabinha/pet.png" /></span><span class="nomepet">Diabinha Açucarada</span><div class="clearboth"></div></div>
+						<div class="setvisual" data-f="imagens/asmodeus/asmodeus-feminino.mp4" data-m="imagens/asmodeus/asmodeus-masculino.mp4" data-petnome="Asmodeus" data-petvideo="imagens/asmodeus/pet.mp4"><span class="imgpet"><img src="imagens/asmodeus/pet.png" /></span><span class="nomepet">Asmodeus</span><div class="clearboth"></div></div>
+						<div class="setvisual" data-f="imagens/aslanprateado/aslan-feminino.mp4" data-m="imagens/aslanprateado/aslan-masculino.mp4" data-petnome="Aslan Prateado" data-petvideo="imagens/aslanprateado/pet.mp4"><span class="imgpet"><img src="imagens/aslanprateado/pet.png" /></span><span class="nomepet">Aslan Prateado</span><div class="clearboth"></div></div>
+						<div class="setvisual" data-f="imagens/genio/genio-feminino.mp4" data-m="imagens/genio/genio-masculino.mp4" data-petnome="Gênio" data-petvideo="imagens/genio/pet.mp4"><span class="imgpet"><img src="imagens/genio/pet.png" /></span><span class="nomepet">Gênio</span><div class="clearboth"></div></div>
+					</div>
+					<div class="tabcontainer listaitens itemequipamento" id="tabs-2" style="opacity:0;">
+						<div class="setvisual" data-f="imagens/selion/selion-feminino.mp4" data-m="imagens/selion/selion-masculino.mp4" data-petnome="Selion" data-petvideo="imagens/selion/pet.mp4"><span class="imgpet"><img src="imagens/selion/pet.png" /></span><span class="nomepet">Selion</span><div class="clearboth"></div></div>					
+					</div>
+					<button class="scroll-down"></button>
+					<div class="scroll-track">
+						<div class="scroll-thumb"></div>
+					</div>
 				</div>
 			</div>
-        </div>
+		</div>
 		<div id="videoPopup" class="popup">
 			<div class="popup-content">
 				<video id="videoPlayer" width="600"autoplay="" muted="" loop=""><source src="../imagens/pacotes/anjolian/lian.mp4" type="video/mp4"></video>

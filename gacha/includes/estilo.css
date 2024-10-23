@@ -23,7 +23,8 @@ table{border-collapse:collapse;border-spacing:0;}
 .clearboth{clear:both;height:0;width:auto;}
 html {
 	font-family: rubik,helvetica,arial,sans-serif !important;
-	overflow:hidden;	
+	overflow:hidden;
+	background-color:#090B14;
 }
 html.forumiframe{}
 html a{text-decoration:none !important;}
@@ -32,7 +33,7 @@ body {
     margin: 0;
     padding: 0;
 }
-#corpo{
+#srcontainer{
     margin: 0 auto;
     width: 748px;
 }
