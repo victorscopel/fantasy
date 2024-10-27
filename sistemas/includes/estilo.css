@@ -52,7 +52,7 @@ body {
     left: 195px;
     top: -132px;
 	width:186px;
-	z-index:2;
+	z-index:1;
 }
 #qbcontainer #qb{
 	background-color:#134855;
