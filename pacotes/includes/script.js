@@ -81,6 +81,14 @@ function itemid(itemVar, quantidade, tipo = "", cutin = false, container = "") {
             openBauDialog(dataitemid); // Exemplo: usando o baú item2394100_bau como dados
         });
     }
+	
+	if (tipo === "baumaior") {
+		itemElement.addClass('tembau');
+        // Associa o clique ao item de baú para abrir o diálogo
+        itemElement.on('click', function() {
+            openBauDialog(dataitemid,"maior"); // Exemplo: usando o baú item2394100_bau como dados
+        });
+    }
 
     // Se cutin for verdadeiro, associa um evento de clique no item para mostrar a animação
     if (cutin) {
@@ -129,12 +137,16 @@ function itemid(itemVar, quantidade, tipo = "", cutin = false, container = "") {
 }
 
 
-// Função para abrir o diálogo do baú e carregar os itens dinamicamente
-function openBauDialog(itemVar) {
+function openBauDialog(itemVar, maior) {
     var bauData = window[itemVar];	
     if (!bauData) {
         console.error('Dados do baú não encontrados:', itemVar);
         return;
+    }
+
+    // Cria a div .bauaberto se não existir
+    if ($(".bauaberto").length === 0) {
+        $("body").append('<div class="bauaberto' + (maior ? ' maior' : '') + '"></div>');
     }
 
     // Limpa o conteúdo anterior do baú
@@ -164,15 +176,18 @@ function openBauDialog(itemVar) {
         $(".bauaberto .itens").prepend($itemElement);
     });
 
+    // Define a largura do diálogo com base na opção maior
+    var dialogWidth = maior ? '808' : '528'; // largura padrão é 528, se 'maior' é passado, usa 700
+
     // Abre o diálogo do baú
     $(".bauaberto").dialog({
         autoOpen: true,
 		modal: true,
-        width: '528',
+        width: dialogWidth,
         closeText: "X"
     });
-	
 }
+
 
 
 // TRADUÇÃO

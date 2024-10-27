@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quebra Cabeça</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">	
+	<link rel="stylesheet" href="includes/estilo.css">
+	<link rel="stylesheet" href="../includes/tooltip.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+</head>
+<body>
+	<div id="corpo">		
+		<div id="qbcontainer">
+			<div id="qb">
+				<div class="containerinfo pecas">
+					<h1>Presente</h1>
+					<div class="listapecas">
+						<div class="qbpeca" data-itemid="item2849930"><img src="imagens/peca1.png" alt=""></div>
+						<div class="qbpeca" data-itemid="item2849940"><img src="imagens/peca2.png" alt=""></div>
+						<div class="qbpeca" data-itemid="item2849950"><img src="imagens/peca3.png" alt=""></div>
+						<div class="qbpeca" data-itemid="item2849960"><img src="imagens/peca4.png" alt=""></div>
+						<div class="qbpeca" data-itemid="item2849970"><img src="imagens/peca5.png" alt=""></div>
+						<div class="qbpeca" data-itemid="item2849980"><img src="imagens/peca6.png" alt=""></div>
+						<div class="qbpeca" data-itemid="item2849990"><img src="imagens/peca7.png" alt=""></div>
+						<div class="qbpeca" data-itemid="item2850000"><img src="imagens/peca8.png" alt=""></div>
+						<div class="qbpeca" data-itemid="item2850010"><img src="imagens/peca9.png" alt=""></div>
+						<div class="clearboth"></div>
+					</div>
+					<div class="previewitens"></div>
+					<div id="verpremios" data-itemid="halloween2024" data-iditem="halloween2024_bau" data-bau="true">Ver Lista de Recompensas</div>
+				</div>
+				<div class="containerinfo presentes">
+					<h1>Trocar Peça Individual</h1>
+					<div class="listapresentes"></div>
+				</div>
+				<div class="containerinfo informativo">
+					<p>Encontre as partes do presente e troque-os por prêmios clicando no botão à direita (as peças serão consumidas ao clicar). Complete o quebra-cabeça para concorrer ao Grande Prêmio!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="includes/script.js"></script>	
+	<script src="../includes/tooltip.js"></script>
+	<script src="../includes/itens.js"></script>
+	<script>
+		$(document).ready(function() {
+			itemid(item725510,"","",false,".previewitens");
+			itemid(item727880,"","",false,".previewitens");
+			itemid(item287060,"10","",false,".listapresentes");
+			itemid(item362080,"10","",false,".listapresentes");
+			itemid(item2152120,"5","",false,".listapresentes");
+			itemid(item2554250,"1","",false,".listapresentes");
+			itemid(item2554260,"1","",false,".listapresentes");
+			itemid(item2554270,"1","",false,".listapresentes");
+			itemid(item1000570,"1","",false,".listapresentes");
+			itemid(item1129090,"1","",false,".listapresentes");
+			itemid(item1738720,"2","",false,".listapresentes");
+		});
+	</script>
+</body>
+</html>

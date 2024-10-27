@@ -1,0 +1,246 @@
+/*CSS RESET*/
+.maintooltip div, .maintooltip span, 
+.maintooltip p, .maintooltip img, 
+.maintooltip ul, .maintooltip li,
+.maintooltip video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;}
+.maintooltip :focus{outline:0;}
+.maintooltip ol, .maintooltip ul{list-style:none;} 
+.maintooltip .clearboth{clear:both;height:0;width:auto;}
+
+.ui-dialog-titlebar{position:absolute;right:4px;top:4px;}
+.ui-dialog-titlebar button.ui-button{
+    display: block;
+    height: 30px;
+    width: 30px;
+    background: #873d36;
+    margin: 0;
+    border: none;
+	color:#fff;
+}
+#ui-id-2{display:none;}
+.tooltiplib.bauaberto {
+	display:none;
+	width: 490px !important;
+	background-color: #263449;
+	border: 4px solid #86a1b1;
+	border-radius: 8px;
+	padding: 15px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.tooltiplib.bauaberto h2{background-color:#1d2733; max-width:80%;height:25px;font-size:16px;line-height:25px;border-radius:5px;margin: 0 auto 5px auto;text-align:center;color:#fff;}
+.tooltiplib.bauaberto .item{
+    display: flex;
+    float: left;
+    height: 65px;
+    margin: 5px 0 0 5px;
+    justify-content: center;
+    position: relative;
+    width: 65px;
+    align-items: center;	
+}
+.tooltiplib.bauaberto .item img{max-width:65px;max-height:65px;}
+.tooltiplib.bauaberto .item.comum{
+	background-image:url("../../imagens/comum.png");
+}
+.tooltiplib.bauaberto .item.raro{
+	background-image:url("../../imagens/raro.png");
+}
+.tooltiplib.bauaberto .item.epico{
+	background-image:url("../../imagens/epico.png");
+}
+.tooltiplib.bauaberto .item.lendario{
+	background-image:url("../../imagens/lendario.png");
+}
+.tooltiplib.bauaberto .item.supremo{
+	background-image:url("../../imagens/supremo.png");
+}
+.tooltiplib.bauaberto .quantidade{
+	bottom: 3%;
+    position: absolute;
+    left: 7%;
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.tooltiplib.bauabertotexto p{
+	margin: 0;
+    padding: 5px 5px 10px 5px;
+}
+
+body .maintooltip {
+	font-family: rubik,helvetica,arial,sans-serif;
+	display:none;
+	z-index:-1;
+    background-color: #a7b6b9;
+    padding: 6px;
+    margin: 0px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    color: #CCC;
+    font-size: 16px;
+    line-height: 150%;
+	width:442px;	
+	opacity:0 !important;
+	visibility:hidden;
+	position:absolute;
+	user-select: none;
+	pointer-events:none;	
+}
+body .maintooltip.video {
+	background:none;
+	box-shadow:none;
+	border:none;
+	height:auto;
+	padding:0;
+	width:auto;
+}
+
+body .maintooltip.cartamonstro {
+    background: none;
+    box-shadow: none;
+    border: none;
+    height: calc(495px * 0.8); /* Reduzido em 20% */
+    padding: 0;
+    width: calc(365px * 0.8);  /* Reduzido em 20% */
+}
+body .maintooltip.cartamonstro .imagemcarta {
+    position: absolute;
+    top: calc(-14px * 0.8);  /* Reduzido em 20% */
+    left: calc(-85px * 0.8); /* Reduzido em 20% */
+}
+body .maintooltip.cartamonstro img {
+    display: block;
+    height: calc(512px * 0.8) !important;  /* Reduzido em 20% */
+    width: calc(512px * 0.8) !important;   /* Reduzido em 20% */
+    max-height: none !important;
+    max-width: none !important;
+}
+body .maintooltip.cartamonstro .statuscarta {
+    position: absolute;
+    bottom: calc(127px * 0.8);  /* Reduzido em 20% */
+    height: calc(45px * 0.8);   /* Reduzido em 20% */
+    left: calc(18px * 0.8);     /* Reduzido em 20% */
+    width: calc(306px * 0.8);   /* Reduzido em 20% */
+}
+body .maintooltip.cartamonstro .statuscarta li {
+    -webkit-text-stroke: calc(0.1px * 0.8) rgb(255 255 255 / 50%); /* Reduzido em 20% */
+    font-size: calc(21px * 0.8);  /* Reduzido em 20% */
+    color: #000000;
+    font-weight: 500;
+    text-align: center;
+    line-height: calc(45px * 0.8); /* Reduzido em 20% */
+}
+body .maintooltip.cartamonstro .statuscarta.escuro li {
+    color: #fff;
+    -webkit-text-stroke: calc(0.1px * 0.8) rgb(0 0 0 / 100%); /* Reduzido em 20% */
+}
+body .maintooltip.cartamonstro .statuscarta>li:nth-last-child(n+2), 
+body .maintooltip.cartamonstro .statuscarta>li:nth-last-child(n+2) ~ li {
+    font-size: calc(18px * 0.8);  /* Reduzido em 20% */
+    line-height: calc(20px * 0.8); /* Reduzido em 20% */
+    margin-top: calc(1px * 0.8);  /* Reduzido em 20% */
+}
+
+.temtooltip:hover{cursor: help;z-index:2;}
+.temtooltip:hover .maintooltip, .temtooltip:hover + .maintooltip{
+	display:block;
+	opacity:1 !important;
+	position:fixed;	
+	visibility:visible;
+	z-index:2 !important;
+}
+
+.maintooltip .tooltipdesc{
+	background-color: #4d6272;
+	border-radius:5px;
+	border:1px solid #657f8c;
+}
+.maintooltip .tooltipdesc video{height:auto;width:100%;display: block;}
+.maintooltip .nomeitem {
+    background-color: #788a94;
+	border-radius: 5px;
+	border:1px solid #6b787d;
+    padding: 6px;
+    text-align: center;
+	margin:0 21px 3px 21px;	
+}
+.maintooltip .nomeitem p{
+	-webkit-text-stroke: 1px rgb(0 0 0 / 95%);
+	font-size: 18px;
+	line-height:21px;
+    font-weight: 700;
+}
+.maintooltip .raridade.comum{color:#fff;}
+.maintooltip .raridade.raro{color:#00CCFF;}
+.maintooltip .raridade.epico{color:#FCE800;}
+.maintooltip .raridade.lendario{color:#F763F7;}
+.maintooltip .raridade.supremo{color:#F04C4F;}
+
+.maintooltip .statustitulo .tituloprop{
+	float: left;
+    display: block;
+    width: 100%;
+    max-width: 125px;	
+}
+.maintooltip .statustitulo .tituloprop li .numeroatributo{float:right;}
+
+.maintooltip .statustitulo {
+    border-radius: 5px;
+	border:1px solid #657f8c;
+    background-color: #364957;
+    padding: 10px;
+    margin: 4px 4px 0 4px;
+    color: #ffffff
+}
+
+.maintooltip .statustitulo .raridade{float:right;}
+.maintooltip .statustitulo .custo{
+    float:right;
+    margin: 0;
+    padding: 0;	
+	float:right;
+	clear:right;
+}
+.maintooltip .statustitulo:before,
+.maintooltip .statustitulo:after {
+  content: " ";
+  display: table;
+}
+.maintooltip .statustitulo:after {
+  clear: both;
+}
+
+.maintooltip .statustitulo .tituloatributo li{color:#01F9FA;}
+.maintooltip .statustitulo.conjunto .tituloatributo li{margin-left:30px;color:#E8E900;}
+.maintooltip .statustitulo.conjunto .tituloatributo li:first-child{margin-left:0 !important;}
+
+.maintooltip .descricaotooltip {
+    padding: 16px 15px 19px 15px;
+    margin: 0 !important;
+    color: #00ffff;
+    margin: 7px 0px 7px 0px;
+    color: #00ffff
+}
+
+.maintooltip .itemdesc {
+	color:#fff;
+    display: block;
+    word-wrap: break-word;
+    max-width: 410px;
+    padding: 0px 0px 0px 0px !important
+}
+.maintooltip .podemover{color:#00ccff !important;display:block;}
+.maintooltip .naopodemover{color:#ff0000 !important;display:block;}
+.maintooltip .amarelo{color:#F0FF00;}
+.maintooltip .vermelho{color:#00fdff;font-size:15px;font-weight:500;}
+.maintooltip .efeitosgrupo {
+    border-radius: 15px;
+    background-color: #153245;
+    padding: 15px 15px 15px 15px;
+    margin: 0px 0px 7px 0px;
+    color: #00ffff
+}
+.ui-dialog {
+    z-index: 99999 !important;
+}

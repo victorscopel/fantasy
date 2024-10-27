@@ -1,0 +1,191 @@
+/*CSS RESET*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section{display:block;}
+body{line-height:1;}
+:focus{outline:0;}
+ol, ul{list-style:none;} 
+blockquote, q{quotes:none;}
+blockquote::before, blockquote::after,
+q::before, q::after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+.clearboth{clear:both;height:0;width:auto;}
+html {
+	font-family: rubik,helvetica,arial,sans-serif !important;
+	overflow:hidden;
+	background-color:#333;
+}
+html a{text-decoration:none !important;}
+
+body {	        
+    margin: 0;
+    padding: 0;
+}
+#qbcontainer{
+	background-color:#abd9cf;
+	border-left:10px solid #abd9cf;
+	border-top:12px solid #abd9cf;
+	border-right:12px solid #abd9cf;
+	border-bottom:11px solid #abd9cf;
+	border-radius:9px;	
+	position:relative;
+	height:415px;
+	margin:120px auto 0 auto;
+	width:580px;
+}
+#qbcontainer::after{
+	background:url(../imagens/logo-halloween.png) no-repeat center center;
+	content:'';
+	display:block;
+	height:143px;
+	position:absolute;
+    left: 195px;
+    top: -132px;
+	width:186px;
+	z-index:2;
+}
+#qbcontainer #qb{
+	background-color:#134855;
+	box-shadow: inset black 0px 0px 1px 1px;
+	border-radius:9px;
+	height:100%;
+	width:100%;
+}
+
+#qbcontainer #qb .containerinfo {
+	background-color:#011c22;
+	border-radius:6px;
+	border:1px solid #407a8c;
+	float:left;
+	padding:0 9px 0 7px;
+	max-width:256px;
+	margin-top:6px;
+	width:100%;
+}
+#qbcontainer #qb .containerinfo.presentes{padding-bottom: 2px;}
+#qbcontainer #qb .containerinfo h1{
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;    
+    -webkit-text-stroke: #1f6271 0.7px;
+    margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+#qbcontainer #qb .containerinfo.pecas{margin-left:11px;margin-right:9px;padding-bottom: 5px;}
+#qbcontainer #qb .listapecas .qbpeca{float: left;display: block;height: 84px;margin-left: 1px;width: 84px;}
+#qbcontainer #qb .listapecas .qbpeca:nth-child(3n+1){margin-left:0;}
+
+#qbcontainer #qb .listapresentes .item{background:url(../imagens/itembg.png) no-repeat center center;float: left;display: flex;justify-content:center;align-items:center;height: 84px;margin-left: 1px;width: 84px;position:relative;margin:2px 0 0 2px;}
+#qbcontainer #qb .listapresentes .item:nth-child(3n+1){margin-left:0;}
+#qbcontainer #qb .listapresentes .item:nth-child(-n+3){margin-top:0;}
+#qbcontainer #qb .listapresentes .item img{height:68px;width:68px;}
+#qbcontainer #qb .listapresentes .item .quantidade{
+	bottom: 6px;
+    position: absolute;
+    left: 6px;
+    color: #ffffff;
+    font-weight: 500;
+	font-size:20px;
+    text-shadow: 2px 2px 0px #000000;
+}
+#qbcontainer #qb .informativo p{color: white;font-size: 15px;line-height: 15.3px;padding: 5px 0px;}
+
+#qbcontainer #qb .previewitens{margin-top:8px;}
+#qbcontainer #qb .previewitens::after{content:'';clear:both;display: block;height:auto;width:100%;}
+#qbcontainer #qb .previewitens .item{
+	box-shadow: inset black 0px 0px 1px 1px;
+	background-color: #0d394c;
+	border-radius: 5px;
+	border: 1px solid #3e839f;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 58px;
+	width: 112px;
+	position: relative;
+	margin-right: 28px;
+}
+#qbcontainer #qb .previewitens .item:last-child{margin:0;}
+#qbcontainer #qb .previewitens .item img{height:50px;width:50px;}
+
+#verpremios{
+    display: flex;
+    cursor: pointer;
+    background: linear-gradient(0deg, rgba(88,74,136,1) 0%, rgba(61,52,91,1) 98%);
+    height: 37px;
+    width: 254px;       
+    color: white;
+    font-size: 17px;
+    line-height: 19px;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.2);
+    transition: all .3s;
+    margin-top: 4px;
+    border: 1px solid #3d345b;
+    border-radius: 7px;
+    font-weight: 500;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+#verpremios:hover{color:#ccc;}
+/* Estilos básicos para o popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    z-index: 1000;
+	width: 750px;
+}
+
+.popup-content {
+    position: relative;
+}
+
+#videoPlayer {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#closePopupButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4c4c;
+    border: none;
+    color: #fff;
+	font-weight:bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Fundo escurecido */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 900;
+}
+
