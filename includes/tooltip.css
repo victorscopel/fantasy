@@ -40,19 +40,19 @@
 }
 .tooltiplib.bauaberto .item img{max-width:65px;max-height:65px;}
 .tooltiplib.bauaberto .item.comum{
-	background-image:url("../../imagens/comum.png");
+	background-image:url("../imagens/comum.png");
 }
 .tooltiplib.bauaberto .item.raro{
-	background-image:url("../../imagens/raro.png");
+	background-image:url("../imagens/raro.png");
 }
 .tooltiplib.bauaberto .item.epico{
-	background-image:url("../../imagens/epico.png");
+	background-image:url("../imagens/epico.png");
 }
 .tooltiplib.bauaberto .item.lendario{
-	background-image:url("../../imagens/lendario.png");
+	background-image:url("../imagens/lendario.png");
 }
 .tooltiplib.bauaberto .item.supremo{
-	background-image:url("../../imagens/supremo.png");
+	background-image:url("../imagens/supremo.png");
 }
 .tooltiplib.bauaberto .quantidade{
 	bottom: 3%;
