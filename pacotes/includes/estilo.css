@@ -33,11 +33,9 @@ body {
     padding: 0;
 }
 
-#corpo{
-	overflow:hidden;
+#corpo{	
 	margin:0 auto;	
-	width:1044px;
-	height:474px;	
+	width:1044px;	
 }
 .forumiframe #corpo{height:auto;width: 954px;}
 .forumiframe .cashvalor{
@@ -344,7 +342,7 @@ body .maintooltip.cartamonstro .statuscarta>li:nth-last-child(n+2) ~ li {
 }
 
 .item:hover, .titulomissao:hover {cursor: help;z-index:2;}
-.item:hover .maintooltip, .titulomissao:hover .maintooltip {	
+.item:hover .maintooltip, .titulomissao:hover .maintooltip {
 	display:block;
 	opacity:1 !important;
 	position:fixed;	
