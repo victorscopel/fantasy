@@ -11,7 +11,7 @@
 	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 </head>
-<body>
+<body oncontextmenu="return false;">
 	<div id="corpo">
 		<div class="descricaovip">A recompensa é entregue para os usuários após gastarem um valor de CASH durante o período em que o evento está ativo.</div>
 		<div class="items secao1"><h2 class="cashvalor semtop">1500 ~ 3999 CASH</h2></div>
@@ -20,10 +20,10 @@
 		<div class="items secao4"><h2 class="cashvalor">15000 ~ 21999 CASH</h2></div>
 		<div class="items secao5"><h2 class="cashvalor">22000 ~ 999999 CASH</h2></div>
 		<div class="videovisual">
-			<video id="video" autoplay muted loop><source src="../imagens/pacotes/cavaleirodemoniaco/asas-vip.mp4" type="video/mp4"></video>
+			<video id="video" autoplay muted loop><source src="../imagens/pacotes/cavaleirodemoniaco/cavaleiro-feminino.mp4" type="video/mp4"></video>
 			<div class="botoes-versao">
 				<select id="videoSelect">					
-					<option value="../imagens/pacotes/cavaleirodemoniaco/asas-vip.mp4" data-image="../imagens/feminino.png" selected>Feminino</option>					
+					<option value="../imagens/pacotes/cavaleirodemoniaco/cavaleiro-feminino.mp4" data-image="../imagens/feminino.png" selected>Feminino</option>					
 					<option value="../imagens/pacotes/cavaleirodemoniaco/cavaleiro-masculino.mp4" data-image="../imagens/masculino.png">Masculino</option>					
 				</select>
 			</div>
@@ -31,7 +31,7 @@
 		<div class="videovisual2">
 			<video id="video" autoplay muted loop><source src="../imagens/pacotes/cavaleirodemoniaco/asas-vip.mp4" type="video/mp4"></video>
 		</div>
-		<div class="bauaberto"></div>
+		<div class="clearboth"></div>
 	</div>
 		<script src="includes/script.js"></script>
 		<script src="../includes/itens.js"></script>	
@@ -114,8 +114,8 @@
 				itemid(item2821570,"","",false,".secao5");
 				itemid(item2405250,"","",false,".secao5");
 				itemid(item2855890,"","",false,".secao5");
-				itemid(item2855870,"","",false,".secao5");
-				itemid(item2855880,"","",false,".secao5");				
+				itemid(item2855870,"","",true,".secao5");
+				itemid(item2855880,"","",true,".secao5");				
 				itemid(item2855590,"25","",false,".secao5");
 				itemid(item2742020,"25","",false,".secao5");
 				itemid(item2249480,"8","",false,".secao5");
