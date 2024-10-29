@@ -188,8 +188,6 @@ function openBauDialog(itemVar, maior) {
     });
 }
 
-
-
 // TRADUÇÃO
 const translations = {};
 
@@ -224,10 +222,13 @@ function updateLanguage(language) {
     });
 }
 
+// Função para trocar o vídeo com verificação se o elemento existe
 function changeVideo(src) {
-	const videoElement = document.getElementById('video');
-	videoElement.src = src;
-	videoElement.load();
+    var videoElement = document.getElementById('video');
+    if (videoElement) {
+        videoElement.src = src;
+        videoElement.load();
+    }
 }
 const video1 = document.getElementById('video');
 const video2 = document.getElementById('video2');
@@ -249,28 +250,35 @@ function addPlaybackEvents(video) {
 	video.addEventListener('mouseleave', () => resetPlaybackSpeed(video)); // Reseta se o mouse sair do vídeo
 }
 
-// Adiciona os eventos aos dois vídeos
-addPlaybackEvents(video1);
-addPlaybackEvents(video2);
+// Verifica se os vídeos existem antes de adicionar os eventos
+if (video1) {
+	addPlaybackEvents(video1);
+}
+
+if (video2) {
+	addPlaybackEvents(video2);
+}
 
 $(document).ready(function() {
-    $('#videoSelect').select2({
-		closeOnSelect: true,
-		minimumResultsForSearch: 12,
-        templateResult: formatOption,  // Função para customizar as opções
-        templateSelection: formatOptionSelection  // Customiza a seleção
-    });
+    if ($('#videoSelect').length && $('#video').length) {
+        $('#videoSelect').select2({
+            closeOnSelect: true,
+            minimumResultsForSearch: 12,
+            templateResult: formatOption,  // Função para customizar as opções
+            templateSelection: formatOptionSelection  // Customiza a seleção
+        });
 
-    // Carrega a versão feminina por padrão ao iniciar
-    var initialVideo = $('#videoSelect').val();
-    changeVideo(initialVideo);
+        // Carrega a versão feminina por padrão ao iniciar
+        var initialVideo = $('#videoSelect').val();
+        changeVideo(initialVideo);
 
-    $('#videoSelect').on('change', function() {
-        var videoUrl = $(this).val();
-        if (videoUrl) {
-            changeVideo(videoUrl);
-        }
-    });
+        $('#videoSelect').on('change', function() {
+            var videoUrl = $(this).val();
+            if (videoUrl) {
+                changeVideo(videoUrl);
+            }
+        });
+    }
 });
 
 // Customiza as opções para exibir imagem
@@ -290,7 +298,7 @@ function formatOption(option) {
     return option.text;
 }
 
-// Customiza a visualização da opção selecionada
+// Função para customizar a visualização da opção selecionada
 function formatOptionSelection(option) {
     var imgSrc = $(option.element).data('image');
     if (imgSrc) {
