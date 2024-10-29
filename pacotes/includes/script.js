@@ -229,22 +229,29 @@ function changeVideo(src) {
 	videoElement.src = src;
 	videoElement.load();
 }
-const video = document.getElementById('video');
+const video1 = document.getElementById('video');
+const video2 = document.getElementById('video2');
 
 // Função para aumentar a velocidade do vídeo
-function increasePlaybackSpeed() {
-	video.playbackRate = 3; // Define a taxa de reprodução para 2x
+function increasePlaybackSpeed(video) {
+	video.playbackRate = 3; // Define a taxa de reprodução para 3x
 }
 
 // Função para retornar à velocidade normal
-function resetPlaybackSpeed() {
+function resetPlaybackSpeed(video) {
 	video.playbackRate = 1; // Define a taxa de reprodução para 1x
 }
 
-// Adiciona eventos de mouse
-video.addEventListener('mousedown', increasePlaybackSpeed);
-video.addEventListener('mouseup', resetPlaybackSpeed);
-video.addEventListener('mouseleave', resetPlaybackSpeed); // Reseta se o mouse sair do vídeo
+// Função para adicionar eventos a um vídeo específico
+function addPlaybackEvents(video) {
+	video.addEventListener('mousedown', () => increasePlaybackSpeed(video));
+	video.addEventListener('mouseup', () => resetPlaybackSpeed(video));
+	video.addEventListener('mouseleave', () => resetPlaybackSpeed(video)); // Reseta se o mouse sair do vídeo
+}
+
+// Adiciona os eventos aos dois vídeos
+addPlaybackEvents(video1);
+addPlaybackEvents(video2);
 
 $(document).ready(function() {
     $('#videoSelect').select2({

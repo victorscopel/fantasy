@@ -160,6 +160,10 @@ body {
 
 #corpo .items{float:left;list-style:none;max-width:696px;margin: 0;width: 100%;}
 .forumiframe #corpo .items{max-width:606px;}
+#corpo.semvideo .items{max-width: 1010px;}
+#corpo.semvideo .descricaovip{max-width: 983px;}
+#corpo.semvideo .items .item .quantidade{font-size:20px;}
+#corpo.semvideo .items .item{height:90px;width:90px;}
 #corpo .items .item{
 	float:left;
 	display:flex;
