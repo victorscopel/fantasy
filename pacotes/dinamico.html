@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">		
+	<link rel="stylesheet" href="includes/estilo.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+</head>
+<body oncontextmenu="return false;">
+	<div id="corpo" class="semvideo">
+		<div class="descricaovip"></div>
+		<div class="items"></div>
+	</div>
+	<script src="includes/script.js"></script>
+	<script src="../includes/itens.js"></script>		
+	<script>
+		$(document).ready(function() {
+			// Função para obter os parâmetros da URL
+			const params = new URLSearchParams(window.location.search);
+			
+			// Atualizar descrição
+			const descricao = params.get('descricao');
+			if (descricao) {
+				$('.descricaovip').html(decodeURIComponent(descricao));
+			}
+
+			// Executar itemid() para cada item especificado
+			const itens = params.get('itens');
+			if (itens) {
+				try {
+					// Dividir a string de itens e executar cada chamada individualmente
+					const itemCommands = decodeURIComponent(itens).split(';');
+					itemCommands.forEach(command => {
+						if (command.trim()) eval(command.trim());
+					});
+				} catch (error) {
+					console.error("Erro ao processar os itens:", error);
+				}
+			}
+		});
+	</script>
+</body>
+</html>
