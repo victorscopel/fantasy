@@ -49,6 +49,7 @@ body {
 .forumiframe .cashvalor.semtop{
 	margin-top:0;
 }
+.forumiframe .cashvalor.semcash{background:none;padding:0;}
 #corpo .cutin-image{pointer-events:none;}
 #corpo .videovisual{background-color:#17273a;display:block;height:476px;width:348px;position:relative;overflow:hidden;}
 #corpo .videovisual2{background-color:#17273a;display:block;margin-top:20px;height:476px;width:348px;position:relative;overflow:hidden;}
@@ -160,6 +161,9 @@ body {
 
 #corpo .items{float:left;list-style:none;max-width:696px;margin: 0;width: 100%;}
 .forumiframe #corpo .items{max-width:606px;}
+.forumiframe #corpo.circo .items{float:none;max-width:100%;}
+.forumiframe #corpo.circo .items::after{content:'';display:block;height:auto;width:auto;clear:both;}
+.forumiframe #corpo.circo .items .item{margin:0 5px 7px 0;}
 #corpo.semvideo .items{float:none;max-width: 1010px;}
 #corpo.semvideo .items::after{content:'';display:block;width:auto;height:auto;clear:both;}
 #corpo.semvideo .items .item.tembau::after{height:115px;width:115px;}
