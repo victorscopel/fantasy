@@ -31,12 +31,13 @@ body {
     margin: 0;
     padding: 0;
 }
+/* QUEBRA CABEÇA */
 #qbcontainer{
-	background-color:#abd9cf;
-	border-left:10px solid #abd9cf;
-	border-top:12px solid #abd9cf;
-	border-right:12px solid #abd9cf;
-	border-bottom:11px solid #abd9cf;
+	background-color:#8fb2c1;
+	border-left:10px solid #8fb2c1;
+	border-top:12px solid #8fb2c1;
+	border-right:12px solid #8fb2c1;
+	border-bottom:11px solid #8fb2c1;
 	border-radius:9px;	
 	position:relative;
 	height:415px;
@@ -141,6 +142,88 @@ body {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 #verpremios:hover{color:#ccc;}
+
+
+/*SELO DIARIO*/
+#selocontainer{
+	background-color:#243952;
+	border-left:8px solid #8fb2c1;
+	border-top:9px solid #8fb2c1;
+	border-right:8px solid #8fb2c1;
+	border-bottom:7px solid #8fb2c1;
+	border-radius:9px;	
+	position:relative;	
+	margin:13px auto 0 auto;
+	width:476px;
+}
+#corpo.halloween #selocontainer::after{
+	background:url(../imagens/selo-halloween.png) no-repeat center center;
+	content:'';
+	display:block;
+	height:73px;
+	position:absolute;
+    left: 135px;
+    top: -23px;
+	width:231px;
+	z-index:1;
+}
+
+#selocontainer .seloitens{
+	background-color:#142539;
+	border:5px solid #3f5875;
+	box-shadow: inset black 0px 0px 1px 1px;
+	border-radius:9px;
+	height:100%;
+	margin:50px 0 10px 9px;
+	padding:6px 0 6px 7px;
+	max-width:441px;
+	width:100%;
+}
+
+#selocontainer .seloitens .item{border:1px solid #2b4762;background: linear-gradient(180deg, rgba(27,42,61,1) 0%, rgba(32,54,81,1) 80%);border-radius:3px;display:inline-grid;height:102px;width:83px;margin:3px 0 0 3px;justify-content: space-around;align-content: space-between;position:relative;}
+#selocontainer .seloitens .item:nth-child(5n+1){margin-left:0;}
+#selocontainer .seloitens .item:nth-child(-n+5){margin-top:0;}
+#selocontainer .seloitens .item img{max-height:79px;max-width:79px;justify-self:center;}
+#selocontainer .seloitens .item .diacontador{
+	background: linear-gradient(180deg, rgba(58,80,107,1) 0%, rgba(34,54,77,1) 100%);
+	color:#fff;
+	font-size:13px;
+	text-align:center;
+	height:24px;
+	line-height:24px;
+	font-weight:500;
+	width:83px;
+}
+#selocontainer .seloitens .item .quantidade{
+	bottom: 1px;
+    position: absolute;
+    right: 1px;
+    color: #ffffff;
+    font-weight: 500;
+	font-size:14px;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+#selocontainer .tembau::after{
+	background: url("../../imagens/lupa.png") no-repeat center center;
+	background-size:80px;
+	content:'';
+	display:block;
+	position:absolute;
+	left:13px;
+	right:0;
+	bottom:0;
+	height:60px;
+	width:60px;
+	opacity: 0;
+	transition: all .2s;
+}
+#selocontainer .tembau:hover:after{
+	background-image: url(../../imagens/lupa-hover.png);
+	opacity:1;
+}
+
+
 /* Estilos básicos para o popup */
 .popup {
     display: none;

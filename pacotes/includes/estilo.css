@@ -162,10 +162,10 @@ body {
 .forumiframe #corpo .items{max-width:606px;}
 #corpo.semvideo .items{float:none;max-width: 1010px;}
 #corpo.semvideo .items::after{content:'';display:block;width:auto;height:auto;clear:both;}
-#corpo.semvideo .items .item.tembau::after{height:90px;width:90px;}
-#corpo.semvideo .descricaovip{float:none;max-width: 983px;}
+#corpo.semvideo .items .item.tembau::after{height:115px;width:115px;}
+#corpo.semvideo .descricaovip{float:none;max-width: 981px;}
 #corpo.semvideo .items .item .quantidade{font-size:20px;}
-#corpo.semvideo .items .item{height:90px;width:90px;}
+#corpo.semvideo .items .item{height:115px;width:115px;}
 #corpo .items .item{
 	float:left;
 	display:flex;
@@ -451,10 +451,12 @@ body .maintooltip.cartamonstro .statuscarta>li:nth-last-child(n+2) ~ li {
 	top:0;
 	height:128px;
 	width:128px;
+	opacity: 0;
 	transition: all .2s;
 }
 .tembau:hover:after{
 	background-image: url(../../imagens/lupa-hover.png);
+	opacity:1;
 }
 .forumiframe .tembau::after{
 	background-size:70px;

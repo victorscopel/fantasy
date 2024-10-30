@@ -3,28 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacote de Recompensas</title>
-	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">		
+    <title>Selo Diário</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">	
 	<link rel="stylesheet" href="includes/estilo.css">
+	<link rel="stylesheet" href="../includes/tooltip.css">
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
 </head>
-<body oncontextmenu="return false;">
-	<div id="corpo">
-		<div class="descricaovip" style="display:none;"></div>
-		<div class="videovisual" style="display:none;">			
-			<video id="video" autoplay muted loop><source src="" type="video/mp4"></video>
-			<div class="botoes-versao">
-				<select id="videoSelect">					
-					<option value="" data-image="../imagens/feminino.png" selected>Feminino</option>					
-					<option value="" data-image="../imagens/masculino.png">Masculino</option>					
-				</select>
-			</div>
-		</div>
-		<div class="items"></div>
+<body>
+	<div id="corpo" oncontextmenu="return false;">
+		<div id="selocontainer"><div class="seloitens"></div></div>
 	</div>
-	<script src="includes/pacotes.js"></script>
-	<script src="includes/script.js"></script>
+	<script src="../pacotes/includes/pacotes.js"></script>
+	<script src="../includes/tooltip.js"></script>
 	<script src="../includes/itens.js"></script>
 	<script>
 $(document).ready(function() {
@@ -36,25 +27,16 @@ $(document).ready(function() {
         try {
             const pacote = window.Pacotes[pacoteNome];
 			
-			// Adicionar classe se presente
+			// Adicionar classe no corpo
 			if (pacote.classe) {
 				$("#corpo").addClass(pacote.classe);
 			}
-            // Atualizar descrição se presente
-            if (pacote.descricao) {
-                $('.descricaovip').html(pacote.descricao).show();
-            }
-
+			
             // Adicionar itens se presentes
             if (pacote.itens) {
                 pacote.itens.forEach(itemCommand => {
                     eval(itemCommand);
                 });
-            }
-
-            // Adicionar placeholder de vídeo se presente
-            if (pacote.video) {
-                $('.video-placeholder').html(`<video controls src="${pacote.video}"></video>`).show();
             }
 
             // Adicionar scripts adicionais se presentes
@@ -72,6 +54,24 @@ $(document).ready(function() {
         console.warn("Pacote não encontrado ou parâmetro 'pacote' ausente na URL.");
     }
 });
+		document.addEventListener("DOMContentLoaded", function() {
+			setTimeout(function() {				
+				var items = document.querySelectorAll('.item');									
+				if (items.length === 0) {					
+					return;
+				}				
+				var vipCount = 0;
+
+				items.forEach(function(item, index) {			
+					vipCount = vipCount + 1;
+					var vipDiv = document.createElement('div');
+					vipDiv.className = 'diacontador';
+					vipDiv.textContent = 'Dia ' + vipCount;
+					
+					item.prepend(vipDiv);
+				});
+			}, 100);
+		});
 	</script>
 </body>
 </html>

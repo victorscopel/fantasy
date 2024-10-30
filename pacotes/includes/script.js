@@ -260,7 +260,7 @@ if (video2) {
 }
 
 $(document).ready(function() {
-    if ($('#videoSelect').length && $('#video').length) {
+    if ($('#videoSelect').length && $('#video').length && $('#video').is(':visible')) {
         $('#videoSelect').select2({
             closeOnSelect: true,
             minimumResultsForSearch: 12,
