@@ -88,8 +88,7 @@ Pacotes.PocaoBruxa = {
 };
 
 Pacotes.Raspadinha102024 = {
-	descricao: "Você pode conseguir prêmios com o Cartão Premiado.<br/>Poderá utilizar o item [Sonho Perdido] para construir os itens do Cartão Premiado.",
-	
+	descricao: "Você pode conseguir prêmios com o Cartão Premiado.<br/>Poderá utilizar o item [Sonho Perdido] para construir os itens do Cartão Premiado.",	
     itens: [
 		'itemid(item2853520,"")',
 		'itemid(item2553530,"","")',
@@ -227,7 +226,7 @@ Pacotes.UltimateFlosAbyssi = {
 
 Pacotes.ColecaoVip = {		
 	classe: "colecaovip",
-	descricaovip:"A cada 2 VIPs adquiridos você recebera uma recompensa.<br>As recompensas são enviadas a cada 6 horas.",
+	descricao:"A cada 2 VIPs adquiridos você recebera uma recompensa.<br>As recompensas são enviadas a cada 6 horas.",
     itens: [
 		'itemid(item2595420,"")',
 		'itemid(item2553460,"")',
