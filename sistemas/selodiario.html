@@ -54,24 +54,24 @@ $(document).ready(function() {
         console.warn("Pacote não encontrado ou parâmetro 'pacote' ausente na URL.");
     }
 });
-		document.addEventListener("DOMContentLoaded", function() {
-			setTimeout(function() {				
-				var items = document.querySelectorAll('.item');									
-				if (items.length === 0) {					
-					return;
-				}				
-				var vipCount = 0;
+document.addEventListener("DOMContentLoaded", function() {
+	setTimeout(function() {				
+		var items = document.querySelectorAll('.item');									
+		if (items.length === 0) {					
+			return;
+		}				
+		var vipCount = 0;
 
-				items.forEach(function(item, index) {			
-					vipCount = vipCount + 1;
-					var vipDiv = document.createElement('div');
-					vipDiv.className = 'diacontador';
-					vipDiv.textContent = 'Dia ' + vipCount;
-					
-					item.prepend(vipDiv);
-				});
-			}, 100);
+		items.forEach(function(item, index) {			
+			vipCount = vipCount + 1;
+			var vipDiv = document.createElement('div');
+			vipDiv.className = 'diacontador';
+			vipDiv.textContent = 'Dia ' + vipCount;
+			
+			item.prepend(vipDiv);
 		});
+	}, 100);
+});
 	</script>
 </body>
 </html>

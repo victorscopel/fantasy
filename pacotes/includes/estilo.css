@@ -143,6 +143,9 @@ body {
 	float:left;
 }
 .forumiframe #corpo .descricaovip{max-width:574px;}
+#corpo.pocaobruxa .descricaovip{position:relative;}
+#corpo.pocaobruxa .descricaovip::after{content: '';display: block;position: absolute;right: 10px;top: -3px;background: url(../../imagens/sbta285608.png) no-repeat center center;height: 70px;width: 70px;background-size: 100% 100%;}
+#corpo.pocaobruxa .descricaovip::before{content: '';display: block;position: absolute;left: 10px;top: -3px;background: url(../../imagens/caldeirao.png) no-repeat center center;height: 70px;width: 70px;background-size: 100% 100%;}
 #corpo .items .item .vip-info {
 	position: absolute;
 	background: #c28322;
@@ -183,6 +186,98 @@ body {
 	position:relative;
 	overflow:hidden;
 }
+#corpo.passedebatalha .cashvalor{	
+	line-height:25px;
+	font-size:25px;
+	color:white;
+	margin:0 0 10px 0;	
+}
+#corpo.passedebatalha .items.s2{
+	margin-top:60px;
+}
+#corpo.passedebatalha .items{
+	height: 163px;
+}
+#corpo.passedebatalha .items .item{
+	
+	float:none;
+	display:inline-flex;
+	height:114px;
+	width:114px;
+}
+#corpo.passedebatalha .items .item .quantidade{
+	font-size:25px;
+}
+#corpo.passedebatalha .items .item .nivelpasse{
+	background-color: rgba(244, 117, 14, 0.4);
+    display: block;
+    top: 0;
+    left: 0;
+    height: 20px;
+    color: white;
+    line-height: 20px;
+    position: absolute;
+    width: 100%;
+    font-size: 17px;
+    text-align: center;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+}
+#corpo.passedebatalha .tembau::after{
+	background-size:70px;
+	height: 114px;
+    width: 114px;
+}
+#corpo.passedebatalha .items .slick-slider{
+	height: 132px;
+    width: 692px;
+    padding: 0 35px;
+}
+/* Estilos para os botões de navegação do slider */
+.slick-prev:before, .slick-next:before{
+    font-size: 21px;
+    color: white;
+    line-height: 21px;
+}
+.slick-prev:before {
+    content: "<"; /* Remove o texto padrão */
+}
+.slick-next:before {
+    content: ">"; /* Remove o texto padrão */
+}
+
+.slick-prev, .slick-next {
+    background-color: rgba(244, 117, 14, 0.8);
+    color: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: block;
+	font-size:0;
+	line-height:0;    
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+	transition:all .2s;
+}
+
+/* Posição dos botões */
+.slick-prev {
+    left: 0px; /* Ajuste conforme necessário */
+}
+
+.slick-next {
+    right: 0px; /* Ajuste conforme necessário */
+}
+
+/* Efeito hover */
+.slick-prev:hover, .slick-next:hover {
+    background-color: #555;
+}
+
 
 .forumiframe #corpo .items .item{height:64px;width:64px;}
 #corpo .items .item .quantidade{

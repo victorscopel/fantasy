@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passe de Batalha</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">		
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+	<link rel="stylesheet" href="includes/estilo.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+	<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+<body  oncontextmenu="return false;">
+	<div id="corpo" class="passedebatalha">		
+		<div class="items s1"><h2 class="cashvalor semcash semtop">PASSE COMUM</h2><div class="secao1"></div><div class="clearboth"></div></div>
+		<div class="items s2"><h2 class="cashvalor semcash">PASSE PREMIUM</h2><div class="secao2"></div><div class="clearboth"></div></div>
+		<div class="videovisual">
+			<video id="video" autoplay muted loop><source src="../imagens/pacotes/nail/nail-feminino.mp4" type="video/mp4"></video>
+			<div class="botoes-versao">
+				<select id="videoSelect">
+					<option value="../imagens/pacotes/nail/nail-feminino.mp4" data-image="../imagens/feminino.png" selected>Feminino</option>					
+					<option value="../imagens/pacotes/nail/nail-masculino.mp4" data-image="../imagens/masculino.png">Masculino</option>					
+				</select>
+			</div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+		<script src="includes/script.js"></script>
+		<script src="../includes/itens.js"></script>
+		<script>
+			$(document).ready(function() {
+				//PASSE COMUM
+				itemid(item1129100,"1","",false,".secao1");
+				itemid(item2840570,"50","",false,".secao1");
+				itemid(item378370,"50","",false,".secao1");
+				itemid(item2840570,"50","",false,".secao1");
+				itemid(item1464250,"1","",false,".secao1");
+				itemid(item362080,"50","",false,".secao1");
+				itemid(item2840570,"50","",false,".secao1");
+				itemid(item2554250,"5","",false,".secao1");
+				itemid(item1024420,"50","",false,".secao1");
+				itemid(item2732880,"1","",false,".secao1");
+				itemid(item2304730,"1","",false,".secao1");
+				itemid(item2840570,"50","",false,".secao1");
+				itemid(item2597220,"5","",false,".secao1");
+				itemid(item287060,"200","",false,".secao1");
+				itemid(item1464240,"1","",false,".secao1");
+				itemid(item362080,"100","",false,".secao1");
+				itemid(item807700,"25","",false,".secao1");
+				itemid(item2840570,"50","",false,".secao1");
+				itemid(item1024430,"100","",false,".secao1");
+				itemid(item2840570,"50","",false,".secao1");
+				itemid(item2390140,"2","",false,".secao1");
+				itemid(item2840570,"50","",false,".secao1");
+				itemid(item1738720,"100","",false,".secao1");
+				itemid(item2840570,"50","",false,".secao1");
+				itemid(item1464260,"1","",false,".secao1");
+				itemid(item2152120,"50","",false,".secao1");
+				itemid(item807700,"15","",false,".secao1");
+				itemid(item2840570,"50","",false,".secao1");
+				itemid(item1024430,"100","",false,".secao1");
+				itemid(item2840570,"50","",false,".secao1");
+				itemid(item2304730,"1","",false,".secao1");
+				itemid(item2840570,"50","",false,".secao1");
+				itemid(item2554270,"5","",false,".secao1");
+				itemid(item2840570,"50","",false,".secao1");
+				itemid(item1464270,"1","",false,".secao1");
+				itemid(item2152120,"100","",false,".secao1");
+				itemid(item807700,"15","",false,".secao1");
+				itemid(item2554260,"5","",false,".secao1");
+				itemid(item2008900,"5","",false,".secao1");
+				itemid(item2840570,"75","",false,".secao1");
+				itemid(item1129100,"5","",false,".secao1");
+				itemid(item2840570,"75","",false,".secao1");
+				itemid(item287060,"250","",false,".secao1");
+				itemid(item2840570,"75","",false,".secao1");
+				itemid(item1464280,"1","",false,".secao1");
+				itemid(item2152120,"150","",false,".secao1");
+				itemid(item807700,"25","",false,".secao1");
+				itemid(item2840570,"75","",false,".secao1");
+				itemid(item2390110,"4","",false,".secao1");
+				itemid(item1738720,"150","",false,".secao1");
+				itemid(item2390120,"4","",false,".secao1");
+				itemid(item2304730,"1","",false,".secao1");
+				itemid(item1738720,"150","",false,".secao1");
+				itemid(item1959190,"2","",false,".secao1");
+				itemid(item2732880,"1","",false,".secao1");
+				itemid(item2103790,"1","",false,".secao1");
+				itemid(item2841220,"1","",true,".secao1");
+				itemid(item2595340,"1","",false,".secao1");
+				itemid(item2753640,"5","",false,".secao1");
+				itemid(item2236330,"1","",false,".secao1");
+				
+				//PASSE PREMIUM
+				itemid(item2732880,"1","",false,".secao2");
+				itemid(item102030,"100","",false,".secao2");
+				itemid(item378370,"100","",false,".secao2");
+				itemid(item2770700,"2","",false,".secao2");
+				itemid(item2403540,"1","",false,".secao2");
+				itemid(item362080,"100","",false,".secao2");
+				itemid(item2770710,"2","",false,".secao2");
+				itemid(item2554250,"8","",false,".secao2");
+				itemid(item1024420,"100","",false,".secao2");
+				itemid(item2732880,"1","",false,".secao2");
+				itemid(item2304730,"1","",false,".secao2");
+				itemid(item2770720,"2","",false,".secao2");
+				itemid(item2597220,"15","",false,".secao2");
+				itemid(item287060,"400","",false,".secao2");
+				itemid(item2403530,"1","",false,".secao2");
+				itemid(item362080,"200","",false,".secao2");
+				itemid(item807700,"50","",false,".secao2");
+				itemid(item2770730,"2","",false,".secao2");
+				itemid(item1024430,"200","",false,".secao2");
+				itemid(item2732880,"1","",false,".secao2");
+				itemid(item2390140,"4","",false,".secao2");
+				itemid(item2056750,"1","",false,".secao2");
+				itemid(item2653300,"1","",false,".secao2");
+				itemid(item2770740,"2","",false,".secao2");
+				itemid(item2403550,"1","",false,".secao2");
+				itemid(item2152120,"100","",false,".secao2");
+				itemid(item807700,"30","",false,".secao2");
+				itemid(item2393700,"2","",false,".secao2");
+				itemid(item1024430,"200","",false,".secao2");
+				itemid(item2732880,"1","",false,".secao2");
+				itemid(item2304730,"1","",false,".secao2");
+				itemid(item2393690,"2","",false,".secao2");
+				itemid(item2793460,"1","",false,".secao2");
+				itemid(item2393710,"2","",false,".secao2");
+				itemid(item2403560,"1","",false,".secao2");
+				itemid(item2152120,"200","",false,".secao2");
+				itemid(item807700,"30","",false,".secao2");
+				itemid(item2554260,"10","",false,".secao2");
+				itemid(item2008900,"10","",false,".secao2");
+				itemid(item2732880,"2","",false,".secao2");
+				itemid(item1129100,"10","",false,".secao2");
+				itemid(item2793470,"1","",false,".secao2");
+				itemid(item287060,"500","",false,".secao2");
+				itemid(item2346880,"2","",false,".secao2");
+				itemid(item2403570,"1","",false,".secao2");
+				itemid(item2152120,"300","",false,".secao2");
+				itemid(item807700,"50","",false,".secao2");
+				itemid(item2346860,"2","",false,".secao2");
+				itemid(item2578540,"","",false,".secao2");
+				itemid(item1738720,"300","",false,".secao2");
+				itemid(item2578550,"","",false,".secao2");
+				itemid(item2304730,"1","",false,".secao2");
+				itemid(item1738720,"300","",false,".secao2");
+				itemid(item1959190,"4","",false,".secao2");
+				itemid(item2732880,"3","",false,".secao2");
+				itemid(item2821470,"","",false,".secao2");
+				itemid(item2841210,"","",true,".secao2");
+				itemid(item2553410,"","",false,".secao2");
+				itemid(item2753640,"10","",false,".secao2");
+				itemid(item2403580,"","",false,".secao2");
+				
+				$('.secao1').slick({
+					slidesToShow: 5, // Exibe 5 itens por vez
+					slidesToScroll: 5, // Avança 5 itens por vez
+					infinite: false,
+				});
+
+				$('.secao2').slick({
+					slidesToShow: 5,
+					slidesToScroll: 5,
+					infinite: false,										
+				});		
+				$('.item').on('mouseenter', function() {
+					const tooltip = $(this).find('.maintooltip'); // Tooltip original dentro do item
+					const tooltipClone = tooltip.clone(); // Clona o tooltip
+					tooltipClone.attr('id', 'tooltip-clone'); // Adiciona um ID ao clone
+					$('body').append(tooltipClone); // Adiciona o clone ao body
+
+					// Oculta o tooltip original
+					tooltip.css({
+						visibility: 'hidden',
+						opacity: '0',
+						display: 'none'
+					});
+
+					// Posição e exibição do tooltip clone
+					const offset = tooltip.offset();
+					tooltipClone.css({
+						position: 'absolute',
+						top: offset.top,
+						left: offset.left,
+						visibility: 'visible',
+						display: 'block',
+						zIndex: 9999
+					});
+
+					// Força o opacity: 1 !important no clone
+					tooltipClone[0].style.setProperty('opacity', '1', 'important');
+				});
+
+				$('.item').on('mouseleave', function() {
+					$('#tooltip-clone').remove(); // Remove o clone quando o mouse sai do item
+					$(this).find('.maintooltip').css({ // Restaura o tooltip original
+						visibility: 'hidden',
+						opacity: '0',
+						display: 'none'
+					});
+				});
+			});
+document.addEventListener("DOMContentLoaded", function() {
+	setTimeout(function() {				
+		var items = document.querySelectorAll('.s1 .item');									
+		if (items.length === 0) {					
+			return;
+		}				
+		var vipCount = 0;
+
+		items.forEach(function(item, index) {			
+			vipCount = vipCount + 1;
+			var vipDiv = document.createElement('div');
+			vipDiv.className = 'nivelpasse';
+			vipDiv.textContent = 'Nv. ' + vipCount;
+			
+			item.prepend(vipDiv);
+		});
+	}, 100);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+	setTimeout(function() {				
+		var items = document.querySelectorAll('.s2 .item');									
+		if (items.length === 0) {					
+			return;
+		}				
+		var vipCount = 0;
+
+		items.forEach(function(item, index) {			
+			vipCount = vipCount + 1;
+			var vipDiv = document.createElement('div');
+			vipDiv.className = 'nivelpasse';
+			vipDiv.textContent = 'Nv. ' + vipCount;
+			
+			item.prepend(vipDiv);
+		});
+	}, 100);
+});
+
+		</script>	
+</body>
+</html>
+
+

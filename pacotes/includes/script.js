@@ -222,6 +222,105 @@ function updateLanguage(language) {
     });
 }
 
+$(document).ready(function() {
+    const params = new URLSearchParams(window.location.search);
+    const pacoteNome = params.get('pacote');
+
+    if (pacoteNome && window.Pacotes[pacoteNome]) {
+        try {
+            const pacote = window.Pacotes[pacoteNome];
+			 
+
+            if (pacote.classe) {
+                $("#corpo").addClass(pacote.classe);
+            }
+            if (pacote.descricao) {
+                $('.descricaovip').html(pacote.descricao).show();
+            }
+            if (pacote.itens) {
+                pacote.itens.forEach(itemCommand => {
+                    try {
+                        eval(itemCommand);
+                    } catch (evalError) {
+                        console.error("Erro ao executar itemCommand:", evalError);
+                    }
+                });
+            }
+
+            // Adicionar vídeo com seleção para masculino e feminino
+            if (pacote.video) {
+			const videoSelectHTML = pacote.video.useOptgroup ? `
+			<div class="videovisual">
+				<video id="video" autoplay muted loop>
+					<source src="${pacote.video.initialSrc}" type="video/mp4">
+				</video>
+				<div class="botoes-versao">
+					<select id="videoSelect">
+						<optgroup label="Feminino">
+							${pacote.video.feminino.map(opcao => `
+								<option value="${opcao.src}" data-image="../imagens/feminino.png">${opcao.texto}</option>
+							`).join('')}
+						</optgroup>
+						<optgroup label="Masculino">
+							${pacote.video.masculino.map(opcao => `
+								<option value="${opcao.src}" data-image="../imagens/masculino.png">${opcao.texto}</option>
+							`).join('')}
+						</optgroup>
+					</select>
+				</div>
+			</div>` : `
+    <div class="videovisual">
+        <video id="video" autoplay muted loop>
+            <source src="${pacote.video.initialSrc}" type="video/mp4">
+        </video>
+        <div class="botoes-versao">
+            <select id="videoSelect" ${pacote.video.selectwidth ? `style="width:${pacote.video.selectwidth};"` : ''}>
+                ${pacote.video.videos ? 
+                    pacote.video.videos.map(opcao => `
+                        <option value="${opcao.src}" data-image="${opcao.imagem}">${opcao.texto}</option>
+                    `).join('') :
+                    `
+                        <option value="${pacote.video.feminino[0].src}" data-image="../imagens/feminino.png">Feminino</option>
+                        <option value="${pacote.video.masculino[0].src}" data-image="../imagens/masculino.png">Masculino</option>
+                    `}
+            </select>
+        </div>
+    </div>`;
+
+                
+                $('.videovisual').html(videoSelectHTML).show();
+               
+            }
+          
+        } catch (error) {
+            console.error("Erro ao processar o pacote:", error);
+        }
+    } else {
+        
+    }
+});
+
+
+$(document).ready(function() {
+    if ($('#videoSelect').length && $('#video').length && $('#video').is(':visible')) {
+        $('#videoSelect').select2({
+            closeOnSelect: true,
+            minimumResultsForSearch: 12,
+            templateResult: formatOption,  // Função para customizar as opções
+            templateSelection: formatOptionSelection  // Customiza a seleção
+        });
+
+        // Carrega a versão feminina por padrão ao iniciar
+        var initialVideo = $('#videoSelect').val();
+        changeVideo(initialVideo);
+
+        $('#videoSelect').on('change', function() {
+            var videoUrl = $(this).val();
+            if (videoUrl) {
+                changeVideo(videoUrl);
+            }
+        });
+    }
 // Função para trocar o vídeo com verificação se o elemento existe
 function changeVideo(src) {
     var videoElement = document.getElementById('video');
@@ -257,28 +356,7 @@ if (video1) {
 
 if (video2) {
 	addPlaybackEvents(video2);
-}
-
-$(document).ready(function() {
-    if ($('#videoSelect').length && $('#video').length && $('#video').is(':visible')) {
-        $('#videoSelect').select2({
-            closeOnSelect: true,
-            minimumResultsForSearch: 12,
-            templateResult: formatOption,  // Função para customizar as opções
-            templateSelection: formatOptionSelection  // Customiza a seleção
-        });
-
-        // Carrega a versão feminina por padrão ao iniciar
-        var initialVideo = $('#videoSelect').val();
-        changeVideo(initialVideo);
-
-        $('#videoSelect').on('change', function() {
-            var videoUrl = $(this).val();
-            if (videoUrl) {
-                changeVideo(videoUrl);
-            }
-        });
-    }
+}	
 });
 
 // Customiza as opções para exibir imagem
