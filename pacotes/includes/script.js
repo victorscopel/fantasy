@@ -1,4 +1,3 @@
-// TOOLTIP
 var tooltips = document.getElementsByClassName('maintooltip');
 window.onmousemove = function (e) {
     var mouseX = e.clientX;
@@ -9,51 +8,107 @@ window.onmousemove = function (e) {
 
     for (var i = 0; i < tooltips.length; i++) {
         var tooltip = tooltips[i];
+        var tooltipConstruir = tooltip.nextElementSibling; // Assumindo que .tooltipconstruir é o próximo elemento
+
         // Check if the tooltip is visible
         if (window.getComputedStyle(tooltip).visibility === 'visible') {
             var tooltipWidth = tooltip.offsetWidth;
             var tooltipHeight = tooltip.offsetHeight;
             var x, y;
+
             // Calculate x and y based on cursor position and tooltip size
             if (mouseX + tooltipWidth + tooltipOffset < viewportWidth) {
-                // Tooltip can be to the right of the cursor
                 x = mouseX + tooltipOffset;
             } else {
-                // Tooltip should be to the left of the cursor
                 x = mouseX - tooltipWidth - tooltipOffset;
-                // Make sure tooltip stays within the left boundary
-                if (x < 0) {
-                    x = 0;
-                }
+                if (x < 0) x = 0;
             }
 
             if (mouseY + tooltipHeight + tooltipOffset < viewportHeight) {
-                // Tooltip can be below the cursor
                 y = mouseY + tooltipOffset;
             } else {
-                // Tooltip should be above the cursor
                 y = mouseY - tooltipHeight - tooltipOffset;
-                // Make sure tooltip stays within the top boundary
-                if (y < 0) {
-                    y = 0;
-                }
+                if (y < 0) y = 0;
             }
 
-            // Make sure tooltip stays within the right boundary
+            // Ensure tooltip stays within the boundaries
             if (x + tooltipWidth > viewportWidth) {
                 x = viewportWidth - tooltipWidth - tooltipOffset;
             }
-
-            // Make sure tooltip stays within the bottom boundary
             if (y + tooltipHeight > viewportHeight) {
                 y = viewportHeight - tooltipHeight - tooltipOffset;
             }
 
             tooltip.style.left = x + 'px';
-            tooltip.style.top = y + 'px';            
+            tooltip.style.top = y + 'px';
+
+            // Position .tooltipconstruir directly below .maintooltip
+            if (tooltipConstruir && tooltipConstruir.classList.contains('tooltipconstruir')) {
+                tooltipConstruir.style.left = x + 'px';
+                tooltipConstruir.style.top = (y + tooltipHeight + tooltipOffset) + 'px';
+
+                // Ensure .tooltipconstruir stays within the bottom boundary
+                if (y + tooltipHeight + tooltipConstruir.offsetHeight + tooltipOffset > viewportHeight) {
+                    tooltipConstruir.style.top = (y - tooltipConstruir.offsetHeight - tooltipOffset) + 'px';
+                }
+            }
         }
     }
 };
+
+function tooltipConstrucao(itemVar) {
+    console.log('tooltipConstrucao foi chamada com itemVar:', itemVar);
+
+    var tpcData = window[itemVar];
+    if (!tpcData) {
+        console.error('Dados do tooltip não encontrados:', itemVar);
+        return;
+    }
+
+    // Cria a div .tooltipconstruir se não existir
+    if ($(".tooltipconstruir").length === 0) {
+        $(".item").append('<div class="tooltipconstruir"></div>');
+    }
+
+    // Limpa o conteúdo anterior do baú
+    $(".tooltipconstruir").empty();
+
+    // Estrutura fixa do baú
+    var dialogContent = `
+        <h1>Construção</h1>
+        <div class="containeritens">
+        <div class="item comum"><img src="../imagens/sbta102565.png" alt="Doce do Halloween - 1" data-item="item1025650"><div class="quantidade">25</div></div>
+        <div class="item comum"><img src="../imagens/sbta102566.png" alt="Doce do Halloween - 2" data-item="item1025660"><div class="quantidade">25</div></div>
+        <div class="item comum"><img src="../imagens/sbta102567.png" alt="Doce do Halloween - 3" data-item="item1025670"><div class="quantidade">25</div></div>
+        <div class="item comum"><img src="../imagens/sbta102568.png" alt="Doce do Halloween - 4" data-item="item1025680"><div class="quantidade">25</div></div>
+        </div>
+        <div class="containercusto">
+        <div class="currency moedaepica">100</div>
+        <div class="currency gp">500 GP</div>
+        </div>
+    `;
+    $(".tooltipconstruir").html(dialogContent);
+
+    // Mapeia os IDs e as quantidades dos itens do baú
+    var qtds = tpcData.tpc_qtd.split(',');
+    var ids = tpcData.tpc_ids.split(',');
+
+    // Loop para adicionar cada item ao baú
+    ids.forEach(function(id, index) {
+        var itemHtml = window['item' + id];
+        var quantidade = qtds[index];
+        var $itemElement = $(itemHtml);
+
+        // Atualiza a quantidade no elemento do item
+        $itemElement.find('.quantidade').text(quantidade);
+
+        // Adiciona o item à estrutura do baú
+        $(".tooltipconstruir").prepend($itemElement);
+    });
+}
+
+
+
 
 // Função para adicionar um item ao HTML e abrir o baú quando for clicado
 function itemid(itemVar, quantidade, tipo = "", cutin = false, container = "") {
@@ -73,27 +128,39 @@ function itemid(itemVar, quantidade, tipo = "", cutin = false, container = "") {
     // Adiciona o item ao container
     container.append(itemElement);
 
+    // Divide o tipo em um array, separando por vírgula
+    var tipos = tipo.split(',');
+
     // Verifica se o item é um baú
-    if (tipo === "bau") {
-		itemElement.addClass('tembau');
+    if (tipos.includes("bau")) {
+        itemElement.addClass('tembau');
         // Associa o clique ao item de baú para abrir o diálogo
         itemElement.on('click', function() {
-            openBauDialog(dataitemid); // Exemplo: usando o baú item2394100_bau como dados
+            openBauDialog(dataitemid);
         });
     }
-	
-	if (tipo === "baumaior") {
-		itemElement.addClass('tembau');
-        // Associa o clique ao item de baú para abrir o diálogo
+    
+    // Verifica se o item é um baú maior
+    if (tipos.includes("baumaior")) {
+        itemElement.addClass('tembau');
+        // Associa o clique ao item de baú para abrir o diálogo de baú maior
         itemElement.on('click', function() {
-            openBauDialog(dataitemid,"maior"); // Exemplo: usando o baú item2394100_bau como dados
+            openBauDialog(dataitemid, "maior");
+        });
+    }
+
+    // Verifica se o item possui construção
+    if (tipos.includes("construir")) {
+        // Adiciona o evento para construir
+        itemElement.addClass('construir');
+        itemElement.on('mouseenter', function() {
+            tooltipConstrucao(dataitemid.replace('_bau', ''));
         });
     }
 
     // Se cutin for verdadeiro, associa um evento de clique no item para mostrar a animação
     if (cutin) {
         itemElement.on('click', function() {
-            // Verifica se a cutin já está sendo exibida
             if ($('.cutin-image').length > 0) {
                 return; // Se a imagem já está em exibição, não faz nada
             }
@@ -104,37 +171,34 @@ function itemid(itemVar, quantidade, tipo = "", cutin = false, container = "") {
             // Cria um novo elemento de imagem para o "cutin"
             var cutinElement = $('<img>', {
                 src: itemImageSrc, // Atribui a imagem do item
-                class: 'cutin-image', // Classe para estilizar
+                class: 'cutin-image',
                 css: {
                     position: 'absolute',
-                    left: '-100%',  // Começa fora da tela à esquerda
-                    bottom: '0px',     // Centraliza verticalmente                    
+                    left: '-100%',
+                    bottom: '0px',
                     opacity: 0,
-                    zIndex: 9999 // Garante que o elemento apareça na frente
+                    zIndex: 9999
                 }
             });
 
-            // Adiciona o elemento de cutin ao #corpo
             $('#corpo').append(cutinElement);
 
-            // Aplica o efeito de slide da esquerda para a direita
             cutinElement.animate({
-                left: '0',      // Move para a posição visível
+                left: '0',
                 opacity: 1
             }, 600, function() {
-                // Após um tempo, some com fade
                 setTimeout(function() {
                     cutinElement.animate({
                         opacity: 0
                     }, 500, function() {
-                        // Remove o elemento após o efeito de fade
                         cutinElement.remove();
                     });
-                }, 1500); // Exibe a imagem por 2 segundos antes de desaparecer
+                }, 1500);
             });
         });
     }
 }
+
 
 
 function openBauDialog(itemVar, maior) {

@@ -173,9 +173,8 @@ body {
 #corpo.semvideo .descricaovip{float:none;max-width: 981px;}
 #corpo.semvideo .items .item .quantidade{font-size:20px;}
 #corpo.semvideo .items .item{height:115px;width:115px;}
-#corpo .items .item{
-	float:left;
-	display:flex;
+#corpo .items .item{	
+	display:inline-flex;
 	height:128px;
 	width:128px;
 	background: rgb(28,45,60);
@@ -198,8 +197,7 @@ body {
 #corpo.passedebatalha .items{
 	height: 163px;
 }
-#corpo.passedebatalha .items .item{
-	
+#corpo.passedebatalha .items .item{	
 	float:none;
 	display:inline-flex;
 	height:114px;
@@ -301,6 +299,22 @@ body {
 	font-size:30px;
     text-shadow: 2px 2px 0px #000000;
 }
+
+#corpo.batalhaelemental .cashvalor{
+	line-height:25px;
+	font-size:25px;
+	color:white;
+	margin:0 0 10px 0;	
+}
+#corpo.batalhaelemental .items{margin-top:20px;float:left;max-width: 500px;}
+#corpo.batalhaelemental .items .item{width: 89px;height: 89px;}
+#corpo.batalhaelemental .items .item img{max-width:89px;max-height:89px;}
+#corpo.batalhaelemental .items.secao1, #corpo.batalhaelemental .items.secao2{margin-top:0px;}
+#corpo.batalhaelemental .items.secao2, #corpo.batalhaelemental .items.secao4{margin-left:26px;}
+#corpo.batalhaelemental .descricaovip{padding:15px 20px;max-width:979px;}
+#corpo.batalhaelemental .items.secao5{float:none;max-width:100%;}
+#corpo.batalhaelemental .items.secao5 .item{width: 103px;height: 103px;}
+#corpo.batalhaelemental .items.secao5 .item img{max-width:103px;max-height:103px;}
 .forumiframe #corpo .items .item .quantidade{font-size:19px;}
 .ui-dialog-titlebar{position:absolute;right:4px;top:4px;}
 .ui-dialog-titlebar button.ui-button{
@@ -574,3 +588,42 @@ body .maintooltip.cartamonstro .statuscarta>li:nth-last-child(n+2) ~ li {
 	height: 68px;
     width: 68px;
 }
+
+.tooltipconstruir{
+	opacity:0;
+	visibility:hidden;
+	display:none;
+	background-color:#161a24;
+	position: absolute;
+    top: 0;
+	left: 0;	
+    width: 361px;   
+    height: auto;
+	padding:10px 10px 15px 10px;
+	border:1px solid #2b303b;
+	border-radius:5px;
+	pointer-eventos:none;
+}
+.item:hover .tooltipconstruir{
+	display:block;
+	opacity:1 !important;
+	position:fixed;	
+	visibility:visible;
+	z-index:2;
+}
+.tooltipconstruir h1{
+	font-size:20px;
+	margin-bottom:10px;
+}
+.tooltipconstruir .containeritens {
+	background-color:#1e3046;
+	border-radius:5px;
+	padding:8px 8px 8px 3px;
+}
+.tooltipconstruir .containeritens .item {
+	margin:0 0 0 5px;
+}
+.tooltipconstruir .containercusto{margin-top:10px;}
+.tooltipconstruir .currency{border-radius:5px;background-color:;display:block;float:left; width:39%;height:27px;line-height:27px;padding-left:36px;}
+.tooltipconstruir .moedaepica{background:#1e3046 url(../../imagens/moedaepica.png) 5px 2px no-repeat;}
+.tooltipconstruir .gp{background:#1e3046 url(../../imagens/gp.png) 6px 5px no-repeat;margin-left:7px;}

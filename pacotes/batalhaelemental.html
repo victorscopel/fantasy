@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalha Elemental</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="includes/estilo.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+</head>
+<body oncontextmenu="return false;">
+	<div id="corpo" class="batalhaelemental semvideo">
+		<div class="descricaovip">Na batalha elemental, você começa no ciclo 1 de recompensas. Derrotar o chefe final concede recompensas especiais e inicia um novo ciclo com melhores recompensas e quantidades. Esse processo se repete até o ciclo 4, que passa a ser permanente.</div>
+		<div class="items secao1"><h2 class="cashvalor semcash semtop">Ciclo 1 - Chefes </h2></div>
+		<div class="items secao2"><h2 class="cashvalor semcash">Ciclo 2 - Chefes</h2></div>
+		<div class="items secao3"><h2 class="cashvalor semcash">Ciclo 3 - Chefes</h2></div>
+		<div class="items secao4"><h2 class="cashvalor semcash">Ciclo 4+ - Chefes</h2></div>
+		<div class="clearboth"></div>
+		<div class="items secao5"><h2 class="cashvalor semcash">Chefe Final</h2></div>
+	</div>
+		<script src="includes/script.js"></script>
+		<script src="../includes/itens.js"></script>
+		<script>
+			$(document).ready(function() {
+				//CICLO 1				
+				itemid(item362080,"10","",false,".secao1");
+				itemid(item1129090,"1","",false,".secao1");
+				itemid(item287060,"5","",false,".secao1");
+				itemid(item1738720,"2","",false,".secao1");
+				itemid(item1720690,"10","",false,".secao1");
+				//CICLO 2
+				itemid(item2152120,"5","",false,".secao2");
+				itemid(item1129090,"2","",false,".secao2");
+				itemid(item287060,"10","",false,".secao2");
+				itemid(item1738720,"5","",false,".secao2");
+				itemid(item1720690,"15","",false,".secao2");
+				//CICLO 3
+				itemid(item2152120,"20","",false,".secao3");
+				itemid(item1129090,"3","",false,".secao3");
+				itemid(item287060,"15","",false,".secao3");
+				itemid(item1738720,"7","",false,".secao3");
+				itemid(item1720690,"20","",false,".secao3");
+				//CICLO 4
+				itemid(item2152120,"25","",false,".secao4");
+				itemid(item1129090,"4","",false,".secao4");
+				itemid(item287060,"20","",false,".secao4");
+				itemid(item1738720,"10","",false,".secao4");
+				itemid(item1720690,"30","",false,".secao4")
+				//CHEFE FINAL
+				itemid(item2853530,"","",false,".secao5");
+				itemid(item2855680,"","",false,".secao5");
+				itemid(item1720690,"25","",false,".secao5");
+				itemid(item1959180,"1","",false,".secao5");
+				itemid(item2856080,"1","bau",false,".secao5");
+				itemid(item2554250,"1","",false,".secao5");
+				itemid(item2554260,"1","",false,".secao5");
+				itemid(item2554270,"1","",false,".secao5");
+				itemid(item2753640,"1","",false,".secao5");				
+			});
+		</script>	
+</body>
+</html>
