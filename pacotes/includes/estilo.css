@@ -279,6 +279,18 @@ body {
 }
 
 
+#corpo.lojas .cashvalor{
+	line-height:25px;
+	font-size:25px;
+	color:white;
+	margin:0 0 10px 0;	
+}
+#corpo.lojas .items{margin-top:20px;}
+#corpo.lojas .items.secao1{margin-top:0px;}
+#corpo.lojas .items.secao1 .item .quantidade{background: url(../../imagens/cashvp.png) no-repeat -5px 0px;padding-left: 58px;}
+#corpo.lojas .items.secao2 .item .quantidade, #corpo.lojas .items.secao3 .item .quantidade{background: url(../../imagens/sbta172069.png) no-repeat -5px -5px;padding-left: 24px;background-size: 30px;}
+#corpo.lojas .items .item{height: 135px;width: 133px;justify-content: center;align-items:center;}
+#corpo.lojas .items .item img{width:105px;height:105px;}
 .forumiframe #corpo .items .item{height:64px;width:64px;}
 #corpo .items .item .quantidade{
 	bottom: 3%;

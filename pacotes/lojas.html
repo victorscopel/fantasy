@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lojas</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="includes/estilo.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+</head>
+<body oncontextmenu="return false;">
+	<div id="corpo" class="lojas semvideo">
+		<div class="items secao1">
+			<h2 class="cashvalor semcash semtop">LOJA DE CASH</h2>
+			<div class="descricaovip">Novos pacotes estão disponíveis para acompanhar os eventos do mês junino.<br><i>Consulte o Closet Visual ou a Loja de Cash para informações da aparência dos pacotes nos personagens.</i></div>
+		</div>
+		<div class="items secao2">
+			<h2 class="cashvalor semcash">LOJA DE DIAMANTE</h2>
+			<div class="descricaovip">Novos pacotes exclusivos de personagem estão disponíveis para serem adquiridos na Loja VIP por tempo limitado!<br><i>Consulte o Closet Visual ou a Loja VIP para informações da aparência dos pacotes nos personagens.</i></div>
+		</div>
+		<div class="items secao3">
+			<h2 class="cashvalor semcash">FONTES DE HALLOWEEN</h2>
+			<div class="descricaovip">Novas fontes temáticas de Halloween estão disponíveis para aquisição no menu de customização.</div>
+		</div>
+	</div>
+		<script src="includes/script.js"></script>
+		<script src="../includes/itens.js"></script>
+		<script>
+			$(document).ready(function() {
+				//LOJA DE CASH				
+				itemid(item1720440,"1000","",false,".secao1");
+				itemid(item1720530,"1000","",false,".secao1");
+				itemid(item2302310,"1000","",false,".secao1");
+				itemid(item1029200,"1000","",false,".secao1");
+				itemid(item1029230,"1000","",false,".secao1");
+				itemid(item2507130,"1000","",false,".secao1");
+				itemid(item2507200,"350","",false,".secao1");
+				itemid(item1667540,"1000","",false,".secao1");
+				itemid(item1667560,"1000","",false,".secao1");
+				//LOJA DE DIAMANTE
+				itemid(item2294950,"5000","",false,".secao2");
+				itemid(item2293390,"5000","",false,".secao2");
+				itemid(item2506250,"5000","",false,".secao2");
+				itemid(item2516370,"5000","",false,".secao2");
+				itemid(item2538510,"5000","",false,".secao2");				
+				//FONTES
+				itemid(item2855940,"2000","",false,".secao3");
+				itemid(item2855950,"2000","",false,".secao3");
+				itemid(item2855920,"2000","",false,".secao3");
+				itemid(item2855930,"2000","",false,".secao3");
+				itemid(item2855970,"2000","",false,".secao3");
+				itemid(item2855980,"2000","",false,".secao3");
+			});
+		</script>	
+</body>
+</html>
