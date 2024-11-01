@@ -89,7 +89,7 @@ Pacotes.PocaoBruxa = {
 
 Pacotes.Raspadinha102024 = {
 	descricao: "Você pode conseguir prêmios com o Cartão Premiado.<br/>Poderá utilizar o item [Sonho Perdido] para construir os itens do Cartão Premiado.",
-	classe: 'colecaovip',
+	
     itens: [
 		'itemid(item2853520,"")',
 		'itemid(item2553530,"","")',
