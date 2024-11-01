@@ -41,6 +41,21 @@ body#guiasmissoes h1{
 }
 #topo{position:relative;}
 #topo img[src="../imagens/logo-fantasy.png"]{height:160px;margin:0 auto;display:block;}
+#topo #buscaitens{
+    background: rgba(0, 0, 0, 0.5) url(../../imagens/busca.png) no-repeat left center;
+    padding: 5px 9px 5px 35px;
+    background-size: 35px;
+    position: absolute;
+    top: 5px;
+    right: 1px;
+    color: white;
+    font-size: 18px;
+    transition: all .2s;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 10px;
+}
+#topo #buscaitens:hover{background-color:rgba(0, 0, 0, 1);}
 #guiasmissoes #topo{margin-top:20px;}
 #missoes {
     display: flex;
@@ -338,6 +353,7 @@ body#guiasmissoes #language-buttons{top:22px;}
 	color:white;
 	line-height: 55px;
 }
+.titulodg.buscaitem h1{background: url(../../imagens/busca.png) no-repeat left center;background-size: 37px;padding-left: 40px;}
 .titulodg.berco h1{background:url(../../imagens/missoes/berco.png) no-repeat left center;background-size:55px;padding-left: 50px;}
 .titulodg.cripta h1{background:url(../../imagens/missoes/cripta.png) no-repeat left center;background-size:67px;padding-left: 67px;}
 .titulodg.santuario h1{background:url(../../imagens/missoes/santuario.png) no-repeat left center;background-size:57px;padding-left: 55px;}
@@ -663,3 +679,5 @@ body .maintooltip.cartamonstro .statuscarta>li:nth-last-child(n+2), body .mainto
 .tooltipconstruir .currency{border-radius:5px;background-color:;display:block;float:left; width:39%;height:27px;line-height:27px;padding-left:36px;}
 .tooltipconstruir .moedaepica{background:#1e3046 url(../../imagens/moedaepica.png) 5px 2px no-repeat;}
 .tooltipconstruir .gp{background:#1e3046 url(../../imagens/gp.png) 6px 5px no-repeat;margin-left:7px;}
+
+#searchInput{width: 195px;padding: 5px;position: absolute;right: 10px;top: 17px;}

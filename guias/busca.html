@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>    
 </head>
-<body>
+<body >
 <div class="container" style="width: 710px !important;">
     <div id="topo">
         <div id="language-buttons" class="dropdown" style="z-index:20;">
@@ -28,15 +28,20 @@
         </div>
         <img src="../imagens/logo-fantasy.png" alt=""/>
     </div>    
-    <table cellspacing="0" style="border: 1px solid #999; background: #202123;" width="100%">
+    <table cellspacing="0" style="border: 1px solid rgba(153, 153, 153, 0.3); background: rgba(32, 33, 35, 0.6);" width="100%">
         <tbody>
-            <tr>
-                <td class="bgtitulo" style="background-color:gold;" colspan="4" align="center">    
-                    <h1 id="title" data-translate="buscadeitem" class="titulodg" style="color: black;">Busca de Item</h1>
-                    <input type="text" id="searchInput" placeholder="Procure por Nome do item" autocomplete="off" style="width: 195px;padding: 5px;position: absolute;left: 10px;top: 17px;">
-                    <button id="searchButton" style="display:none;">Buscar</button>
-                </td>
-            </tr>
+		  <tr>
+			<td class="bgtitulo" colspan="4" align="center">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><div class="titulonav home"><a href="index.html" data-translate="inicioguias">Início</a></div></li>
+						<li class="breadcrumb-item"><div class="titulonav wiki"><a href="wiki.html" data-translate="wiki">Wiki</a></div></li>
+						<li class="breadcrumb-item active"><div id="title" class="titulodg buscaitem"><h1 data-translate="buscadeitem">Busca de Item</h1></div></li>
+					</ol>
+				</nav>
+				<input type="text" id="searchInput" placeholder="Procure por Nome do item" autocomplete="off">				
+			</td>
+		  </tr>
             <tr>                    
                 <td colspan="4" style="color:#FFFF; margin-bottom: 8px !important;">
                     <div id="containerdrops"></div>

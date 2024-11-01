@@ -105,8 +105,12 @@ Pacotes.Raspadinha102024 = {
 		'itemid(item1000360,"1","")'
     ],
     video: {
-        feminino: "../imagens/pacotes/outros/carmesim-feminino.mp4",
-        masculino: "../imagens/pacotes/outros/carmesim-masculino.mp4"
+        feminino: [
+            { src: "../imagens/pacotes/outros/carmesim-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/outros/carmesim-masculino.mp4"}
+        ]
     }
 };
 
@@ -136,6 +140,110 @@ Pacotes.UltimatePokemon = {
             { src: "../imagens/pacotes/ultimate-pokemon/pet-bulbassauro.mp4", texto: "Bulbassauro", imagem:"../imagens/sbta239366.png"},
             { src: "../imagens/pacotes/ultimate-pokemon/pet-squirtle.mp4", texto: "Squirtle", imagem:"../imagens/sbta239368.png"},
             { src: "../imagens/pacotes/ultimate-pokemon/pet-charmander.mp4", texto: "Charmander", imagem:"../imagens/sbta239367.png"}
+        ]
+    }
+};
+
+Pacotes.UltimateOceanoAzul = {		
+    itens: [
+		'itemid(item2596490,"25")',
+		'itemid(item2596500,"55")',
+		'itemid(item2595730,"25")',
+		'itemid(item2589670,"")',
+		'itemid(item2595360,"")',
+		'itemid(item2595450,"")',
+		'itemid(item2578880,"","",true)',
+		'itemid(item2855900,"1","baumaior")',
+		'itemid(item1795040,"4")',
+		'itemid(item2304730,"4")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/ultimate-oceanoazul/oceanoazul-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/ultimate-oceanoazul/oceanoazul-masculino.mp4"}
+        ]
+    }
+};
+Pacotes.UltimateDiangelion = {		
+    itens: [
+		'itemid(item2264470,"25")',
+		'itemid(item2264700,"25")',
+		'itemid(item2271860,"25")',
+		'itemid(item2264930,"55")',
+		'itemid(item2278580,"")',
+		'itemid(item2304170,"","",true)',
+		'itemid(item2304240,"","",true)',
+		'itemid(item2304260,"","",true)',
+		'itemid(item2408690,"")',
+		'itemid(item2437450,"")',
+		'itemid(item2855900,"1","baumaior")',
+		'itemid(item1795040,"4")',
+		'itemid(item2304730,"4")'
+    ],
+    video: {
+		selectwidth:'165px',
+        useOptgroup: true,
+        feminino: [
+            { src: "../imagens/pacotes/ultimate-diangelion/diangelion-feminino.mp4", texto: "Diangelion" },
+            { src: "../imagens/pacotes/ultimate-diangelion/diangelionalt-feminino.mp4", texto: "Alternativo" }
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/ultimate-diangelion/diangelion-masculino.mp4", texto: "Diangelion" },
+            { src: "../imagens/pacotes/ultimate-diangelion/diangelionalt-masculino.mp4", texto: "Alternativo" }
+        ]		
+    }
+};
+
+Pacotes.UltimateFlosAbyssi = {		
+    itens: [
+		'itemid(item2667270,"25")',
+		'itemid(item2670460,"25")',
+		'itemid(item2673200,"25")',
+		'itemid(item2671180,"25")',
+		'itemid(item2594360,"25")',
+		'itemid(item2595410,"")',
+		'itemid(item2670710,"")',
+		'itemid(item2673240,"")',
+		'itemid(item2671210,"")',
+		'itemid(item2855900,"1","baumaior")',
+		'itemid(item1795040,"4")',
+		'itemid(item2304730,"4")'
+    ],
+    video: {
+		selectwidth:'135px',
+        useOptgroup: true,
+        feminino: [
+            { src: "../imagens/pacotes/ultimate-flos/flosabyssi-feminino.mp4", texto: "Abyssi" },
+            { src: "../imagens/pacotes/ultimate-flos/flosalt-feminino.mp4", texto: "Flos Alt." }
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/ultimate-flos/flosabyssi-masculino.mp4", texto: "Abyssi" },
+            { src: "../imagens/pacotes/ultimate-flos/flosalt-masculino.mp4", texto: "Flos Alt." }
+        ]		
+    }
+};
+
+Pacotes.ColecaoVip = {		
+	classe: "colecaovip",
+	descricaovip:"A cada 2 VIPs adquiridos você recebera uma recompensa.<br>As recompensas são enviadas a cada 6 horas.",
+    itens: [
+		'itemid(item2595420,"")',
+		'itemid(item2553460,"")',
+		'itemid(item2770820,"")',
+		'itemid(item2797370,"25")',
+		'itemid(item2678350,"")',
+		'itemid(item2798570,"","",true)',
+		'itemid(item2798580,"","",true)',
+		'itemid(item2821430,"")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/colecaovip/acolito-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/colecaovip/acolito-masculino.mp4"}
         ]
     }
 };
@@ -183,5 +291,288 @@ Pacotes.VipCacadorNoturno = {
             { src: "../imagens/pacotes/cacadornoturno/cacador-masculino.mp4", texto: "Normal" },
             { src: "../imagens/pacotes/cacadornoturno/chaser-masculino.mp4", texto: "Chaser" }
         ]		
+    }
+};
+
+Pacotes.VipTurbilhaoDoTempo = {		
+    itens: [
+		'itemid(item2600460,"25")',
+		'itemid(item2600960,"25")',
+		'itemid(item2602080,"")',
+		'itemid(item2601220,"")',
+		'itemid(item2600970,"","",true)',
+		'itemid(item2855900,"1","baumaior")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/turbilhaodotempo/turbilhao-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/turbilhaodotempo/turbilhao-masculino.mp4"}
+        ]
+    }
+};
+
+Pacotes.VipRegioSolar = {		
+    itens: [
+		'itemid(item2286310,"25","")',
+		'itemid(item2304790,"25","")',
+		'itemid(item2286540,"55","")',
+		'itemid(item2286080,"25","")',
+		'itemid(item2286550,"","")',
+		'itemid(item2302810,"","")',
+		'itemid(item2404030,"","")',
+		'itemid(item2304230,"","", true)',
+		'itemid(item2855900,"1","baumaior")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/regiosolar/solar-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/regiosolar/solar-masculino.mp4"}
+        ]
+    }
+};
+
+Pacotes.VipRegioLunar = {		
+    itens: [
+		'itemid(item2290180,"25","")',
+		'itemid(item2304800,"25","")',
+		'itemid(item2290410,"55","")',
+		'itemid(item2289950,"25","")',
+		'itemid(item2290420,"","")',
+		'itemid(item2302820,"","")',
+		'itemid(item2404040,"","")',
+		'itemid(item2304270,"","", true)',
+		'itemid(item2855900,"1","baumaior")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/regiolunar/lunar-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/regiolunar/lunar-masculino.mp4"}
+        ]
+    }
+};
+
+Pacotes.VipPesadeloSangrento = {		
+    itens: [
+		'itemid(item2461910,"25")',
+		'itemid(item2461680,"25")',
+		'itemid(item2462140,"55")',
+		'itemid(item2462420,"25")',
+		'itemid(item2458720,"")',
+		'itemid(item2404900,"")',
+		'itemid(item2462450,"","",true)',
+		'itemid(item2855900,"1","baumaior")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/pesadelosangrento/pesadelo-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/pesadelosangrento/pesadelo-masculino.mp4"}
+        ]
+    }
+};
+
+Pacotes.VipNobilitasEtereos = {		
+    itens: [
+		'itemid(item2446740,"25","")',
+		'itemid(item2573680,"25","")',
+		'itemid(item2573930,"55","")',
+		'itemid(item2447230,"25","")',
+		'itemid(item2447260,"","")',
+		'itemid(item2447250,"","")',
+		'itemid(item2447240,"","")',
+		'itemid(item2573940,"","",true)',
+		'itemid(item2574420,"","",true)',
+		'itemid(item2855900,"1","baumaior")'
+    ],
+    video: {
+        useOptgroup: true, 
+		selectwidth:'150px',
+        feminino: [
+            { src: "../imagens/pacotes/nobilitas/azul-feminino.mp4", texto: "Azul" },
+			{ src: "../imagens/pacotes/nobilitas/rosa-feminino.mp4", texto: "Rosa" },
+			{ src: "../imagens/pacotes/nobilitas/aglow-feminino.mp4", texto: "Glow Azul" },
+            { src: "../imagens/pacotes/nobilitas/rglow-feminino.mp4", texto: "Glow Rosa" }
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/nobilitas/azul-masculino.mp4", texto: "Azul" },
+			{ src: "../imagens/pacotes/nobilitas/rosa-masculino.mp4", texto: "Rosa" },
+			{ src: "../imagens/pacotes/nobilitas/aglow-masculino.mp4", texto: "Glow Azul" },
+            { src: "../imagens/pacotes/nobilitas/rglow-masculino.mp4", texto: "Glow Rosa" }
+        ]		
+    }
+};
+
+Pacotes.VipMonarcaDoOceano = {		
+    itens: [
+		'itemid(item2257030,"25")',
+		'itemid(item2257260,"55")',
+		'itemid(item2256800,"25")',
+		'itemid(item2397370,"")',
+		'itemid(item2403930,"")',
+		'itemid(item2394110,"")',
+		'itemid(item2855900,"1","baumaior")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/monarcadooceano/monarca-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/monarcadooceano/monarca-masculino.mp4"}
+        ]
+    }
+};
+
+Pacotes.VipHordaRubra = {		
+    itens: [
+		'itemid(item2385420,"25")',
+		'itemid(item2385430,"25")',
+		'itemid(item2301420,"55")',
+		'itemid(item2309970,"25")',
+		'itemid(item2302800,"")',
+		'itemid(item2302840,"")',
+		'itemid(item2412150,"")',
+		'itemid(item2855900,"1","baumaior")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/hordarubra/horda-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/hordarubra/horda-masculino.mp4"}
+        ]
+    }
+};
+
+Pacotes.VipFlosMagica = {
+    itens: [
+		'itemid(item2663880,"25","")',
+		'itemid(item2670950,"25","")',
+		'itemid(item2595400,"","")',
+		'itemid(item2671190,"","")',
+		'itemid(item2553430,"","")',
+		'itemid(item2575690,"","", true)',
+		'itemid(item2855900,"1","baumaior")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/flosmagica/flos-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/flosmagica/flos-masculino.mp4"}
+        ]
+    }
+};
+
+Pacotes.VipFabulaErrante = {
+    itens: [
+		'itemid(item2329770,"25")',
+		'itemid(item2329780,"25")',
+		'itemid(item2329810,"55")',
+		'itemid(item1948270,"")',
+		'itemid(item2595480,"")',
+		'itemid(item2855900,"1","baumaior")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/fabulaerrante/fabula-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/fabulaerrante/fabula-masculino.mp4"}
+        ]
+    }
+};
+
+Pacotes.VipComandoSombrio = {
+    itens: [
+		'itemid(item2342790,"25")',
+		'itemid(item2390130,"25")',
+		'itemid(item2343020,"55")',
+		'itemid(item2342560,"25")',
+		'itemid(item2385700,"")',
+		'itemid(item2404160,"")',
+		'itemid(item2404170,"")',
+		'itemid(item2404180,"")',
+		'itemid(item2404190,"")',
+		'itemid(item2404220,"")',
+		'itemid(item2404230,"")',
+		'itemid(item2404240,"")',
+		'itemid(item2404250,"")',
+		'itemid(item2404290,"","",true)',
+		'itemid(item2855900,"1","baumaior")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/comandosombrio/comando-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/comandosombrio/comando-masculino.mp4"}
+        ]
+    }
+};
+
+Pacotes.VipAuroraMistica = {
+    itens: [
+		'itemid(item2010230,"25")',
+		'itemid(item2010240,"25")',
+		'itemid(item2010250,"55")',
+		'itemid(item1967910,"")',
+		'itemid(item2405230,"")',
+		'itemid(item2855900,"1","baumaior")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/auroramistica/aurora-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/auroramistica/aurora-masculino.mp4"}
+        ]
+    }
+};
+
+Pacotes.VipArquidemonio = {
+    itens: [
+		'itemid(item2458200,"25")',				
+		'itemid(item2458660,"55")',
+		'itemid(item2401930,"")',
+		'itemid(item2404140,"")',
+		'itemid(item2458670,"","",true)',
+		'itemid(item2458680,"","",true)',
+		'itemid(item2855900,"1","baumaior")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/arquidemonio/arquidemonio-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/arquidemonio/arquidemonio-masculino.mp4"}
+        ]
+    }
+};
+
+Pacotes.VipApostoloDoFim = {
+    itens: [
+		'itemid(item2092780,"25")',
+		'itemid(item2092550,"25")',
+		'itemid(item2093010,"55")',
+		'itemid(item2253400,"25")',
+		'itemid(item2103770,"")',
+		'itemid(item2404060,"")',
+		'itemid(item2304070,"","",true)',
+		'itemid(item2855900,"1","baumaior")'
+    ],
+    video: {
+        feminino: [
+            { src: "../imagens/pacotes/apostolodofim/apostolo-feminino.mp4"}
+        ],
+        masculino: [
+            { src: "../imagens/pacotes/apostolodofim/apostolo-masculino.mp4"}
+        ]
     }
 };

@@ -229,7 +229,6 @@ $(document).ready(function() {
     if (pacoteNome && window.Pacotes[pacoteNome]) {
         try {
             const pacote = window.Pacotes[pacoteNome];
-			 
 
             if (pacote.classe) {
                 $("#corpo").addClass(pacote.classe);
@@ -250,12 +249,11 @@ $(document).ready(function() {
             // Adicionar vídeo com seleção para masculino e feminino
             if (pacote.video) {
 			const videoSelectHTML = pacote.video.useOptgroup ? `
-			<div class="videovisual">
 				<video id="video" autoplay muted loop>
 					<source src="${pacote.video.initialSrc}" type="video/mp4">
 				</video>
 				<div class="botoes-versao">
-					<select id="videoSelect">
+					<select id="videoSelect"  ${pacote.video.selectwidth ? `style="width:${pacote.video.selectwidth};"` : ''}>
 						<optgroup label="Feminino">
 							${pacote.video.feminino.map(opcao => `
 								<option value="${opcao.src}" data-image="../imagens/feminino.png">${opcao.texto}</option>
@@ -267,9 +265,7 @@ $(document).ready(function() {
 							`).join('')}
 						</optgroup>
 					</select>
-				</div>
-			</div>` : `
-    <div class="videovisual">
+				</div>` : `
         <video id="video" autoplay muted loop>
             <source src="${pacote.video.initialSrc}" type="video/mp4">
         </video>
@@ -284,9 +280,7 @@ $(document).ready(function() {
                         <option value="${pacote.video.masculino[0].src}" data-image="../imagens/masculino.png">Masculino</option>
                     `}
             </select>
-        </div>
-    </div>`;
-
+        </div>`;
                 
                 $('.videovisual').html(videoSelectHTML).show();
                
@@ -302,6 +296,29 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
+    if ($(".colecaovip").length) {
+        setTimeout(function() {                
+            var items = document.querySelectorAll('.item');                                    
+            if (items.length === 0) {                    
+                return;
+            }                
+            var vipCount = 2;
+
+            items.forEach(function(item, index) {                    
+                var vipDiv = document.createElement('div');
+                vipDiv.className = 'vip-info';
+                vipDiv.textContent = vipCount + ' VIPs';
+                            
+                if (index !== 5) {
+                    vipCount += 2;
+                }
+                
+                item.appendChild(vipDiv);
+            });
+        }, 100);
+        $(".colecaovip .videovisual").prepend("<div class='vip-info'>8 VIPs</div>");
+		$(".colecaovip .botoes-versao").css("left", "5px").css("right", "unset");
+    }	
     if ($('#videoSelect').length && $('#video').length && $('#video').is(':visible')) {
         $('#videoSelect').select2({
             closeOnSelect: true,
