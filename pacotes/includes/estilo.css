@@ -285,7 +285,7 @@ body {
 	margin:0 0 10px 0;	
 }
 #corpo.lojas .items{margin-top:20px;}
-#corpo.lojas .items.secao1{margin-top:0px;}
+#corpo.lojas .items.secao4{margin-top:0px;}
 #corpo.lojas .items.secao1 .item .quantidade{background: url(../../imagens/cashvp.png) no-repeat -5px 0px;padding-left: 58px;}
 #corpo.lojas .items.secao2 .item .quantidade, #corpo.lojas .items.secao3 .item .quantidade{background: url(../../imagens/sbta172069.png) no-repeat -5px -5px;padding-left: 24px;background-size: 30px;}
 #corpo.lojas .items .item{height: 135px;width: 133px;justify-content: center;align-items:center;}
