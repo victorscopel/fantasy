@@ -10,13 +10,13 @@ window.onmousemove = function (e) {
         var tooltip = tooltips[i];
         var tooltipConstruir = tooltip.nextElementSibling; // Assumindo que .tooltipconstruir é o próximo elemento
 
-        // Check if the tooltip is visible
+        // Verifica se o tooltip está visível
         if (window.getComputedStyle(tooltip).visibility === 'visible') {
             var tooltipWidth = tooltip.offsetWidth;
             var tooltipHeight = tooltip.offsetHeight;
             var x, y;
 
-            // Calculate x and y based on cursor position and tooltip size
+            // Calcula x e y com base na posição do cursor e tamanho do tooltip
             if (mouseX + tooltipWidth + tooltipOffset < viewportWidth) {
                 x = mouseX + tooltipOffset;
             } else {
@@ -31,7 +31,7 @@ window.onmousemove = function (e) {
                 if (y < 0) y = 0;
             }
 
-            // Ensure tooltip stays within the boundaries
+            // Garante que o tooltip permanece dentro das bordas
             if (x + tooltipWidth > viewportWidth) {
                 x = viewportWidth - tooltipWidth - tooltipOffset;
             }
@@ -42,75 +42,40 @@ window.onmousemove = function (e) {
             tooltip.style.left = x + 'px';
             tooltip.style.top = y + 'px';
 
-            // Position .tooltipconstruir directly below .maintooltip
+            // Posiciona .tooltipconstruir ao lado do .maintooltip se não houver espaço em cima ou embaixo
             if (tooltipConstruir && tooltipConstruir.classList.contains('tooltipconstruir')) {
-                tooltipConstruir.style.left = x + 'px';
-                tooltipConstruir.style.top = (y + tooltipHeight + tooltipOffset) + 'px';
+                var construirHeight = tooltipConstruir.offsetHeight;
+                var construirWidth = tooltipConstruir.offsetWidth;
+                var construirX, construirY;
 
-                // Ensure .tooltipconstruir stays within the bottom boundary
-                if (y + tooltipHeight + tooltipConstruir.offsetHeight + tooltipOffset > viewportHeight) {
-                    tooltipConstruir.style.top = (y - tooltipConstruir.offsetHeight - tooltipOffset) + 'px';
+                // Tenta posicionar abaixo do .maintooltip
+                if (y + tooltipHeight + construirHeight + tooltipOffset < viewportHeight) {
+                    construirX = x;
+                    construirY = y + tooltipHeight + tooltipOffset;
                 }
+                // Caso não caiba abaixo, tenta posicionar acima do .maintooltip
+                else if (y - construirHeight - tooltipOffset > 0) {
+                    construirX = x;
+                    construirY = y - construirHeight - tooltipOffset;
+                }
+                // Caso não haja espaço suficiente em cima ou embaixo, posiciona ao lado direito ou esquerdo
+                else if (mouseX + tooltipWidth + construirWidth + tooltipOffset < viewportWidth) {
+                    construirX = x + tooltipWidth + tooltipOffset;
+                    construirY = y;
+                } else {
+                    construirX = x - construirWidth - tooltipOffset;
+                    construirY = y;
+                    if (construirX < 0) construirX = 0;
+                }
+
+                tooltipConstruir.style.left = construirX + 'px';
+                tooltipConstruir.style.top = construirY + 'px';
             }
         }
     }
 };
 
-function tooltipConstrucao(itemVar) {
-    console.log('tooltipConstrucao foi chamada com itemVar:', itemVar);
 
-    var tpcData = window[itemVar];
-    if (!tpcData) {
-        console.error('Dados do tooltip não encontrados:', itemVar);
-        return;
-    }
-
-    // Cria a div .tooltipconstruir se não existir
-    if ($(".tooltipconstruir").length === 0) {
-        $(".item").append('<div class="tooltipconstruir"></div>');
-    }
-
-    // Limpa o conteúdo anterior do baú
-    $(".tooltipconstruir").empty();
-
-    // Estrutura fixa do baú
-    var dialogContent = `
-        <h1>Construção</h1>
-        <div class="containeritens">
-        <div class="item comum"><img src="../imagens/sbta102565.png" alt="Doce do Halloween - 1" data-item="item1025650"><div class="quantidade">25</div></div>
-        <div class="item comum"><img src="../imagens/sbta102566.png" alt="Doce do Halloween - 2" data-item="item1025660"><div class="quantidade">25</div></div>
-        <div class="item comum"><img src="../imagens/sbta102567.png" alt="Doce do Halloween - 3" data-item="item1025670"><div class="quantidade">25</div></div>
-        <div class="item comum"><img src="../imagens/sbta102568.png" alt="Doce do Halloween - 4" data-item="item1025680"><div class="quantidade">25</div></div>
-        </div>
-        <div class="containercusto">
-        <div class="currency moedaepica">100</div>
-        <div class="currency gp">500 GP</div>
-        </div>
-    `;
-    $(".tooltipconstruir").html(dialogContent);
-
-    // Mapeia os IDs e as quantidades dos itens do baú
-    var qtds = tpcData.tpc_qtd.split(',');
-    var ids = tpcData.tpc_ids.split(',');
-
-    // Loop para adicionar cada item ao baú
-    ids.forEach(function(id, index) {
-        var itemHtml = window['item' + id];
-        var quantidade = qtds[index];
-        var $itemElement = $(itemHtml);
-
-        // Atualiza a quantidade no elemento do item
-        $itemElement.find('.quantidade').text(quantidade);
-
-        // Adiciona o item à estrutura do baú
-        $(".tooltipconstruir").prepend($itemElement);
-    });
-}
-
-
-
-
-// Função para adicionar um item ao HTML e abrir o baú quando for clicado
 function itemid(itemVar, quantidade, tipo = "", cutin = false, container = "") {
     if (container === "") {
         container = $('.items'); 
@@ -150,13 +115,62 @@ function itemid(itemVar, quantidade, tipo = "", cutin = false, container = "") {
     }
 
     // Verifica se o item possui construção
-    if (tipos.includes("construir")) {
-        // Adiciona o evento para construir
-        itemElement.addClass('construir');
-        itemElement.on('mouseenter', function() {
-            tooltipConstrucao(dataitemid.replace('_bau', ''));
-        });
-    }
+		if (tipos.includes("construir")) {
+			// Cria e insere o elemento tooltipconstruir dentro do item correspondente
+			var tooltipHtml = `
+				<div class="tooltipconstruir">
+					<h1></h1>
+					<div class="containeritens"></div>
+					<div class="containercusto">
+						<div class="currency moedaepica">0</div>
+						<div class="currency gp">0</div>
+					</div>
+				</div>
+			`;
+
+			// Anexa o tooltip ao itemElement
+			itemElement.append(tooltipHtml);			
+
+			// Mapeia os IDs e as quantidades dos itens do tooltip e os adiciona ao HTML
+			var tpcData = window[dataitemid.replace('_bau', '_tpc')];
+			if (tpcData) {
+				var texto = tpcData.tpc_texto;
+				var qtdGP = tpcData.tpc_gp;
+				var qtdMoeda = tpcData.tpc_moeda;
+				var mdcoin = tpcData.tpc_md;
+				if (texto) {
+					itemElement.find('.tooltipconstruir h1').text(texto);
+				}
+				if (qtdGP) {
+					itemElement.find('.currency.gp').text(qtdGP);
+				}
+				if (qtdMoeda) {
+					itemElement.find('.currency.moedaepica').text(qtdMoeda);
+				}
+				if (mdcoin) {
+					itemElement.find('.currency.moedaepica').addClass("md");
+				}
+				var qtds = tpcData.tpc_qtd.split(',');
+				var ids = tpcData.tpc_ids.split(',');
+
+				ids.forEach(function(id, index) {
+					var itemHtml = window['item' + id];
+					var quantidade = qtds[index];
+					var $itemElement = $(itemHtml).clone();
+
+					// Remove o .maintooltip do item clonado
+					$itemElement.find('.maintooltip').remove();
+
+					// Atualiza a quantidade no elemento do item
+					$itemElement.find('.quantidade').text(quantidade);
+
+					// Adiciona o item limpo à estrutura do tooltipconstruir dentro do itemElement
+					itemElement.find('.tooltipconstruir .containeritens').prepend($itemElement);
+				});
+			} else {
+				console.error('Dados do tooltip não encontrados:', dataitemid);
+			}
+		}    
 
     // Se cutin for verdadeiro, associa um evento de clique no item para mostrar a animação
     if (cutin) {
@@ -170,7 +184,7 @@ function itemid(itemVar, quantidade, tipo = "", cutin = false, container = "") {
 
             // Cria um novo elemento de imagem para o "cutin"
             var cutinElement = $('<img>', {
-                src: itemImageSrc, // Atribui a imagem do item
+                src: itemImageSrc,
                 class: 'cutin-image',
                 css: {
                     position: 'absolute',

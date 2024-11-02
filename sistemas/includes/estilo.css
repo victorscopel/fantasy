@@ -26,6 +26,8 @@ html {
 	overflow:hidden;	
 }
 html a{text-decoration:none !important;}
+html img{pointer-events:none;}
+html .quantidade{pointer-events:none;}
 
 body {	        
     margin: 0;

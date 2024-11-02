@@ -112,6 +112,18 @@ Pacotes.Raspadinha102024 = {
         ]
     }
 };
+Pacotes.UnoRenascido = {	
+    itens: [
+		'itemid(item2853520,"")'
+    ],
+    video: {
+		selectwidth:'155px',
+        videos: [
+            { src: "../imagens/pacotes/outros/uno-sombra.mp4",texto:"Sombra",imagem:"../imagens/icone-fantasy.png"},
+            { src: "../imagens/pacotes/outros/uno-sangrento.mp4",texto:"Sangrento",imagem:"../imagens/icone-fantasy.png"}
+        ]
+    }
+};
 
 //ULTIMATE VIP
 Pacotes.UltimatePokemon = {		

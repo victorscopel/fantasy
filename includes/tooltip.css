@@ -1,4 +1,6 @@
 /*CSS RESET*/
+html img{pointer-events:none;}
+html .quantidade{pointer-events:none;}
 .maintooltip div, .maintooltip span, 
 .maintooltip p, .maintooltip img, 
 .maintooltip ul, .maintooltip li,

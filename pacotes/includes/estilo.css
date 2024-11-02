@@ -25,7 +25,8 @@ html {
     font-family: rubik,helvetica,arial,sans-serif;	
 	overflow:hidden;
 }
-html.forumiframe{}
+html img{pointer-events:none;}
+html .quantidade{pointer-events:none;}
 html a{text-decoration:none !important;}
 
 body {	        
@@ -341,8 +342,7 @@ body {
 }
 .bauaberto h2{background-color:#1d2733; max-width:80%;height:25px;font-size:16px;line-height:25px;border-radius:5px;margin: 0 auto 5px auto;text-align:center;color:#fff;}
 .bauaberto .item{
-    display: flex;
-    float: left;
+    display: inline-flex;    
     height: 65px;
     margin: 5px 0 0 5px;
     justify-content: center;
@@ -589,7 +589,7 @@ body .maintooltip.cartamonstro .statuscarta>li:nth-last-child(n+2) ~ li {
     width: 68px;
 }
 
-.tooltipconstruir{
+html #corpo .items .item .tooltipconstruir{
 	opacity:0;
 	visibility:hidden;
 	display:none;
@@ -604,26 +604,62 @@ body .maintooltip.cartamonstro .statuscarta>li:nth-last-child(n+2) ~ li {
 	border-radius:5px;
 	pointer-eventos:none;
 }
-.item:hover .tooltipconstruir{
+html #corpo .items .item:hover .tooltipconstruir{
 	display:block;
 	opacity:1 !important;
 	position:fixed;	
 	visibility:visible;
 	z-index:2;
 }
-.tooltipconstruir h1{
+html #corpo .items .item .tooltipconstruir h1{
+	color:white;
 	font-size:20px;
 	margin-bottom:10px;
 }
-.tooltipconstruir .containeritens {
+html #corpo .items .item .tooltipconstruir .containeritens {
 	background-color:#1e3046;
 	border-radius:5px;
 	padding:8px 8px 8px 3px;
 }
-.tooltipconstruir .containeritens .item {
-	margin:0 0 0 5px;
+html #corpo .items .item .tooltipconstruir .item{
+    display: inline-flex;    
+    height: 65px;
+    margin: 5px 0 0 5px;
+    justify-content: center;
+    position: relative;
+    width: 65px;
+    align-items: center;
+	border:none;
+	z-index:1;
 }
-.tooltipconstruir .containercusto{margin-top:10px;}
-.tooltipconstruir .currency{border-radius:5px;background-color:;display:block;float:left; width:39%;height:27px;line-height:27px;padding-left:36px;}
-.tooltipconstruir .moedaepica{background:#1e3046 url(../../imagens/moedaepica.png) 5px 2px no-repeat;}
-.tooltipconstruir .gp{background:#1e3046 url(../../imagens/gp.png) 6px 5px no-repeat;margin-left:7px;}
+
+html #corpo .items .item .tooltipconstruir .item:nth-child(-n+5){margin-top:0;}
+html #corpo .items .item .tooltipconstruir .item img{max-width:65px;max-height:65px;}
+html #corpo .items .item .tooltipconstruir .item.comum{
+	background-image:url("../../imagens/comum.png");
+}
+html #corpo .items .item .tooltipconstruir .item.raro{
+	background-image:url("../../imagens/raro.png");
+}
+html #corpo .items .item .tooltipconstruir .item.epico{
+	background-image:url("../../imagens/epico.png");
+}
+html #corpo .items .item .tooltipconstruir .item.lendario{
+	background-image:url("../../imagens/lendario.png");
+}
+html #corpo .items .item .tooltipconstruir .item.supremo{
+	background-image:url("../../imagens/supremo.png");
+}
+html #corpo .items .item .tooltipconstruir .quantidade{
+	bottom: 3%;
+    position: absolute;
+    left: 7%;
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 2px 2px 0px #000000;
+}
+html #corpo .items .item .tooltipconstruir .containercusto{margin-top:10px;}
+html #corpo .items .item .tooltipconstruir .currency{color:white;border-radius:5px;background-color:;display:block;float:left; width:39%;height:27px;line-height:27px;padding-left:36px;}
+html #corpo .items .item .tooltipconstruir .moedaepica{background:#1e3046 url(../../imagens/moedaepica.png) 5px 2px no-repeat;}
+html #corpo .items .item .tooltipconstruir .moedaepica.md{background:#1e3046 url(../../imagens/moedacorrompida.png) 5px 2px no-repeat;}
+html #corpo .items .item .tooltipconstruir .gp{background:#1e3046 url(../../imagens/gp.png) 6px 5px no-repeat;margin-left:7px;}

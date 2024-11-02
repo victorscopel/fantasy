@@ -27,9 +27,11 @@ const TraducaoGeral = {
 		'resistenciacorrupcao':'Corruption Resistance',
         'pecasvazio': 'Set Item: Void Devourer<br/>3 Pieces Bonus:',
         'pecashenir': 'Set Item: Otherworld Lord<br/>3 Pieces Bonus:',
-		'detalhesmissao':'Mission Details'
+		'detalhesmissao':'Mission Details',
+		'botaobuscaitens':'Search Items'
 	},
 	'pt': {
+		'botaobuscaitens':'Buscar Itens',
 		'buscadeitem':'Busca de Item',
 		'ataque':'Ataque',
 		'defesa':'Defesa',

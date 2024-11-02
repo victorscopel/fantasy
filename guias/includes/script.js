@@ -1,4 +1,3 @@
-// TOOLTIP
 var tooltips = document.getElementsByClassName('maintooltip');
 window.onmousemove = function (e) {
     var mouseX = e.clientX;
@@ -9,51 +8,54 @@ window.onmousemove = function (e) {
 
     for (var i = 0; i < tooltips.length; i++) {
         var tooltip = tooltips[i];
+        var tooltipConstruir = tooltip.nextElementSibling; // Assumindo que .tooltipconstruir é o próximo elemento
+
         // Check if the tooltip is visible
         if (window.getComputedStyle(tooltip).visibility === 'visible') {
             var tooltipWidth = tooltip.offsetWidth;
             var tooltipHeight = tooltip.offsetHeight;
             var x, y;
+
             // Calculate x and y based on cursor position and tooltip size
             if (mouseX + tooltipWidth + tooltipOffset < viewportWidth) {
-                // Tooltip can be to the right of the cursor
                 x = mouseX + tooltipOffset;
             } else {
-                // Tooltip should be to the left of the cursor
                 x = mouseX - tooltipWidth - tooltipOffset;
-                // Make sure tooltip stays within the left boundary
-                if (x < 0) {
-                    x = 0;
-                }
+                if (x < 0) x = 0;
             }
 
             if (mouseY + tooltipHeight + tooltipOffset < viewportHeight) {
-                // Tooltip can be below the cursor
                 y = mouseY + tooltipOffset;
             } else {
-                // Tooltip should be above the cursor
                 y = mouseY - tooltipHeight - tooltipOffset;
-                // Make sure tooltip stays within the top boundary
-                if (y < 0) {
-                    y = 0;
-                }
+                if (y < 0) y = 0;
             }
 
-            // Make sure tooltip stays within the right boundary
+            // Ensure tooltip stays within the boundaries
             if (x + tooltipWidth > viewportWidth) {
                 x = viewportWidth - tooltipWidth - tooltipOffset;
             }
-
-            // Make sure tooltip stays within the bottom boundary
             if (y + tooltipHeight > viewportHeight) {
                 y = viewportHeight - tooltipHeight - tooltipOffset;
             }
 
             tooltip.style.left = x + 'px';
-            tooltip.style.top = y + 'px';            
+            tooltip.style.top = y + 'px';
+
+            // Position .tooltipconstruir directly below .maintooltip
+            if (tooltipConstruir && tooltipConstruir.classList.contains('tooltipconstruir')) {
+                tooltipConstruir.style.left = x + 'px';
+                tooltipConstruir.style.top = (y + tooltipHeight + tooltipOffset) + 'px';
+
+                // Ensure .tooltipconstruir stays within the bottom boundary
+                if (y + tooltipHeight + tooltipConstruir.offsetHeight + tooltipOffset > viewportHeight) {
+                    tooltipConstruir.style.top = (y - tooltipConstruir.offsetHeight - tooltipOffset) + 'px';
+                }
+            }
         }
     }
 };
+
 
 // ABAS
 $(function() {

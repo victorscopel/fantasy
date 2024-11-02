@@ -30,6 +30,8 @@ html {
 	overflow-y:auto;overflow-x:hidden;
 }
 html a{text-decoration:none !important;}
+html img{pointer-events:none;}
+html .quantidade{pointer-events:none;}
 
 body#guiasmissoes{max-width: 1200px;margin: 0 auto;position:relative;}
 body#guiasmissoes h1{
@@ -392,8 +394,7 @@ body#guiasmissoes #language-buttons{top:22px;}
 .containerdrops .tabcontainer[aria-hidden=true]{opacity:0 !important;}
 .containerdrops .tabcontainer[aria-hidden=false]{opacity:1 !important;}
 .item{
-    display: flex;
-    float: left;
+    display: inline-flex;    
     height: 65px;
     margin: 5px 0 5px 5px;
     justify-content: center;
@@ -646,6 +647,7 @@ body .maintooltip.cartamonstro .statuscarta>li:nth-last-child(n+2), body .mainto
 .tooltipconstruir{
 	opacity:0;
 	visibility:hidden;
+	display:none;
 	background-color:#161a24;
 	position: absolute;
     top: 0;
@@ -658,6 +660,7 @@ body .maintooltip.cartamonstro .statuscarta>li:nth-last-child(n+2), body .mainto
 	pointer-eventos:none;
 }
 .item:hover .tooltipconstruir{
+	display:block;
 	opacity:1 !important;
 	position:fixed;	
 	visibility:visible;
